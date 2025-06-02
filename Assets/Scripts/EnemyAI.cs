@@ -15,11 +15,7 @@ public class EnemyAI : MonoBehaviour
             Debug.LogError("NavMeshAgent no encontrado en " + gameObject.name + ". Agregándolo.");
             agente = gameObject.AddComponent<NavMeshAgent>();
         }
-        // Configura propiedades del NavMeshAgent si son importantes, como velocidad, aceleración, etc.
-        // agente.speed = 3.5f;
-        // agente.angularSpeed = 120f;
-        // agente.acceleration = 8f;
-        // agente.stoppingDistance = 0.5f; // Distancia para considerar que ha llegado al destino
+     
     }
 
     void OnEnable() // Se llama cada vez que el GameObject se activa
