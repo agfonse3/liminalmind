@@ -10,6 +10,12 @@ public class FirstPersonController : MonoBehaviour
     public float jumpHeight = 1.5f;
     public float gravity = -9.81f;
 
+    [Header("Footstep Settings")]
+    public AudioClip[] footstepClips;
+    public AudioSource footstepSource;
+    public float minStepPitch = 0.9f;
+    public float maxStepPitch = 1.1f;
+
     [Header("Mouse Look")]
     public float mouseSensitivity = 100f;
     public Transform cameraTransform;
@@ -37,6 +43,7 @@ public class FirstPersonController : MonoBehaviour
     public float bobFrequency = 8f;
     public float bobAmplitude = 0.05f;
     private float bobTimer = 0f;
+    private bool stepTriggered = false;
     private Vector3 cameraStartPos;
 
     private CharacterController controller;
@@ -45,6 +52,17 @@ public class FirstPersonController : MonoBehaviour
     private float standingCameraY;
     private float crouchingCameraY;
     private float currentCameraY;
+
+    [Header("Sanity Settings")]
+    public float maxSanity = 100f;
+    public float sanityDecreaseRate = 5f;
+    public float sanityRegenRate = 2f;
+    public float sanityRegenDelay = 3f;
+    private float currentSanity;
+    private float timeSinceLastSeen = 0f;
+    public Transform sanityTarget;
+    public LayerMask lineOfSightObstacles;
+
 
     void Start()
     {
@@ -58,6 +76,7 @@ public class FirstPersonController : MonoBehaviour
         standingCameraY = cameraStartPos.y;
         crouchingCameraY = standingCameraY - 0.5f;
         currentCameraY = standingCameraY;
+        currentSanity = maxSanity;
     }
 
     void Update()
@@ -67,6 +86,48 @@ public class FirstPersonController : MonoBehaviour
         HandleMovement();
         HandleHeadBob();
         RegenerateStamina();
+        HandleSanity();
+
+    }
+
+    void HandleSanity()
+    {
+        Vector3 directionToTarget = sanityTarget.position - cameraTransform.position;
+        float angleToTarget = Vector3.Angle(cameraTransform.forward, directionToTarget);
+
+        Ray ray = new Ray(cameraTransform.position, directionToTarget.normalized);
+        RaycastHit hit;
+
+        bool seesEntity = false;
+
+        if (angleToTarget < 60f) // Field of view angle (can adjust)
+        {
+            if (Physics.Raycast(ray, out hit, 30f, lineOfSightObstacles))
+            {
+                if (hit.transform == sanityTarget)
+                {
+                    seesEntity = true;
+                }
+            }
+        }
+
+        if (seesEntity)
+        {
+            currentSanity -= sanityDecreaseRate * Time.deltaTime;
+            currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
+            timeSinceLastSeen = 0f;
+        }
+        else
+        {
+            timeSinceLastSeen += Time.deltaTime;
+            if (timeSinceLastSeen >= sanityRegenDelay)
+            {
+                currentSanity += sanityRegenRate * Time.deltaTime;
+                currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
+            }
+        }
+
+        Debug.Log("Sanity: " + currentSanity);
     }
 
     void HandleMouseLook()
@@ -151,6 +212,16 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
+    void PlayFootstep()
+    {
+        if (footstepClips.Length == 0 || !footstepSource || !isGrounded)
+            return;
+
+        int index = Random.Range(0, footstepClips.Length);
+        footstepSource.pitch = Random.Range(minStepPitch, maxStepPitch);
+        footstepSource.PlayOneShot(footstepClips[index]);
+    }
+
     void HandleHeadBob()
     {
         bool isMovingAndGrounded = isGrounded &&
@@ -175,6 +246,17 @@ public class FirstPersonController : MonoBehaviour
             bobTimer += Time.deltaTime * currentBobFreq;
             float bobOffset = Mathf.Sin(bobTimer) * currentBobAmp;
 
+            // Trigger step when bob reaches downward trough
+            if (Mathf.Sin(bobTimer) < -0.95f && !stepTriggered)
+            {
+                PlayFootstep();
+                stepTriggered = true;
+            }
+            else if (Mathf.Sin(bobTimer) > 0f)
+            {
+                stepTriggered = false;
+            }
+
             Vector3 camPos = cameraTransform.localPosition;
             camPos.y = currentCameraY + bobOffset;
             cameraTransform.localPosition = camPos;
@@ -182,6 +264,7 @@ public class FirstPersonController : MonoBehaviour
         else
         {
             bobTimer = Mathf.Lerp(bobTimer, 0f, Time.deltaTime * 5f);
+            stepTriggered = false;
 
             Vector3 camPos = cameraTransform.localPosition;
             camPos.y = Mathf.Lerp(camPos.y, currentCameraY, Time.deltaTime * 5f);
