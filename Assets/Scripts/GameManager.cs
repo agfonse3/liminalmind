@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,7 +23,20 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+public Animator animacionTransicion; // Asigna el Animator de la animación de transición
+    public float tiempoEspera = 1f; // Tiempo antes de cargar la escena
 
+    public void CambiarEscena(string nombreEscena)
+    {
+        StartCoroutine(Transicion(nombreEscena)); // Llamar la animación antes de cambiar de escena
+    }
+
+    IEnumerator Transicion(string nombreEscena)
+    {
+        animacionTransicion.SetTrigger("Iniciar"); // Activar animación de transición
+        yield return new WaitForSeconds(tiempoEspera); // Esperar la duración de la animación
+        SceneManager.LoadScene(nombreEscena); // Cargar la nueva escena
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
