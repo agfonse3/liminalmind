@@ -10,35 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: StaticText Shared Data
+  m_Name: PausePanelText Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: StaticText
-  m_TableCollectionNameGuidString: d23a3545907ca0247b2d2d2546e04e81
+  m_TableCollectionName: PausePanelText
+  m_TableCollectionNameGuidString: bd92000496b3b014ebbfd1b6403068fa
   m_Entries:
-  - m_Id: 351693901824
-    m_Key: TittleEffects
+  - m_Id: 1081696113332224
+    m_Key: TittleQuitButton
     m_Metadata:
       m_Items: []
-  - m_Id: 144939880448
-    m_Key: Tittlelanguage
-    m_Metadata:
-      m_Items: []
-  - m_Id: 280864690176
-    m_Key: TittleMusic
-    m_Metadata:
-      m_Items: []
-  - m_Id: 19748294656
-    m_Key: TittleSetings
+  - m_Id: 1081825524387840
+    m_Key: TittleResumeButton
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 7730350288944496907
+    rid: 7730350288944496916
   references:
     version: 2
     RefIds:
-    - rid: 7730350288944496907
+    - rid: 7730350288944496916
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1748655010250
+        m_CustomEpoch: 1748657721412

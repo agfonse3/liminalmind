@@ -16,14 +16,13 @@ MonoBehaviour:
   m_GUID: d2b3403350051574fb43222da7d453b1
   m_SerializeEntries:
   - m_GUID: 00b0a6adc3e1c0643b03d76ac6cc72f7
-    m_Address: StaticText_en
+    m_Address: SettingsPanelText_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
-    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7f2c60f629ffcc54ca2eb75c98176ecf
-    m_Address: LanguageTable_en
+    m_Address: PausePanelText_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
