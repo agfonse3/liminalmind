@@ -21,8 +21,14 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-es
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 643a9f6e994a9954d965e365abe21f0b
+    m_Address: NamesInGame_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: be04b116a94a1aa42b7d06f7a0fd9bdb
-    m_Address: PausePanelText_es
+    m_Address: StartPausePanelText_es
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es

@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 public class PausePanel : MonoBehaviour
 {
     [SerializeField] GameObject pausePannel; //panel activo
+    [SerializeField] GameObject settingsPannel; //panel configuracion
 
     public void QuitButton() 
     {
         pausePannel.SetActive(false);
         //SceneManager.LoadScene(1);// carga primera escena titulo
+    }
+
+    public void SettingsButton() 
+    {
+        pausePannel.SetActive(false);
+        settingsPannel.SetActive(true);
     }
 
     public void ResumeButton() 

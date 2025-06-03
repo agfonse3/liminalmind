@@ -22,11 +22,17 @@ MonoBehaviour:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7f2c60f629ffcc54ca2eb75c98176ecf
-    m_Address: PausePanelText_en
+    m_Address: StartPausePanelText_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a6707ed3dd4054c49982099599fe53f5
+    m_Address: NamesInGame_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 39fb5295a83a31344be5eaee8d65f3b1, type: 2}
