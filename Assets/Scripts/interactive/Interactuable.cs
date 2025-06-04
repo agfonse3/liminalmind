@@ -10,6 +10,7 @@ public class Interactuable : MonoBehaviour
     public TMP_Text textoUI; // Si usas TextMeshPro, cambia a Text si usas el Text UI normal
     private Transform jugador;
     private bool dentroRango = false;
+    public Light luzInteractuable;
     //Inventario inventario;
     void Start()
     {
@@ -58,9 +59,10 @@ public class Interactuable : MonoBehaviour
             {
                 dentroRango = false;
                 CerrarPanelUI();
+                MostrarIndicador(false); // Desactivar el indicador y luz
                 Debug.Log("Jugador salió del rango.");
                 
-                MostrarIndicador(false); // Desactivar el indicador y luz
+                
 
 
             }
@@ -75,6 +77,10 @@ public class Interactuable : MonoBehaviour
         {
             panelInteractuar.SetActive(mostrar);
         }
+        if (luzInteractuable != null)
+    {
+        luzInteractuable.enabled = mostrar;
+    }
         // Activar/desactivar el cursor cuando el panel cambia de estado
         Cursor.lockState = mostrar ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = mostrar;
@@ -99,18 +105,7 @@ public class Interactuable : MonoBehaviour
         GameManager.Instance.MostrarInventario(); // Muestra el inventario después de recoger
        // Destroy(gameObject); // Elimina el objeto de la escena
     }
-            //if (inventario != null) // Evitar el NullReferenceException
-            //{
-            //    inventario.Cantidad += 1;
-            //    Debug.Log("Objeto recogido: " + gameObject.name);
-            //    Destroy(gameObject);
-            //}
-            //else
-            //{
-            //    Debug.LogError("Inventario no está inicializado.");
-            //}
-    
-        // Aquí puedes añadir más lógica de interacción
+         
         Debug.Log("Interacción con " + gameObject.name);
     }
     void CerrarPanelUI()
