@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public Vector3 lastPosition; // posicion del jugador en la ultima escena
 
     //List<GameObject> lista para el inventario
-
+    public List<GameObject> listaInventario = new List<GameObject>();
     public bool isGameActive;
     [SerializeField] GameObject gameOverPannel;
 
@@ -41,7 +41,10 @@ public class GameManager : MonoBehaviour
     {
 
     }
-
+  public void NuevoJuego()
+    {
+        SceneManager.LoadScene(1);
+    }
     //Metodo para determinar el idioma
     public void ChangeLanguage(int option)
     {
@@ -98,7 +101,36 @@ public class GameManager : MonoBehaviour
 
     }
 
+// MÉTODOS DEL INVENTARIO
+    // Método para agregar un objeto al inventario
+    public void AgregarObjetoAlInventario(GameObject objeto)
+    {
+        listaInventario.Add(objeto);
+        Debug.Log("Objeto agregado al inventario: " + objeto.name);
+    }
 
+    // Método para mostrar los objetos que están en el inventario
+    public void MostrarInventario()
+{
+    Debug.Log("Inventario actual:");
 
-
+    foreach (GameObject obj in listaInventario)
+    {
+        if (obj != null) // Verifica si el objeto no ha sido destruido
+        {
+            Debug.Log("- " + obj.name);
+        }
+        else
+        {
+            Debug.Log("- Un objeto ha sido eliminado del inventario.");
+        }
+    }
+}
+ void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I)) // Presionar "I" para abrir el inventario
+        {
+            GameManager.Instance.MostrarInventario();
+        }
+    }
 }
