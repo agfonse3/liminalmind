@@ -8,6 +8,11 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] Slider volumeBFXSlider; // Control de volumen sonidos de fondo
     [SerializeField] Button volumeFXButton; // Boton que mutea
     [SerializeField] GameObject settingsPannel; //panel activo
+    [SerializeField] GameObject startPannel; //panel inicio
+    [SerializeField] GameObject pausePannel; //panel pausa
+
+    public StartPanel startPanel; //script
+    public PausePanel pausePanel; //script
 
     bool isOnVolume = true; //variable que controla el muteado
 
@@ -16,10 +21,15 @@ public class SettingsMenu : MonoBehaviour
     public Sprite soundOnImage; // imagen boton sonido on
     public Sprite soundOffImage; // imagen boton mute
 
+    public bool isOnpause = false;
+    public bool isOnStart = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         AudiomanagerTemp.Instance.PlayMusic(audioBGS);// musica que se reproduce en el fondo
+        startPanel = startPannel.GetComponent<StartPanel>();
+        pausePanel = pausePannel.GetComponent<PausePanel>();
     }
 
     //metodo dinamica para cambiar el volumen musica de fondo
@@ -63,13 +73,41 @@ public class SettingsMenu : MonoBehaviour
     {
         if (GameManager.Instance != null)
         {
-            Time.timeScale = 1.0f;
-            settingsPannel.SetActive(false);
             AudiomanagerTemp.Instance.PlayEndMusic(audioBGS);
-            int temporalscene = GameManager.Instance.numberActualScene; // llama la ultima escena en la que estuvo
-            Vector3 lastposition = GameManager.Instance.lastPosition;// llama la posicion del jugador en la ultima escena
-            //player.transform.position = lastposition; //asigna la posicion al player 
-            SceneManager.LoadScene(temporalscene);// carga ultima escena en la que estuvo
+            if (isOnStart)
+            {
+                settingsPannel.SetActive(false);
+                if (startPanel != null)
+                {
+                    AudiomanagerTemp.Instance.PlayMusic(startPanel.audioBGS);
+                }
+                else
+                {
+                    Debug.Log("no se encontro el objeto");
+                }
+                startPannel.SetActive(true);
+                isOnStart = false;
+                isOnpause = false;
+            }
+            if (isOnpause)
+            {
+                settingsPannel.SetActive(false);
+                if (pausePanel != null)
+                {
+                    AudiomanagerTemp.Instance.PlayMusic(pausePanel.audioBGS);
+                }
+                else
+                {
+                    Debug.Log("no se encontro el objeto");
+                }
+                pausePannel.SetActive(true);
+                isOnStart = false;
+                isOnpause = false;
+            }
+
+
+
+
         }
 
     }

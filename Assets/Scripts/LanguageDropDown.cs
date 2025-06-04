@@ -34,6 +34,7 @@ public class LanguageDropDown : MonoBehaviour
         dropdownLanguage.value = selectedlanguage;
         dropdownLanguage.onValueChanged.AddListener(LocaleSelected);
     }
+    //metodo para asignar el idioma al juego
     static void LocaleSelected(int index)
     {
         GameManager.Instance.ChangeLanguage(index);

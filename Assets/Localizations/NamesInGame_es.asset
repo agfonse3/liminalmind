@@ -17,7 +17,23 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 884d8a25bbb2a3546b37a026464911ff, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 95612990590976
+    m_Localized: Realizado por
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95717818830848
+    m_Localized: Cordura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95830553333760
+    m_Localized: Es tu fin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96342342307840
+    m_Localized: Has recuperado la cordura... o eso crees
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
