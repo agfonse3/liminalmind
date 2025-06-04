@@ -10,20 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: LanguageTable_es
+  m_Name: SettingsPanelText_en
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: es
-  m_SharedData: {fileID: 11400000, guid: bd92000496b3b014ebbfd1b6403068fa, type: 2}
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: d23a3545907ca0247b2d2d2546e04e81, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 10680209408
-    m_Localized: Spanish
+  - m_Id: 19748294656
+    m_Localized: SETTINGS
     m_Metadata:
       m_Items: []
-  - m_Id: 116238258176
-    m_Localized: "Espa\xF1ol"
+  - m_Id: 144939880448
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 280864690176
+    m_Localized: Background
+    m_Metadata:
+      m_Items: []
+  - m_Id: 351693901824
+    m_Localized: Effects
     m_Metadata:
       m_Items: []
   references:

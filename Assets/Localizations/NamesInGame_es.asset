@@ -10,30 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: StaticText_es
+  m_Name: NamesInGame_es
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: es
-  m_SharedData: {fileID: 11400000, guid: d23a3545907ca0247b2d2d2546e04e81, type: 2}
+  m_SharedData: {fileID: 11400000, guid: 884d8a25bbb2a3546b37a026464911ff, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData:
-  - m_Id: 19748294656
-    m_Localized: "CONFIGURACI\xD3N"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 144939880448
-    m_Localized: Idioma
-    m_Metadata:
-      m_Items: []
-  - m_Id: 280864690176
-    m_Localized: "M\xFAsica"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 351693901824
-    m_Localized: Efectos
-    m_Metadata:
-      m_Items: []
+  m_TableData: []
   references:
     version: 2
     RefIds: []

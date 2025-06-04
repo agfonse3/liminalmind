@@ -12,7 +12,7 @@ public class LanguageDropDown : MonoBehaviour
     
     IEnumerator Start()
     {
-        // Wait for the localization system to initialize, loading Locales, preloading etc.
+        // Wait for the localization system to initialize.
         yield return LocalizationSettings.InitializationOperation;
 
         // Generate list of available Locales

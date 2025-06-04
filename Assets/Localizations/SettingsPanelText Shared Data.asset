@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: StaticText Shared Data
+  m_Name: SettingsPanelText Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: StaticText
+  m_TableCollectionName: SettingsPanelText
   m_TableCollectionNameGuidString: d23a3545907ca0247b2d2d2546e04e81
   m_Entries:
   - m_Id: 351693901824

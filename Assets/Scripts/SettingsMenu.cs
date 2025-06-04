@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
@@ -60,8 +61,17 @@ public class SettingsMenu : MonoBehaviour
 
     public void ExitPanel() 
     {
-        settingsPannel.SetActive(false);
-        AudiomanagerTemp.Instance.PlayEndMusic(audioBGS);
+        if (GameManager.Instance != null)
+        {
+            Time.timeScale = 1.0f;
+            settingsPannel.SetActive(false);
+            AudiomanagerTemp.Instance.PlayEndMusic(audioBGS);
+            int temporalscene = GameManager.Instance.numberActualScene; // llama la ultima escena en la que estuvo
+            Vector3 lastposition = GameManager.Instance.lastPosition;// llama la posicion del jugador en la ultima escena
+            //player.transform.position = lastposition; //asigna la posicion al player 
+            SceneManager.LoadScene(temporalscene);// carga ultima escena en la que estuvo
+        }
+
     }
 
     
