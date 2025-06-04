@@ -2619,8 +2619,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f679aaea3dd75ff439db07e2abea3be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animacionTransicion: {fileID: 0}
-  tiempoEspera: 1
+  sanityOfPlayer: 0
+  numberActualScene: 0
+  lastPosition: {x: 0, y: 0, z: 0}
+  isGameActive: 0
+  gameOverPannel: {fileID: 0}
 --- !u!4 &1051855025
 Transform:
   m_ObjectHideFlags: 0
@@ -4650,6 +4653,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 719916917925777442, guid: e36e5910113332b428a039be35dbc01a, type: 3}
+      propertyPath: footsteps
+      value: 
+      objectReference: {fileID: 8300000, guid: 87b663575fa3e164982f5bfeb4f0281b, type: 3}
+    - target: {fileID: 719916917925777442, guid: e36e5910113332b428a039be35dbc01a, type: 3}
+      propertyPath: horrorSting
+      value: 
+      objectReference: {fileID: 8300000, guid: b96a5fdc5c52fc2478ad58a05f1d3194, type: 3}
+    - target: {fileID: 719916917925777442, guid: e36e5910113332b428a039be35dbc01a, type: 3}
+      propertyPath: elevatorMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 96b938c42295c5747a0ca2157dd423c3, type: 3}
+    - target: {fileID: 719916917925777442, guid: e36e5910113332b428a039be35dbc01a, type: 3}
+      propertyPath: elevatorButton
+      value: 
+      objectReference: {fileID: 8300000, guid: de0b5c2335bbcc24b899074f8ed50654, type: 3}
+    - target: {fileID: 719916917925777442, guid: e36e5910113332b428a039be35dbc01a, type: 3}
+      propertyPath: officeAmbience
+      value: 
+      objectReference: {fileID: 8300000, guid: e76af91cc28289d4abad60e4c766a7a8, type: 3}
+    - target: {fileID: 719916917925777442, guid: e36e5910113332b428a039be35dbc01a, type: 3}
+      propertyPath: paperShuffling
+      value: 
+      objectReference: {fileID: 8300000, guid: f49da092d45277c429e80077a3c0395b, type: 3}
+    - target: {fileID: 719916917925777442, guid: e36e5910113332b428a039be35dbc01a, type: 3}
+      propertyPath: characterAgitation
+      value: 
+      objectReference: {fileID: 8300000, guid: c195b433d189fc849a6c28b02146a23d, type: 3}
     - target: {fileID: 5578808887755331581, guid: e36e5910113332b428a039be35dbc01a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 221.5
@@ -6230,7 +6261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 860bc24531fe1e249a3b10fa124ccdcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cantidad: 0
 --- !u!1 &2120282956
 GameObject:
   m_ObjectHideFlags: 0
