@@ -39,6 +39,18 @@ MonoBehaviour:
     m_Key: TittleRestartButtons
     m_Metadata:
       m_Items: []
+  - m_Id: 1437218666647552
+    m_Key: YesConfirmationButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1437292847108096
+    m_Key: NoconfirmationButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1469737185251328
+    m_Key: ConfirmationQuestion
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

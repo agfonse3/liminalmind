@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        //garantiza una unica instancia del mismo
         if (Instance == null)
         {
             Instance = this;
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     }
 
+    //Metodo para determinar el idioma
     public void ChangeLanguage(int option)
     {
         if (option == 0 || option == 1)
@@ -49,6 +51,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //metodo para incrementar la cordura
     public void IncreaseSanity(int value) 
     {
         if (sanityOfPlayer < maxValueOfSanity)
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //metodo para disminuir la cordura
     public void DecreaseSanity(int value)
     {
         if (sanityOfPlayer > 0)
@@ -73,16 +77,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //metodo que almacena la ultima posicion del jugador
     public void setLastPosition(Vector3 actualPosition) 
     {
         lastPosition = actualPosition; // ultima posicion del player
     }
 
+    //metodo que almacena la ultima escena del jugador
     public void SetActualScene(int value) 
     {
         numberActualScene=value; // ultima escena en la que estuvo
     }
 
+    //metodo de gameover
     public void GameOver()
     {
         gameOverPannel.SetActive(true);
@@ -90,6 +97,8 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
 
     }
+
+
 
 
 }

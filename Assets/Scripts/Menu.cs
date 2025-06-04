@@ -49,16 +49,15 @@ public void CancelarAccion()
     optionsPause.SetActive(true);
 }
 
-void Restart()
+void Restart()//
 {
     // Aquí va la lógica para Restart el juego
     Time.timeScale = 1f;
     PlayerPrefs.SetInt("restart", 1); // Marcamos que el juego se está reiniciando
-
     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 }
 
-void Quit()
+void Quit()//
 {
     
     Time.timeScale = 1f;
@@ -70,14 +69,14 @@ void Quit()
  
 }
 
-public void Pause()
+public void Pause()//
 {
     Time.timeScale = 0f;
     buttonPause.SetActive(false);
     menuPause.SetActive(true);
 }
 
-public void Resume()
+public void Resume()//
 {
     Time.timeScale = 1f;
     buttonPause.SetActive(true);

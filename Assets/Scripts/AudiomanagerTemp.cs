@@ -7,7 +7,8 @@ public class AudiomanagerTemp : MonoBehaviour
     
     private void Awake()
     {
-        
+
+        //garantiza una unica instancia del mismo
         if (Instance == null)
         {
             Instance = this;

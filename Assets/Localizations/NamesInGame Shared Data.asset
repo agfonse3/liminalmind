@@ -14,7 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: NamesInGame
   m_TableCollectionNameGuidString: 884d8a25bbb2a3546b37a026464911ff
-  m_Entries: []
+  m_Entries:
+  - m_Id: 95612990590976
+    m_Key: TittleMadeBy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95717818830848
+    m_Key: TitlleSanity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95830553333760
+    m_Key: GameOver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96342342307840
+    m_Key: 'Congratulations '
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

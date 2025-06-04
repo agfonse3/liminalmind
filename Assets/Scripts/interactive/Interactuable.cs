@@ -11,10 +11,10 @@ public class Interactuable : MonoBehaviour
 
     private Transform jugador;
     private bool dentroRango = false;
-    Inventario inventario;
+    //Inventario inventario;
     void Start()
     {
-        inventario = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventario>();
+        //inventario = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventario>();
         jugador = GameObject.FindGameObjectWithTag("Player").transform; // Asegúrate de que tu jugador tenga el tag "Player"
         if (panelInteractuar != null)
         {
@@ -88,16 +88,16 @@ public class Interactuable : MonoBehaviour
         // Verificar si el objeto tiene el tag "Recolectable" antes de añadirlo al inventario
     if (gameObject.CompareTag("Recolectable"))
     {
-        if (inventario != null) // Evitar el NullReferenceException
-        {
-            inventario.Cantidad += 1;
-            Debug.Log("Objeto recogido: " + gameObject.name);
-            Destroy(gameObject);
-        }
-        else
-        {
-            Debug.LogError("Inventario no está inicializado.");
-        }
+        //if (inventario != null) // Evitar el NullReferenceException
+        //{
+        //    inventario.Cantidad += 1;
+        //    Debug.Log("Objeto recogido: " + gameObject.name);
+        //    Destroy(gameObject);
+        //}
+        //else
+        //{
+        //    Debug.LogError("Inventario no está inicializado.");
+        //}
     }
         // Aquí puedes añadir más lógica de interacción
         Debug.Log("Interacción con " + gameObject.name);
