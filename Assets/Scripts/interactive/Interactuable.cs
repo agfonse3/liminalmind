@@ -8,9 +8,9 @@ public class Interactuable : MonoBehaviour
     public GameObject panelUI;
     public string textoInteractuar = "Presiona E para interactuar";
     public TMP_Text textoUI; // Si usas TextMeshPro, cambia a Text si usas el Text UI normal
-
     private Transform jugador;
     private bool dentroRango = false;
+    public Light luzInteractuable;
     //Inventario inventario;
     void Start()
     {
@@ -32,36 +32,43 @@ public class Interactuable : MonoBehaviour
 
     void Update()
     {
-      if (jugador == null) return;
+        if (jugador == null) return;
 
-   float distancia = Vector3.Distance(jugador.position, GetComponent<Collider>().bounds.center);
+        float distancia = Vector3.Distance(jugador.position, GetComponent<Collider>().bounds.center);
 
-   // Debug.Log("Distancia al objeto: " + distancia);
+        // Debug.Log("Distancia al objeto: " + distancia);
 
-    if (distancia <= distanciaInteractuar)
-    {
-        if (!dentroRango)
+        if (distancia <= distanciaInteractuar)
         {
-            dentroRango = true;
-            Debug.Log("Jugador dentro del rango de interacción.");
-            MostrarIndicador(true);
+            if (!dentroRango)
+            {
+                dentroRango = true;
+                //Debug.Log("Jugador dentro del rango de interacción.");
+                MostrarIndicador(true); // Activar el indicador y luz
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("Tecla E presionada.");
+                Interactuar();
+            }
+        }
+        else
+        {
+            if (dentroRango)
+            {
+                dentroRango = false;
+                CerrarPanelUI();
+                MostrarIndicador(false); // Desactivar el indicador y luz
+                Debug.Log("Jugador salió del rango.");
+                
+                
+
+
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Tecla E presionada.");
-            Interactuar();
-        }
-    }
-    else
-    {
-        if (dentroRango)
-        {
-            dentroRango = false;
-            Debug.Log("Jugador salió del rango.");
-            MostrarIndicador(false);
-        }
-    }
+
     }
 
     void MostrarIndicador(bool mostrar)
@@ -70,7 +77,11 @@ public class Interactuable : MonoBehaviour
         {
             panelInteractuar.SetActive(mostrar);
         }
-           // Activar/desactivar el cursor cuando el panel cambia de estado
+        if (luzInteractuable != null)
+    {
+        luzInteractuable.enabled = mostrar;
+    }
+        // Activar/desactivar el cursor cuando el panel cambia de estado
         Cursor.lockState = mostrar ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = mostrar;
     }
@@ -86,23 +97,26 @@ public class Interactuable : MonoBehaviour
             Cursor.visible = panelUI.activeSelf;
         }
         // Verificar si el objeto tiene el tag "Recolectable" antes de añadirlo al inventario
-    if (gameObject.CompareTag("Recolectable"))
+       if (gameObject.CompareTag("Recolectable"))
     {
-        //if (inventario != null) // Evitar el NullReferenceException
-        //{
-        //    inventario.Cantidad += 1;
-        //    Debug.Log("Objeto recogido: " + gameObject.name);
-        //    Destroy(gameObject);
-        //}
-        //else
-        //{
-        //    Debug.LogError("Inventario no está inicializado.");
-        //}
+        GameManager.Instance.AgregarObjetoAlInventario(gameObject);
+        Debug.Log("Objeto recogido: " + gameObject.name);
+
+        GameManager.Instance.MostrarInventario(); // Muestra el inventario después de recoger
+       // Destroy(gameObject); // Elimina el objeto de la escena
     }
-        // Aquí puedes añadir más lógica de interacción
+         
         Debug.Log("Interacción con " + gameObject.name);
     }
-
+    void CerrarPanelUI()
+    {
+        if (panelUI != null)
+        {
+            panelUI.SetActive(false); // Cerrar el panel
+            Cursor.lockState = CursorLockMode.Locked; // Bloquea el cursor de nuevo
+        Cursor.visible = false;
+        }
+    }
     // Para dibujar la esfera de interacción en el editor
     void OnDrawGizmosSelected()
     {
