@@ -3,13 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - Recolectable
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Enemigo
+  - 
   - Water
   - UI
   - 
