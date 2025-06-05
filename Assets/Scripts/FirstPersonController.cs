@@ -93,10 +93,7 @@ public class FirstPersonController : MonoBehaviour
         HandleHeadBob();
         RegenerateStamina();
         HandleSanity();
-<<<<<<< Updated upstream
-=======
-        
->>>>>>> Stashed changes
+
     }
 
     void HandleSanity()
