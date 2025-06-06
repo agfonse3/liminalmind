@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ConfirmationPanel : MonoBehaviour
+public class ConfirmationPanel : PanelBasic
 {
     [SerializeField] GameObject confirmationPannel; //este panel
     [SerializeField] GameObject pausePannel; //panel pausa
@@ -9,7 +9,6 @@ public class ConfirmationPanel : MonoBehaviour
 
     public PausePanel PausePanel;
 
-    public bool isQuitOrigin=false;
     public bool isRestartOrigin = false;
 
     void Start()
@@ -17,19 +16,15 @@ public class ConfirmationPanel : MonoBehaviour
         PausePanel = pausePannel.GetComponent<PausePanel>();
     }
 
+    private void OnEnable()
+    {
+        MouseActivatedInPanel();
+    }
+
     public void YesButton() 
     {
-        if (isQuitOrigin)
-        {
-            isQuitOrigin = false;
-            isRestartOrigin = false;
-            pausePannel.SetActive(false);
-            confirmationPannel.SetActive(false);
-            YesQuit();
-        }
         if (isRestartOrigin)
         {
-            isQuitOrigin = false;
             isRestartOrigin = false;
             pausePannel.SetActive(false);
             confirmationPannel.SetActive(false);
@@ -40,50 +35,21 @@ public class ConfirmationPanel : MonoBehaviour
 
     public void NoButton()
     {
-        if (isQuitOrigin)
-        {
-            isQuitOrigin = false;
-            NoQuit();
-        }
         if (isRestartOrigin)
         {
-            isQuitOrigin = false;
             isRestartOrigin = false;
+            confirmationPannel.SetActive(false);
             NoRestart();
         }
     }
 
-    public void YesQuit() 
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = 1f;
-        //SceneManager.LoadScene(0);// carga primera escena titulo
-        
-    }
-    public void NoQuit() 
-    {
-        confirmationPannel.SetActive(false);
-        if (PausePanel != null)
-        {
-            //Asigna la musica del panel objetivo
-            AudiomanagerTemp.Instance.PlayMusic(PausePanel.audioBGS);
-        }
-        else
-        {
-            Debug.Log("no se encontro el objeto");
-        }
-        pausePannel.SetActive(true);
-    }
-
-
     public void YesRestart() 
     {
         // Aquí va la lógica para Restart el juego
-        //confirmationPannel.SetActive(false);
         PlayerPrefs.SetInt("restart", 1); // Marcamos que el juego se está reiniciando
+        //SceneManager.LoadScene(1);// carga primera escena titulo
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
-        
     }
     public void NoRestart() 
     {
@@ -92,10 +58,6 @@ public class ConfirmationPanel : MonoBehaviour
         {
             //Asigna la musica del panel objetivo
             AudiomanagerTemp.Instance.PlayMusic(PausePanel.audioBGS);
-        }
-        else
-        {
-            Debug.Log("no se encontro el objeto");
         }
         pausePannel.SetActive(true);
     }

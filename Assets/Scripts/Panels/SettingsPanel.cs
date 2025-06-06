@@ -1,11 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SettingsMenu : MonoBehaviour
+public class SettingsPanel : PanelBasic
 {
     [SerializeField] Slider volumeBGMSlider; // Control de volumen sonidos de fondo
-    [SerializeField] Slider volumeBFXSlider; // Control de volumen sonidos de fondo
+    [SerializeField] Slider volumeBFXSlider; // Control de volumen efectos de sonidos
     [SerializeField] Button volumeFXButton; // Boton que mutea
     [SerializeField] GameObject settingsPannel; //panel activo
     [SerializeField] GameObject startPannel; //panel inicio
@@ -32,23 +31,28 @@ public class SettingsMenu : MonoBehaviour
         pausePanel = pausePannel.GetComponent<PausePanel>();
     }
 
-    //metodo dinamica para cambiar el volumen musica de fondo
-   public void ChangeVolumeBGM(float value) 
+    private void OnEnable()
     {
-        if (isOnVolume) 
+        MouseActivatedInPanel();
+    }
+
+    //metodo dinamica para cambiar el volumen musica de fondo
+    public void ChangeVolumeBGM(float value)
+    {
+        if (isOnVolume)
         {
             AudiomanagerTemp.Instance.VolumeMusic(value / 100); // se divide en 100 para control mas preciso
-        }            
+        }
     }
 
     //metodo dinamica para cambiar el volumen musica de efectos de sonido
     public void ChangeVolumeBFX(float value)
     {
-        if (isOnVolume) 
+        if (isOnVolume)
         {
             AudiomanagerTemp.Instance.PlaySFX(audioBFX);
             AudiomanagerTemp.Instance.VolumeSFX(value / 100);// se divide en 100 para control mas preciso
-        }        
+        }
     }
 
     //metodo para silenciar todo el juego
@@ -60,18 +64,19 @@ public class SettingsMenu : MonoBehaviour
             isOnVolume = false;
             volumeFXButton.image.sprite = soundOffImage; // cambia el icono del boton para indicar que esta apagado
         }
-        else {
+        else
+        {
             isOnVolume = true;
             AudiomanagerTemp.Instance.VolumeMusic(volumeBGMSlider.value / 100);
             AudiomanagerTemp.Instance.VolumeSFX(volumeBFXSlider.value / 100);
             volumeFXButton.image.sprite = soundOnImage;
         }
-               
+
     }
 
-    public void ExitPanel() 
+    public void ExitPanel()
     {
-        if (GameManager.Instance != null)
+        if (AudiomanagerTemp.Instance != null)
         {
             AudiomanagerTemp.Instance.PlayEndMusic(audioBGS);
             if (isOnStart)
@@ -105,16 +110,7 @@ public class SettingsMenu : MonoBehaviour
                 isOnpause = false;
             }
 
-
-
-
         }
 
     }
-
-    
-
-    
-
-
 }

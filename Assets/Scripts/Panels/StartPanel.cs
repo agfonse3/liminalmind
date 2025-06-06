@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartPanel : MonoBehaviour
+public class StartPanel : PanelBasic
 {
     [SerializeField] GameObject creditsPannel; //panel creditos
     [SerializeField] GameObject startPannel; //panel inicio
@@ -9,14 +9,14 @@ public class StartPanel : MonoBehaviour
     
     public AudioClip audioBGS; //audio de la escena
 
-    public SettingsMenu settingsMenu; // script
+    public SettingsPanel settingsPanel; // script
     public CreditsPanel creditsPanel; // script
     
 
     void Start()
     {
         AudiomanagerTemp.Instance.PlayMusic(audioBGS);
-        settingsMenu= settingsPannel.GetComponent<SettingsMenu>();
+        settingsPanel= settingsPannel.GetComponent<SettingsPanel>();
         creditsPanel = creditsPannel.GetComponent<CreditsPanel>();
     }
 
@@ -27,22 +27,29 @@ public class StartPanel : MonoBehaviour
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    private void OnEnable()
+    {
+        MouseActivatedInPanel();
+    }
+
+    private void OnDisable()
+    {
+        MouseDesctivatedOutOfPanel();
+    }
+
+
 
     public void GoSettingsPanel()
     {
         settingsPannel.SetActive(true);
         startPannel.SetActive(false);
         AudiomanagerTemp.Instance.PlayEndMusic(audioBGS);
-        if (settingsMenu != null)
+        if (settingsPanel != null)
         {
-            settingsMenu.isOnStart = true;
+            settingsPanel.isOnStart = true;
             //Asigna la musica del panel objetivo
-            AudiomanagerTemp.Instance.PlayMusic(settingsMenu.audioBGS);
+            AudiomanagerTemp.Instance.PlayMusic(settingsPanel.audioBGS);
         }
-        else 
-        {
-            Debug.Log("no se encontro el objeto");
-        }    
     }
 
     public void GoCreditsPanel() 
