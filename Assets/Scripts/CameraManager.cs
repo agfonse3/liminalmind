@@ -5,11 +5,14 @@ public class CameraManager : MonoBehaviour
      public Transform[] views;
     public float transitionSpeed;
     private Transform currentView;
-    public FirstPersonController playerController; // Referencia al script del jugador
- private Transform defaultView; // Guarda la vista original
+    private Transform defaultView;
+
+    public FirstPersonController playerController; // Referencia al jugador
+    public bool camaraFinalizada = false; // Indica si la cámara ya terminó su movimiento
+
     void Start()
     {
-        currentView = transform;
+        defaultView = transform; // Guarda la vista original
         currentView = defaultView;
     }
 
@@ -34,44 +37,40 @@ public class CameraManager : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
+    void LateUpdate()
     {
-        if (currentView != null) // Verifica si currentView tiene un valor válido
+        if (currentView != null)
         {
             transform.position = Vector3.Lerp(transform.position, currentView.position, Time.deltaTime * transitionSpeed);
+            transform.rotation = Quaternion.Lerp(transform.rotation, currentView.rotation, Time.deltaTime * transitionSpeed);
 
-            Vector3 currentAngle = new Vector3(
-                Mathf.Lerp(transform.rotation.eulerAngles.x, currentView.transform.rotation.eulerAngles.x, Time.deltaTime * transitionSpeed),
-                Mathf.Lerp(transform.rotation.eulerAngles.y, currentView.transform.rotation.eulerAngles.y, Time.deltaTime * transitionSpeed),
-                Mathf.Lerp(transform.rotation.eulerAngles.z, currentView.transform.rotation.eulerAngles.z, Time.deltaTime * transitionSpeed)
-            );
-
-            transform.eulerAngles = currentAngle;
+            // Detecta cuando la cámara ha llegado a su destino
+            if (Vector3.Distance(transform.position, currentView.position) < 0.1f)
+            {
+                camaraFinalizada = true;
+            }
         }
+    }
+
+    public void CambiarVista(int indice, bool bloquearMovimiento)
+    {
+        if (indice >= 0 && indice < views.Length)
+        {
+            currentView = views[indice];
+        }
+        else
+        {
+            currentView = defaultView;
+        }
+
+        BloquearMovimiento(bloquearMovimiento);
     }
 
     private void BloquearMovimiento(bool estado)
     {
         if (playerController != null)
         {
-            playerController.enabled = !estado; // Si estado es true, desactiva el movimiento, si es false, lo activa
-        }
-        else
-        {
-            Debug.LogWarning("PlayerController no está asignado en el inspector.");
+            playerController.enabled = !estado;
         }
     }
-public void CambiarVista(int indice, bool bloquearMovimiento)
-{
-    if (indice >= 0 && indice < views.Length)
-    {
-        currentView = views[indice];
-    }
-    else
-    {
-        currentView = defaultView; // Vista original si el índice no es válido
-    }
-
-    BloquearMovimiento(bloquearMovimiento);
-}
 }
