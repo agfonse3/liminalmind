@@ -20,7 +20,6 @@ public class CreditsPanel : MonoBehaviour
         if (GameManager.Instance != null)
         {
             creditsPannel.SetActive(false);
-            AudiomanagerTemp.Instance.PlayPaperShuffling();  // efecto al salir del panel
             AudiomanagerTemp.Instance.PlayEndMusic(audioBGS);
             
             if (startPanel != null)
