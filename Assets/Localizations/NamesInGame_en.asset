@@ -34,6 +34,15 @@ MonoBehaviour:
     m_Localized: "Sanity has returned\u2026 for now"
     m_Metadata:
       m_Items: []
+  - m_Id: 720756603817984
+    m_Localized: HELP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 720888049111040
+    m_Localized: "Z  => Pause\nH  => Help \nF  => Inventory\nArrows => Move\nWASD 
+      => Move\nMouse  => Focus\nShift  => Sprint\nSpaceBar => Jump\nCtrl => Crouch\n"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

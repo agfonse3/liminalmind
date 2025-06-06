@@ -80,13 +80,12 @@ public class FirstPersonController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
         UpdateIsGrounded();
-
         HandleMouseLook();
         HandleCrouch();
         HandleMovement();
@@ -128,6 +127,7 @@ public class FirstPersonController : MonoBehaviour
         {
             currentSanity -= sanityDecreaseRate * Time.deltaTime;
             currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
+            GameManager.Instance.SetSanityOfPlayer(currentSanity);
             timeSinceLastSeen = 0f;
             Debug.Log($"[Sanity] Decreasing: {currentSanity:F2}");
         }
@@ -138,6 +138,7 @@ public class FirstPersonController : MonoBehaviour
             {
                 currentSanity += sanityRegenRate * Time.deltaTime;
                 currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
+                GameManager.Instance.SetSanityOfPlayer(currentSanity);
             }
         }
     }
@@ -158,9 +159,7 @@ public class FirstPersonController : MonoBehaviour
 
     void HandleMovement()
     {
-        
-
-
+      
         if (isGrounded && velocity.y < 0)
             velocity.y = -0.1f;
 
@@ -247,8 +246,6 @@ public class FirstPersonController : MonoBehaviour
 
     void PlayFootstep()
     {
-        
-
         if (footstepClips.Length == 0 || !footstepSource || !isGrounded)
             return;
 

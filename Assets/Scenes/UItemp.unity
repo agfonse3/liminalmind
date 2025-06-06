@@ -242,6 +242,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music: {fileID: 728810836}
   soundEffects: {fileID: 1347951094}
+  elevatorMusic: {fileID: 0}
+  officeAmbience: {fileID: 0}
+  apartmentAmbience: {fileID: 0}
+  characterAgitation: {fileID: 0}
+  footsteps: {fileID: 0}
+  elevatorButton: {fileID: 0}
+  paperShuffling: {fileID: 0}
+  horrorSting: {fileID: 0}
 --- !u!4 &467176647
 Transform:
   m_ObjectHideFlags: 0
@@ -727,6 +735,7 @@ MonoBehaviour:
   lastPosition: {x: 0, y: 0, z: 0}
   listaInventario: []
   isGameActive: 0
+  gameOver: 0
   gameOverPannel: {fileID: 0}
 --- !u!4 &1887337588
 Transform:
@@ -751,6 +760,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1902801315580116892, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2051574413554811301, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -763,18 +776,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1887337587}
-    - target: {fileID: 5890145527773305117, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: NuevoJuego
-      objectReference: {fileID: 0}
-    - target: {fileID: 5890145527773305117, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5890145527773305117, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6764766364173830736, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_Pivot.x
       value: 0

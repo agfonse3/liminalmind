@@ -5,12 +5,28 @@ public class GamePanel : MonoBehaviour
 {
 
     [SerializeField] GameObject pausePannel; //panel configuracion
+    [SerializeField] GameObject helpPannel; //panel ayuda
     public PausePanel PausePanel;
 
     void Start()
     {
         PausePanel = pausePannel.GetComponent<PausePanel>();
     }
+
+    public void Update()
+    {
+        if (Input.GetKey(KeyCode.P) && !GameManager.Instance.gameOver) 
+        {
+            Pause();
+        }
+
+        if (Input.GetKey(KeyCode.H) && !GameManager.Instance.gameOver)
+        {
+            HelpPan();
+        }
+    }
+
+    //Metodo que activa panel de pausa
     public void Pause()
     {
         Time.timeScale = 0f;
@@ -25,4 +41,12 @@ public class GamePanel : MonoBehaviour
         }
         pausePannel.SetActive(true);
     }
+
+    //metodo que activa panel de ayuda
+    public void HelpPan()
+    {
+        Time.timeScale = 0f;
+        helpPannel.SetActive(true);
+    }
+
 }
