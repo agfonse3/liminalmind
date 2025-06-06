@@ -12,7 +12,7 @@ public class BotonInteractivo : MonoBehaviour
 
     void Start()
     {
-        jugador = GameObject.FindGameObjectWithTag("Player").transform; // Asegúrate de que tu jugador tenga el tag correcto
+        jugador = GameObject.FindGameObjectWithTag("Player").transform; 
     }
 
     void Update()
