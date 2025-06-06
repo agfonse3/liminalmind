@@ -1,21 +1,2 @@
 fileFormatVersion: 2
 guid: 68c0669682835754eab9f340e37455a9
-MonoImporter:
-  externalObjects: {}
-  serializedVersion: 2
-  defaultReferences:
-  - music: {instanceID: 0}
-  - soundEffects: {instanceID: 0}
-  - elevatorMusic: {fileID: 8300000, guid: 0d3b908602282bb46b93c917eaba362f, type: 3}
-  - officeAmbience: {fileID: 8300000, guid: e76af91cc28289d4abad60e4c766a7a8, type: 3}
-  - apartmentAmbience: {instanceID: 0}
-  - characterAgitation: {instanceID: 0}
-  - footsteps: {instanceID: 0}
-  - elevatorButton: {instanceID: 0}
-  - paperShuffling: {instanceID: 0}
-  - horrorSting: {instanceID: 0}
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 

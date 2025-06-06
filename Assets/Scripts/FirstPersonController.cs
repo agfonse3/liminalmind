@@ -175,11 +175,6 @@ public class FirstPersonController : MonoBehaviour
             isSprinting = true;
             currentStamina -= staminaDrain * Time.deltaTime;
             regenTimer = 0f;
-            if (currentStamina <= sprintStaminaThreshold)
-    {
-        AudiomanagerTemp.Instance.PlayCharacterAgitation();
-    }
-            
         }
         else
         {

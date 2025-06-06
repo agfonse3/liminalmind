@@ -19,8 +19,6 @@ public class ConfirmationPanel : MonoBehaviour
 
     public void YesButton() 
     {
-         AudiomanagerTemp.Instance.PlayElevatorButton(); // sonido botÃ³n
-
         if (isQuitOrigin)
         {
             isQuitOrigin = false;
@@ -80,10 +78,9 @@ public class ConfirmationPanel : MonoBehaviour
 
     public void YesRestart() 
     {
-         AudiomanagerTemp.Instance.PlayHorrorSting(); //sonido Horror
-        // Aquï¿½ va la lï¿½gica para Restart el juego
+        // Aquí va la lógica para Restart el juego
         //confirmationPannel.SetActive(false);
-        PlayerPrefs.SetInt("restart", 1); // Marcamos que el juego se estï¿½ reiniciando
+        PlayerPrefs.SetInt("restart", 1); // Marcamos que el juego se está reiniciando
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
         
