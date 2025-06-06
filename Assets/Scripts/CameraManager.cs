@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-      public Transform[] views;
+     public Transform[] views;
     public float transitionSpeed;
     private Transform currentView;
     public FirstPersonController playerController; // Referencia al script del jugador
@@ -61,5 +61,17 @@ public class CameraManager : MonoBehaviour
             Debug.LogWarning("PlayerController no está asignado en el inspector.");
         }
     }
+public void CambiarVista(int indice, bool bloquearMovimiento)
+{
+    if (indice >= 0 && indice < views.Length)
+    {
+        currentView = views[indice];
+    }
+    else
+    {
+        currentView = defaultView; // Vista original si el índice no es válido
+    }
 
+    BloquearMovimiento(bloquearMovimiento);
+}
 }
