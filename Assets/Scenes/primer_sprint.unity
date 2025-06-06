@@ -3978,7 +3978,7 @@ MonoBehaviour:
   panelUI: {fileID: 1825668334}
   textoInteractuar: Presiona E para interactuar
   textoUI: {fileID: 1183646650}
-  luzInteractuable: {fileID: 1491982372}
+  luzInteractuable: {fileID: 0}
 --- !u!64 &2089293675
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4106,7 +4106,7 @@ MonoBehaviour:
   panelUI: {fileID: 880947279}
   textoInteractuar: Presiona E para interactuar
   textoUI: {fileID: 1183646650}
-  luzInteractuable: {fileID: 1226284706}
+  luzInteractuable: {fileID: 0}
 --- !u!64 &2123061598
 MeshCollider:
   m_ObjectHideFlags: 0
