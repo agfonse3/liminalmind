@@ -1,3 +1,4 @@
+using System.Runtime.Serialization;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
@@ -11,19 +12,29 @@ public class PausePanel : MonoBehaviour
     public SettingsMenu settingsMenu; //script
     public ConfirmationPanel confirmationPanel; //script
 
-
     void Start()
     {
         AudiomanagerTemp.Instance.PlayMusic(audioBGS);
         settingsMenu = settingsPannel.GetComponent<SettingsMenu>();
         confirmationPanel=confirmationPannel.GetComponent<ConfirmationPanel>();
     }
-    public void QuitButton() 
+    
+    private void OnEnable()
     {
-        AudiomanagerTemp.Instance.PlayEndMusic(audioBGS);
-        confirmationPanel.isQuitOrigin = true;
-        confirmationPannel.SetActive(true);
+        MouseActivatedInPanel();
     }
+
+    private void OnDisable()
+    {
+        MouseDesctivatedOutOfPanel();
+    }
+
+    //public void QuitButton() 
+    //{
+    //    AudiomanagerTemp.Instance.PlayEndMusic(audioBGS);
+    //    confirmationPanel.isQuitOrigin = true;
+    //    confirmationPannel.SetActive(true);
+    //}
 
     public void SettingsButton() 
     {
@@ -42,7 +53,7 @@ public class PausePanel : MonoBehaviour
         }
     }
 
-    public void restartButton()
+    public void RestartButton()
     {
         AudiomanagerTemp.Instance.PlayEndMusic(audioBGS);
         confirmationPanel.isRestartOrigin = true;
@@ -56,5 +67,16 @@ public class PausePanel : MonoBehaviour
         pausePannel.SetActive(false);
               
     }
-
+    //Metodo que permite activar el mouse en pantalla
+    public void MouseActivatedInPanel() 
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    //Metodo que permite desactivar el mouse en pantalla
+    public void MouseDesctivatedOutOfPanel()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
+    }
 }
