@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
-// Clase auxiliar que se mostrará en el Inspector
 [System.Serializable]
 public class EventoTecla
 {
@@ -24,16 +23,18 @@ public class ActivarAnimacion : MonoBehaviour
 
     void Update()
     {
-        foreach (var evento in eventos)
+        if (cameraManager != null && cameraManager.teclaEPulsada) // Solo si E ha sido presionado
         {
-            // Verifica si se presionó la tecla configurada y si la cámara terminó su transición
-            if (Input.GetKeyDown(evento.tecla) && (cameraManager == null || cameraManager.camaraFinalizada))
+            foreach (var evento in eventos)
             {
-                Debug.Log("Tecla presionada: " + evento.tecla);
-                ActivarAnimacionYShader(evento.nombreAnimacion, evento.objetoRenderer);
-                escenaSeleccionada = evento.indiceEscena;
-                Invoke(nameof(CambiarEscena), 2f); // Espera 2 segundos para cambiar de escena
-                break;
+                if (Input.GetKeyDown(evento.tecla) && cameraManager.camaraFinalizada)
+                {
+                    Debug.Log("Tecla presionada después de E: " + evento.tecla);
+                    ActivarAnimacionYShader(evento.nombreAnimacion, evento.objetoRenderer);
+                    escenaSeleccionada = evento.indiceEscena;
+                    Invoke(nameof(CambiarEscena), 2f);
+                    break;
+                }
             }
         }
     }
