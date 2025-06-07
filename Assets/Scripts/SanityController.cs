@@ -1,17 +1,16 @@
 using UnityEngine;
 
-public class HelpPanel : MonoBehaviour
+public class SanityController : MonoBehaviour
 {
-    [SerializeField] GameObject helpPannel; //panel activo
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
-    public void ExitPanel()
+    // Update is called once per frame
+    void Update()
     {
-        helpPannel.SetActive(false);
+        
     }
 }

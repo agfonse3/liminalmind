@@ -80,11 +80,11 @@ public class FirstPersonController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    Cursor.lockState = CursorLockMode.None;
+        //    Cursor.visible = true;
+        //}
         UpdateIsGrounded();
         HandleMouseLook();
         HandleCrouch();

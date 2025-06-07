@@ -1,13 +1,12 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class CreditsPanel : MonoBehaviour
+public class CreditsPanel : PanelBasic
 {
 
     [SerializeField] GameObject creditsPannel; //panel activo
     [SerializeField] GameObject startPannel; //panel inicio
     public AudioClip audioBGS; //audio de la escena
-    public StartPanel startPanel;
+    public StartPanel startPanel; //scrpit
 
     void Start()
     {
@@ -15,11 +14,16 @@ public class CreditsPanel : MonoBehaviour
         startPanel = startPannel.GetComponent<StartPanel>();
     }
 
+    private void OnEnable()
+    {
+        MouseActivatedInPanel();
+    }
+
     public void ExitPanel()
     {
-        if (GameManager.Instance != null)
+        creditsPannel.SetActive(false);
+        if (AudiomanagerTemp.Instance != null)
         {
-            creditsPannel.SetActive(false);
             AudiomanagerTemp.Instance.PlayEndMusic(audioBGS);
             
             if (startPanel != null)
@@ -27,15 +31,10 @@ public class CreditsPanel : MonoBehaviour
                 //Asigna la musica del panel objetivo
                 AudiomanagerTemp.Instance.PlayMusic(startPanel.audioBGS);
             }
-            else
-            {
-                Debug.Log("no se encontro el objeto");
-            }
             if (!startPannel.activeSelf)
             {
                 startPannel.SetActive(true);
             }
         }
-
     }
 }
