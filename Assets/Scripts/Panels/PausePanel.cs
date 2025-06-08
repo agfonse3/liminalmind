@@ -18,12 +18,18 @@ public class PausePanel : PanelBasic
     
     private void OnEnable()
     {
+       
         MouseActivatedInPanel();
     }
 
     private void OnDisable()
     {
-        MouseDesctivatedOutOfPanel();
+        if (GameManager.Instance.isGamePaused)
+        {
+            MouseDesctivatedOutOfPanel();
+            GameManager.Instance.isGamePaused = false;
+        }
+       
     }
 
 

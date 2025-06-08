@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     //List<GameObject> lista para el inventario
     public List<GameObject> listaInventario = new List<GameObject>();
     public bool isGameActive;
+    public bool isGamePaused;
 
     public bool gameOver;
     [SerializeField] GameObject gameOverPannel;
@@ -40,11 +41,13 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        gameOver = false;
+        isGamePaused = false;
     }
   public void NuevoJuego()
     {
         SceneManager.LoadScene(1);
+        isGameActive = true;
     }
     //Metodo para determinar el idioma
     public void ChangeLanguage(int option)
@@ -67,11 +70,7 @@ public class GameManager : MonoBehaviour
         numberActualScene=value; // ultima escena en la que estuvo
     }
 
-    public void SetSanityOfPlayer(float sanity) 
-    {
-        sanityOfPlayer = sanity;
-    }
-    public void SetGameOver() 
+   public void SetGameOver() 
     {
         gameOver=true;
     }

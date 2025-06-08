@@ -17,11 +17,13 @@ public class GamePanel : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.P) && !GameManager.Instance.gameOver) 
         {
+            GameManager.Instance.isGamePaused = true;
             Pause();
         }
 
         if (Input.GetKey(KeyCode.H) && !GameManager.Instance.gameOver)
         {
+            GameManager.Instance.isGamePaused = true;
             HelpPan();
         }
     }
