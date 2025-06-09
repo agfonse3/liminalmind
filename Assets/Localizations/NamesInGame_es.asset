@@ -34,6 +34,32 @@ MonoBehaviour:
     m_Localized: Has recuperado la cordura... o eso crees
     m_Metadata:
       m_Items: []
+  - m_Id: 720756603817984
+    m_Localized: AYUDA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 720888049111040
+    m_Localized: 'P  => Pausa
+
+      H  => Ayuda
+
+      F  => Inventario
+
+      Flechas 
+      => Mover
+
+      WASD  => Mover
+
+      Mouse => enfocar
+
+      Shift => Correr
+
+      Barra
+      Espaciadora => Saltar
+
+      Ctrl => Agacharse'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
