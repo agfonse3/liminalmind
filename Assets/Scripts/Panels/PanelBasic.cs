@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class PanelBasic : MonoBehaviour, IPaneles
@@ -12,7 +13,8 @@ public class PanelBasic : MonoBehaviour, IPaneles
     //Metodo que permite desactivar el mouse en pantalla
     virtual public void MouseDesctivatedOutOfPanel()
     {
-        Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 }

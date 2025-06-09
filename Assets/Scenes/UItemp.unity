@@ -796,6 +796,7 @@ MonoBehaviour:
   lastPosition: {x: 0, y: 0, z: 0}
   listaInventario: []
   isGameActive: 0
+  isGamePaused: 0
   gameOver: 0
   gameOverPannel: {fileID: 0}
 --- !u!4 &1887337588
@@ -824,6 +825,10 @@ PrefabInstance:
     - target: {fileID: 2051574413554811301, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597126652950981326, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4597126652950981326, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_AnchorMax.y

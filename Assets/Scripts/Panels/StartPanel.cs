@@ -32,13 +32,7 @@ public class StartPanel : PanelBasic
         MouseActivatedInPanel();
     }
 
-    private void OnDisable()
-    {
-        MouseDesctivatedOutOfPanel();
-    }
-
-
-
+    
     public void GoSettingsPanel()
     {
         settingsPannel.SetActive(true);
