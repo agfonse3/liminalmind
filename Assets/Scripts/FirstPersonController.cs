@@ -129,7 +129,7 @@ public class FirstPersonController : MonoBehaviour
             currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
             GameManager.Instance.SetSanityOfPlayer(currentSanity);
             timeSinceLastSeen = 0f;
-            Debug.Log($"[Sanity] Decreasing: {currentSanity:F2}");
+           // Debug.Log($"[Sanity] Decreasing: {currentSanity:F2}");
         }
         else
         {
