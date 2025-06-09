@@ -19,21 +19,25 @@ public class CameraManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            teclaEPulsada = true; // Marca que E ha sido presionado
-            currentView = views[0];
-            BloquearMovimiento(true); // Bloquea el movimiento del jugador
-        }
-
-        if (Input.GetKeyDown(KeyCode.M)) // Tecla para desbloquear y restaurar vista
-        {
-            BloquearMovimiento(false);
-            currentView = defaultView;
-            teclaEPulsada = false; // Reinicia el estado
-        }
+        if (Input.GetKeyDown(KeyCode.E) && EncuentraZonaDeActivacion())
+    {
+        teclaEPulsada = true;
+        currentView = views[0];
+        BloquearMovimiento(true);
     }
 
+    if (Input.GetKeyDown(KeyCode.M))
+    {
+        BloquearMovimiento(false);
+        currentView = defaultView;
+        teclaEPulsada = false;
+    }
+    }
+private bool EncuentraZonaDeActivacion()
+{
+    return FindFirstObjectByType<ActivarZona>().jugadorDentro;
+// Verifica si el jugador está dentro
+}
     void LateUpdate()
     {
         if (currentView != null)

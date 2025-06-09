@@ -11,7 +11,7 @@ public class ActivarZona : MonoBehaviour
     public TextMeshProUGUI textoMensaje; // Texto dentro del panel
     public string mensaje = "Presiona la E para interactuar"; // Texto a mostrar
     private Material[] materialesOriginales; // Guardamos los materiales originales
-    
+    public bool jugadorDentro = false;
 
     private void Start()
     {
@@ -25,29 +25,28 @@ public class ActivarZona : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+   private void OnTriggerEnter(Collider other)
+{
+    if (other.CompareTag("Player"))
     {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Jugador ha entrado: " + other.transform.position);
-            scriptAActivar.enabled = true; // Activa el script
-            ActivarShader(true);
-            MostrarTexto(true);
-            Debug.Log("Shader activado.");
-        }
+        jugadorDentro = true; // Marcamos que el jugador está en la zona
+        scriptAActivar.enabled = true;
+        ActivarShader(true);
+        MostrarTexto(true);
+        
     }
+}
 
-    private void OnTriggerExit(Collider other)
+private void OnTriggerExit(Collider other)
+{
+    if (other.CompareTag("Player"))
     {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Jugador ha salido: " + other.transform.position);
-            scriptAActivar.enabled = false; // Desactiva el script
-            ActivarShader(false);
-            MostrarTexto(false);
-            Debug.Log("Shader desactivado.");
-        }
+        jugadorDentro = false; // El jugador salió de la zona
+        scriptAActivar.enabled = false;
+        ActivarShader(false);
+        MostrarTexto(false);
     }
+}
 
     private void ActivarShader(bool activar)
     {

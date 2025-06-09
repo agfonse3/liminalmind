@@ -10,10 +10,11 @@ public class BotonInteractivo : MonoBehaviour
     public string animacionBoton = "botonarriba"; // Animación del botón
     public string animacionPuertas = "puertas";   // Animación de las puertas
     public float delaySegundaAnimacion = 2f; // Tiempo de espera antes de reproducir la segunda animación
-
+ // ¡Referencia a la ActivarZona específica que controla este botón!
+    public ActivarZona zonaDeActivacion; 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M)) // Al presionar M, se activan las animaciones en orden
+        if (Input.GetKeyDown(KeyCode.E)&& zonaDeActivacion.jugadorDentro) // Al presionar E, se activan las animaciones en orden
         {
             ReproducirAnimaciones();
         }
