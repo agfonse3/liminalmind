@@ -53,21 +53,20 @@ public class FirstPersonController : MonoBehaviour
     private float crouchingCameraY;
     private float currentCameraY;
 
-    [Header("Sanity Settings")]
-    public float maxSanity = 100f;
-    public float sanityDecreaseRate = 5f;
-    public float sanityRegenRate = 2f;
-    public float sanityRegenDelay = 3f;
-    private float currentSanity;
-    private float timeSinceLastSeen = 0f;
-    public Transform sanityTarget;
-    public LayerMask lineOfSightObstacles;
-
+    [Header("Sanity Settings")]//
+    public float maxSanity = 100f;//
+    public float sanityDecreaseRate = 5f;//
+    public float sanityRegenRate = 2f;//
+    public float sanityRegenDelay = 3f;//
+    private float currentSanity;//
+    private float timeSinceLastSeen = 0f;//
+    public LayerMask lineOfSightObstacles;//
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         originalHeight = controller.height;
         currentStamina = maxStamina;
@@ -81,6 +80,7 @@ public class FirstPersonController : MonoBehaviour
 
     void Update()
     {
+        UpdateIsGrounded();
         HandleMouseLook();
         HandleCrouch();
         HandleMovement();
@@ -89,33 +89,43 @@ public class FirstPersonController : MonoBehaviour
         HandleSanity();
 
     }
-
+    /// <summary>
+    /// //////////////////////////////////////////////////////////////////////////////
+    /// </summary>
     void HandleSanity()
     {
-        Vector3 directionToTarget = sanityTarget.position - cameraTransform.position;
-        float angleToTarget = Vector3.Angle(cameraTransform.forward, directionToTarget);
+        SanityAffectingEntity[] targets = Object.FindObjectsByType<SanityAffectingEntity>(FindObjectsSortMode.None);
+        bool seesAnyEntity = false;
 
-        Ray ray = new Ray(cameraTransform.position, directionToTarget.normalized);
-        RaycastHit hit;
-
-        bool seesEntity = false;
-
-        if (angleToTarget < 60f) // Field of view angle (can adjust)
+        foreach (var entity in targets)
         {
-            if (Physics.Raycast(ray, out hit, 30f, lineOfSightObstacles))
+            Vector3 directionToTarget = entity.transform.position - cameraTransform.position;
+            Vector3 dirNormalized = directionToTarget.normalized;
+            float distance = directionToTarget.magnitude;
+
+            if (Vector3.Dot(cameraTransform.forward, dirNormalized) > 0.5f) // ~60 deg FOV
             {
-                if (hit.transform == sanityTarget)
+                Ray ray = new Ray(cameraTransform.position, dirNormalized);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit, distance, lineOfSightObstacles))
                 {
-                    seesEntity = true;
+                    var sanityComponent = hit.transform.GetComponentInParent<SanityAffectingEntity>();
+                    if (sanityComponent == entity)
+                    {
+                        seesAnyEntity = true;
+                        break; // Stop checking others once one is seen
+                    }
                 }
             }
         }
 
-        if (seesEntity)
+        if (seesAnyEntity)
         {
             currentSanity -= sanityDecreaseRate * Time.deltaTime;
             currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
             timeSinceLastSeen = 0f;
+            Debug.Log($"[Sanity] Decreasing: {currentSanity:F2}");
         }
         else
         {
@@ -126,9 +136,11 @@ public class FirstPersonController : MonoBehaviour
                 currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
             }
         }
-
-        Debug.Log("Sanity: " + currentSanity);
     }
+    /// <summary>
+    /// ////////////////////////////////////////////////////////////////////////////////////
+    /// </summary>
+
 
     void HandleMouseLook()
     {
@@ -144,15 +156,15 @@ public class FirstPersonController : MonoBehaviour
 
     void HandleMovement()
     {
-        isGrounded = controller.isGrounded;
+      
         if (isGrounded && velocity.y < 0)
-            velocity.y = -2f;
+            velocity.y = -0.1f;
 
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
 
-        bool wantsToSprint = Input.GetKey(KeyCode.LeftShift) && !isCrouching && moveZ > 0;
+        bool wantsToSprint = Input.GetKey(KeyCode.LeftShift) && !isCrouching && move.magnitude > 0.1f;
 
         if (wantsToSprint && currentStamina > sprintStaminaThreshold)
         {
@@ -197,10 +209,10 @@ public class FirstPersonController : MonoBehaviour
             isCrouching = !isCrouching;
 
         float targetHeight = isCrouching ? crouchHeight : originalHeight;
-        controller.height = Mathf.Lerp(controller.height, targetHeight, Time.deltaTime * crouchTransitionSpeed);
+        controller.height = Mathf.MoveTowards(controller.height, targetHeight, crouchTransitionSpeed * Time.deltaTime);
 
         float targetCamY = isCrouching ? crouchingCameraY : standingCameraY;
-        currentCameraY = Mathf.Lerp(currentCameraY, targetCamY, Time.deltaTime * crouchTransitionSpeed);
+        currentCameraY = Mathf.MoveTowards(currentCameraY, targetCamY, crouchTransitionSpeed * Time.deltaTime);
     }
 
     void RegenerateStamina()
@@ -209,6 +221,18 @@ public class FirstPersonController : MonoBehaviour
         {
             currentStamina += staminaRegen * Time.deltaTime;
             currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+        }
+    }
+
+    void UpdateIsGrounded()
+    {
+        isGrounded = controller.isGrounded;
+
+        if (!isGrounded)
+        {
+            // Check a short distance below the player to be sure
+            Vector3 origin = transform.position + Vector3.up * 0.1f;
+            isGrounded = Physics.Raycast(origin, Vector3.down, out _, 0.2f);
         }
     }
 
@@ -224,8 +248,12 @@ public class FirstPersonController : MonoBehaviour
 
     void HandleHeadBob()
     {
+      
+
         bool isMovingAndGrounded = isGrounded &&
-            (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f);
+    (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f);
+
+        
 
         if (isMovingAndGrounded)
         {
@@ -245,10 +273,13 @@ public class FirstPersonController : MonoBehaviour
 
             bobTimer += Time.deltaTime * currentBobFreq;
             float bobOffset = Mathf.Sin(bobTimer) * currentBobAmp;
+            float sine = Mathf.Sin(bobTimer);
 
+           
             // Trigger step when bob reaches downward trough
             if (Mathf.Sin(bobTimer) < -0.95f && !stepTriggered)
             {
+                
                 PlayFootstep();
                 stepTriggered = true;
             }
@@ -263,7 +294,6 @@ public class FirstPersonController : MonoBehaviour
         }
         else
         {
-            bobTimer = Mathf.Lerp(bobTimer, 0f, Time.deltaTime * 5f);
             stepTriggered = false;
 
             Vector3 camPos = cameraTransform.localPosition;
@@ -272,4 +302,5 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 }
+
 

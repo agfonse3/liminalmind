@@ -7,8 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public int sanityOfPlayer; //cordura del jugador
-    private int maxValueOfSanity=100; // maxima cordura
+    public float sanityOfPlayer; //cordura del jugador
     public int numberActualScene; //guarda el numero de la escena actual
 
     //ultima escena
@@ -17,6 +16,9 @@ public class GameManager : MonoBehaviour
     //List<GameObject> lista para el inventario
     public List<GameObject> listaInventario = new List<GameObject>();
     public bool isGameActive;
+    public bool isGamePaused;
+
+    public bool gameOver;
     [SerializeField] GameObject gameOverPannel;
 
     private void Awake()
@@ -39,11 +41,13 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        gameOver = false;
+        isGamePaused = false;
     }
   public void NuevoJuego()
     {
         SceneManager.LoadScene(1);
+        isGameActive = true;
     }
     //Metodo para determinar el idioma
     public void ChangeLanguage(int option)
@@ -54,33 +58,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //metodo para incrementar la cordura
-    public void IncreaseSanity(int value) 
-    {
-        if (sanityOfPlayer < maxValueOfSanity)
-        { 
-            sanityOfPlayer += value;
-            if (sanityOfPlayer>=maxValueOfSanity) 
-            {
-                sanityOfPlayer=maxValueOfSanity;
-            }
-        }
-    }
-
-    //metodo para disminuir la cordura
-    public void DecreaseSanity(int value)
-    {
-        if (sanityOfPlayer > 0)
-        {
-            sanityOfPlayer -= value;
-            if (sanityOfPlayer <=0 )
-            {
-                sanityOfPlayer = 0;
-            }
-        }
-    }
-
-    //metodo que almacena la ultima posicion del jugador
+      //metodo que almacena la ultima posicion del jugador
     public void setLastPosition(Vector3 actualPosition) 
     {
         lastPosition = actualPosition; // ultima posicion del player
@@ -92,13 +70,18 @@ public class GameManager : MonoBehaviour
         numberActualScene=value; // ultima escena en la que estuvo
     }
 
+   public void SetGameOver() 
+    {
+        gameOver=true;
+    }
+
     //metodo de gameover
     public void GameOver()
     {
         gameOverPannel.SetActive(true);
         //SceneManager.LoadScene(1);// carga UI scene
         isGameActive = false;
-
+        gameOver = true;
     }
 
 // MÉTODOS DEL INVENTARIO

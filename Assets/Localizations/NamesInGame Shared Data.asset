@@ -31,6 +31,14 @@ MonoBehaviour:
     m_Key: 'Congratulations '
     m_Metadata:
       m_Items: []
+  - m_Id: 720756603817984
+    m_Key: HelpPaneltittle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 720888049111040
+    m_Key: InstructionsHelpPanel
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

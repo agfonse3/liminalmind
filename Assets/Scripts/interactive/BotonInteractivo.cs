@@ -3,31 +3,31 @@ using UnityEngine;
 
 public class BotonInteractivo : MonoBehaviour
 {
-    private Animator animator;
+     public CameraManager cameraManager; // Referencia al script de cámara
+    public Transform objetoInteractivo;
+    public float distanciaCambioVista = 3f;
+    public int indiceVista; // Índice de la vista a activar
+
     private Transform jugador;
-    public float distanciaActivacion = 3f; // Distancia máxima para activar la animación
 
     void Start()
     {
-        animator = GetComponent<Animator>();
-        jugador = GameObject.FindGameObjectWithTag("Player").transform; // Buscar al jugador
-        animator.SetBool("Presionado", false); // Asegurar que inicia desactivado
+        jugador = GameObject.FindGameObjectWithTag("Player").transform; // Asegúrate de que tu jugador tenga el tag correcto
     }
 
     void Update()
     {
-        if (jugador == null) return;
+        if (jugador == null || cameraManager == null) return;
 
-        float distancia = Vector3.Distance(jugador.position, transform.position); // Calcular distancia
-        Debug.Log("Distancia al botón: " + distancia);
+        float distancia = Vector3.Distance(jugador.position, objetoInteractivo.position);
 
-        if (distancia <= distanciaActivacion) // Si el jugador está dentro del rango
+        if (distancia <= distanciaCambioVista)
         {
-            if (Input.GetKeyDown(KeyCode.F)) // Si presiona "F"
-            {
-                Debug.Log("Jugador presionó F cerca del botón.");
-                animator.SetBool("Presionado", true); // Activar animación
-            }
+            cameraManager.CambiarVista(indiceVista, true); // Activa la vista
+        }
+        else
+        {
+            cameraManager.CambiarVista(-1, false); // Regresa la cámara a la vista normal
         }
     }
 }
