@@ -125,7 +125,7 @@ public class FirstPersonController : MonoBehaviour
             currentSanity -= sanityDecreaseRate * Time.deltaTime;
             currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
             timeSinceLastSeen = 0f;
-           // Debug.Log($"[Sanity] Decreasing: {currentSanity:F2}");
+            Debug.Log($"[Sanity] Decreasing: {currentSanity:F2}");
         }
         else
         {
