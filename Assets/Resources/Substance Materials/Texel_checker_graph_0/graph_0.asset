@@ -1,0 +1,254 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed5864476f84ce4b85454db09ca4eaa, type: 3}
+  m_Name: graph_0
+  m_EditorClassIdentifier: 
+  AssetPath: Assets/Resources/Substance Materials/Texel_checker.sbsar
+  RawData: {fileID: -244192453324840774, guid: 698f63e202957d84b9ef1d22504d6b17, type: 3}
+  Name: graph_0
+  IsRoot: 1
+  FlagedForDelete: 0
+  GUID: 26c021bc-83ca-4241-97b0-d61cfb8ea7ff
+  Index: 0
+  Input:
+  - rid: 1552227957004828949
+  - rid: 1552227957004828950
+  - rid: 1552227957004828951
+  - rid: 1552227957004828952
+  - rid: 1552227957004828953
+  - rid: 1552227957004828954
+  - rid: 1552227957004828955
+  - rid: 1552227957004828956
+  Output:
+  - Index: 0
+    VirtualOutputIndex: 1
+    Description:
+      Identifier: basecolor
+      Label: basecolor
+      Index: 0
+      Type: 8
+      Channel: baseColor
+    OutputTexture: {fileID: 2800000, guid: 10f18ff9f4c699e47ac753b24388fdf3, type: 3}
+    sRGB: 1
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: _MainTex
+  HasPhysicalSize: 0
+  PhysicalSize: {x: 0, y: 0, z: 0}
+  EnablePhysicalSize: 0
+  Thumbnail: 89504e470d0a1a0a0000000d49484452000000800000008008020000004c5cf69c000000097048597300000b1300000b1301009a9c1800000e3749444154789ced9d7b5c1357bec07f794c2621240ac9f0486201150801c190681410babddb9755a9c08ad6d63e76dbddbe6bb7eddebd5ddbcfadb6b76b6f77bbddeddd7e76db6a1f3e50a1ab025abbadca1b84f585bc111f8042028404082190d93f46b369088175528f77f77cff9a9c39e73767e69bcc99939c9cc3d9f2d6db46a329293121297101606e16a7cf9c3d7da69ea2e47ca3d1945f708020082ce066d2d0d89c5f70203b6b15e7936ddb1b1a9bfd1274896151434393c56a651f4aa55448a5127f554c13176bb1583bbbbad987924a241a8dbaaafa04fb5000a0898be527252e484a5cb02b6fdfeebc7c96e14243438a0e1de9f2c7791a0c7a9552915f70807d2800c8ce5ad5d9d55d5d5dcb3e9452a9100588d85fabb5b9d9eb72730080cfbe4e1836600188c10210830520060b400c1680182c0031580062b000c4600188c10210830520060b400c1680182c0031580062b000c4600188c10210830520060b400ca7aeae0e003a2e5cecb870117565fe8d888a8c888a8c00d727a0a1a1a9e8d011964173b2338f9794198d7d6c6b07a0898ba528f9f19272f6a10020233dd56834f965941145c932d2d3f6e5ef6719e7be7beffa8e008bd5ea97f13c46639f5fe2a8540aa954e297500060b7dbfd75820cec43b986afe1360031580062b000c4600188c10210830520060b400c1680182c0031580062b000c4600188c10210830520060b400c1680182c0031580062b000c4600188c10210830520e69a0095526130e8d987d3c4c5aa540af67198f982fc522500904a252a50803fa249251200605f3195f2da55ba26402a95b892d8405172a954c23e8e542a2149d22f5502009224a55250811fa29124096e97ef86715da5eb23e31a9bd9cf8ef4fc734f1e2f29ff979fb029273b937dc55c73c4e1360031580062b000c4600188c10210830520060b400c1680182c0031580062b000c4600188c10210830520060b400c1680182c0031580062b000c4600188c10210830520060b40ccb529cb98a50d59c652a99446a3c96eb7b3af163330cb6834b10f05001425b7dbed168b1f96f8234992a2e49d9d5d2ce3b816efbc3e63963f56fa6304f86729435048a5e097c50701402a95f87129438a92b30fc5cc57062e017e1938b6c4b0a8a1b1d93f338319f42a50f8652c1b00a8940a3f8e8cd368d4ec43790ac0a0020b400c1680182c0031580062b000c4600188c10210830520060b400c1680182c0031580062b000c4600188f9be04f0785c955229160798072d57aff6389dce9994120a85b131d114254f4c8c0f148b7b7b8d0d8dcd7d7dfd5e33cb6532b13880d91e309ba7fdc12b34344448920030e174b2ff49cb5f4c2fe057fff5f2dcb99153edddbfbf68ffc162f714822072d7642dbfe74eb158cca4f40f0c14157f55f0e5411f1a226e9bb362c53dcb52978a442257a22e79a1d3e93c75faecf64f775cbc74d9a3c8860deb3296a532db65e595efbcfbbe8fb320f8c46ffff72da64a8383960d8ffed447e69bc93402381c4e42bc4624124e95c1fd7a01008fc7fbe52b1b753a2d00d86cb68101b35c2e0b0e0a7a68fdda784ddce637b77a75f0a3ecfbd7aecde1f378cccba1e1619b6d542a95080882cbe5266b93162c88fffd1f3ef4b1a8925ea7150804636363536548d626b9de10b714d308080f0f65aefeb1e3a53d3dc6c919ea1b1add5f3eb43e57a7d3d234bd73d7de2ff7173a1c0e9148f4e0036b56dc774fb23669ed9aec9dbbf77a4478f8a17559ab5701c0f0f07051f191e2c3470606cccc641d478f9566ddbf72f9bd77117cfe0bcf3d3538683975faac47719aa601402814ea75da8acaeaa94e24213ecef799a2621a01519191ccc6e73bf24ca669160823084297bc10008e7cfdcd9e7d5f3289369bedcf1f7f1a2809bc3d3d2d73d5f2c2e2c3ee37eb45fae4d5f7af0480befefe4daf6de9eabee21eb0bf7fe0a34f3eebb870e9d9a79fe072b9cf3cf5c493cfbce87038dcf3381c8eeeee2b919111a92986a904f0783cb95c0600bd46630845f93e8b9bcc3402e6464500c0e0a065daab0f008af0301e8f47d3f4de49eb9ceddcb9276359aa50284c4b59527cf86b2691cbe5fcf8b10d1c0ec7e9746edeb2d5e3eabbf8e6db634989f119e9691425bf3d23edebbf1ef5c850565e151919a1d769495260b77bb90bc964321e8f77f972d795ab57ff9f09888a8a0480b6f6f33389250b0e0680cb9d5d93c7f3f4f41abbbaba552aa55e9fec12a04bd686878502405979a5ef8514bfdc5f6858ac6f6e691b1b734cde5b565eb9fe813542a150a7d3565478f9103047292dab983f7fee4c4ee466727dc62c8944e96d16a8b951910060eaeb532a155c2e274014c0e7f36ca3a35edf6881816200e8ed357a0dd5db6b54a994519111aebde9d79f61eacf357a14914a242449ba12c7c61c2fff62d384d30900aec400a6fde770b83c5ef795ab4a45f80f32965dbce8f9b024101071ea589aa6cf775c4848d0000097c7f55ac399405132f73adc30ccd467e012a0d1a84501228f4c0282080a9a0d00f3e646bdf6ea2b21211497cb05009aa6add6a1f31d17fa07065c99f97c3e9fcf0700b95c96939d39f99032b90c00828266aff9d16ae65928599b08004ea7335ea356ab632617f11ac7c59c392a00e0717939d999369b0d0074c90b476c368f07adb0d0508180b058ad292906457818009002d277e46961591c268f0baaaa3eb13b2fdf23937661525aea52009837378ac3e100c0f8f8389fcfe7703852a9242931e18b9d79ae652d15e161e9692900f0edb7c73d7a060cd959ab363cb88ec3e16cdfbe63c06c0680bc9ddb00c064eafbcd7b1f78649ec994652f6e7c262c34646262fc77efff318492ffe9c3f7793c5e4d4d5d7945957bb6d737fd270014161dcedb53f0ea2f5f92cb65369bed77efff710657c90bcc9465375cdcc5dadcecef2ce6e915a6050600ebd0d08e9d7bca2baaacd6a159b3a4e9cb52d7af5b2312091f7c20b7bbfb4a45650d0008040226b37d8a8771c7f5db3729240180cbe53213e0f965c866afd1d4d2da161b139d9a627017209548121313689abe72b587fd51be0f7c0918b5db5b5adbc462f11b9bdfbedad3cb240e0e5a0e161e6a696d7bf38dd70882fff086f555d5279c4e1a38d74a4dd5dd9db89ece74b89c4ee7f8f8384110cc6d8d3d656595b131d17a9d962449d700e194a58bf93cde80d9ec9721c3df07be0414157f5554fc95d75dcdcdad478f95dc75e71d61a121f3e7cd6b696d1b1dbd76860441782d22b89eee181f6736cce6418a924bfc31cd25009457543ffac8832449ea755ad787202d2d05007a7bbd74216f116efccbb8babf9dbaebce3b0020e2b6392dad6da3a3a34c3a7363990c73e70180e1e11166a37f6080a2e4b367490982ef708cdf704d18fafafb9b9a5a341a755aea124640707050bc463d3e3eded8d4c232f8f7c78d0b309bcdcc86284008008383968989091e8f270b0ef29a9fe9258c8d8d0d0d0d3129e7ce35c5c6441304a18e8d395bdfe0fb703f7be231a7d379b6bea1baa676aabb5c6979a546a3d6252f1492e4a8dd9e9ab284cbe59e3c75c662b1dcd839de04a614c0e17066cf9a356b96747474d4d500b8131070edab60ab751800689a1e19b14924816161a15e03868787014067e73f06afd7d4d665ad5e090086c57adf02020303ffe38e0c8140a0d7692bab6aa6ca565159fdf88f1f264952afd79695572d4b5d0a00a5a515c132efef895b8129050804824f3efa80cbe59e3a7df6f5ff7e6b72869898f9cc46fbf96bfde4418b4522098c53c770b95c8f372941f063a2e7014063d33f16766f6e6a319afa28b9eceebb7f78b0e8708f37cd0c992b97334f59be5799379b07ebcf35262e884f596a686e698b89993f3636565553bbfcde3b7d9442cb9402ec767b7b7b4774f4bc788d5a2e97797c17142012310dc0858b972e5dea64127b8d46955221168b53530ca56595eef96fcf48274992a6e963c74b5d894e9adeb3b7e0e9271f1710c4cb2f3eb7f9cdad83deee15890b12980fcac888ed60e121dfe753565e99b8205e97bcb0e3c2450e87535b7792e9a3ddb2f86a030a8b0f6f7cfe6982207efec2335bfee71d57e32912095f79f9055970304dd39fefd8edca6f360f9afafae432d94f1e7bf87cc745d75f6522236f7b64c3030070b6fe5c4b6bbbfb21befeebb7294b176b17264547cfdbfaebcd5fecc8aba8ac9e989860f60a85e47df7debd36379be963ffe9a36dd3feffa9b2b2e6a78f3f2a140a73b23201a0a4b4e29fba1c371f5f028e1d2f5bbc48979ab244a3517ff0fb774b4a2b7a7a7a29b93c233d3538380800f20bf6d7d69e742ff2d9e7bb9e7ef2f1d9b367bdbb75cb37474bbabbbae7cc51ddf183749224072d96fffbf0638f43d034fcfa9df736bdfa8b788d3a2c34e4a5179fb5581eb9dcd9c5e5726432d99a9c2ca19004009aa63ffb62d7d163a5301d16abf5cc997aad364928148e8c8cd4d69d9cb6085aa6790afacd7b7f301a4d2beebb2768f6eccc95cb5de9369bed8b1d7985937a096ded1d6fbcb975e3734fc9e5b215cbef76a59b4c7d6f6ffded952b57271fc2661bddf4fa96acd52b5767ae108bc552a9245ea376cf70e972e7471f7f3af33f7196965769b5490050555debf1e3c12dc83402c6c727b67dbae360e16183411f19719b5028b458ade7cf7754d7d4b99e263da8af6f78ead99f2f31e8d5b1311249e0d0d07053734b45658d8fdf0b272626f6eefbcb5ff617252526cc9f3f9792cb158a7082cfaf3e515b5fdfe8de6ebb73b0f0505555cde447d28aca2a9b6d0400dadb3b3c76e5171c387aac847d9fc38fcca81f60eaeb9baa4bec15bbdd7ebca4dcf713cb641c0e476ddd49e6a631932fe35a5bdb5bbfdba230d86ca3ccd75393696abee57a64785c1062b000c4600188c10210830520060b400c1680182c00319c4fb66d6f68f4ded5fc67596258d4d0d0e49ff982940aa954e2af8a69e262fd385f9046a3aeaa3ec13e140068e26239cf6f7c29bfe0c0dadcec75b9397e098a9909bbf2f6edcecbcfce5ac5a7287976d62a4d5c2cea2afd7ba1898bcdce5a4551f2bf03395648e1249598a60000000049454e44ae426082
+  CurrentStatePreset: 
+  IsRuntimeOnly: 0
+  GenerateAllOutputs: 0
+  GenerateAllMipmaps: 1
+  OutputMaterial: {fileID: 2100000, guid: c854ac221579cef4cb2a961a4c06424c, type: 2}
+  DefaultPreset: " <sbspreset pkgurl=\"pkg://texel_checker\" label=\"\" >\n </sbspreset>\n"
+  MaterialShader: Universal Render Pipeline/Lit
+  RenderTextures: 0
+  OutputRemaped: 0
+  Presets: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 1552227957004828949
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 0
+        Description:
+          Identifier: Texel_density
+          Label: Texel density
+          GuiGroup: Texel density
+          GuiDescription: 
+          Type: 4
+          WidgetType: 6
+        Data: 1024
+        NumericalDescription:
+          DefaultValue: 1024
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 6
+          EnumValues:
+          - Value: 32
+            Label: 0.32
+          - Value: 64
+            Label: 0.64
+          - Value: 128
+            Label: 1.28
+          - Value: 256
+            Label: 2.56
+          - Value: 512
+            Label: 5.12
+          - Value: 1024
+            Label: 10.24
+    - rid: 1552227957004828950
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 1
+        Description:
+          Identifier: Texture_size
+          Label: Texture size
+          GuiGroup: Texel density
+          GuiDescription: 
+          Type: 4
+          WidgetType: 6
+        Data: 2048
+        NumericalDescription:
+          DefaultValue: 2048
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 7
+          EnumValues:
+          - Value: 64
+            Label: 64
+          - Value: 128
+            Label: 128
+          - Value: 256
+            Label: 256
+          - Value: 512
+            Label: 512
+          - Value: 1024
+            Label: 1024
+          - Value: 2048
+            Label: 2048
+          - Value: 4096
+            Label: 4096
+    - rid: 1552227957004828951
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 2
+        Description:
+          Identifier: Small_Line
+          Label: Small line
+          GuiGroup: Size
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.95
+        NumericalDescription:
+          DefaultValue: 0.95
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1552227957004828952
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 3
+        Description:
+          Identifier: Large_Line
+          Label: Large line
+          GuiGroup: Size
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.96
+        NumericalDescription:
+          DefaultValue: 0.96
+          MinValue: 0.9
+          MaxValue: 1
+          SliderStep: 0.005
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1552227957004828953
+      type: {class: SubstanceInputFloat4, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 4
+        Description:
+          Identifier: Background_color
+          Label: Background color
+          GuiGroup: Color
+          GuiDescription: 
+          Type: 3
+          WidgetType: 3
+        Data: {x: 0.109804, y: 0.121569, z: 0.14902, w: 1}
+        NumericalDescription:
+          DefaultValue: {x: 0.109804, y: 0.121569, z: 0.14902, w: 1}
+          MinValue: {x: 0, y: 0, z: 0, w: 0}
+          MaxValue: {x: 1, y: 1, z: 1, w: 1}
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1552227957004828954
+      type: {class: SubstanceInputFloat4, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 5
+        Description:
+          Identifier: line_color
+          Label: Line color
+          GuiGroup: Color
+          GuiDescription: 
+          Type: 3
+          WidgetType: 3
+        Data: {x: 0.804598, y: 0.804598, z: 0.804598, w: 1}
+        NumericalDescription:
+          DefaultValue: {x: 0.804598, y: 0.804598, z: 0.804598, w: 1}
+          MinValue: {x: 0, y: 0, z: 0, w: 0}
+          MaxValue: {x: 1, y: 1, z: 1, w: 1}
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1552227957004828955
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 6
+        Description:
+          Identifier: small_line_opacity
+          Label: Small line opacity
+          GuiGroup: Color
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.63
+        NumericalDescription:
+          DefaultValue: 0.63
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1552227957004828956
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 7
+        Description:
+          Identifier: fontsize
+          Label: Font size
+          GuiGroup: Size
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.25
+        NumericalDescription:
+          DefaultValue: 0.25
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
