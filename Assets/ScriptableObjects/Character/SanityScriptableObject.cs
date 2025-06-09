@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class SanityScriptableObject : MonoBehaviour
+[CreateAssetMenu(fileName = "SanityScriptableObject", menuName = "sanity")]
+public class SanityScriptableObject : ScriptableObject
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public float maxSanity = 100f;
+    public float sanityDecreaseRate = 5f;
+    public float sanityRegenRate = 2f;
+    public float sanityRegenDelay = 3f;
+    public float currentSanity;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

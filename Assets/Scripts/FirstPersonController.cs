@@ -53,14 +53,14 @@ public class FirstPersonController : MonoBehaviour
     private float crouchingCameraY;
     private float currentCameraY;
 
-    [Header("Sanity Settings")]
-    public float maxSanity = 100f;
-    public float sanityDecreaseRate = 5f;
-    public float sanityRegenRate = 2f;
-    public float sanityRegenDelay = 3f;
-    private float currentSanity;
-    private float timeSinceLastSeen = 0f;
-    public LayerMask lineOfSightObstacles;
+    [Header("Sanity Settings")]//
+    public float maxSanity = 100f;//
+    public float sanityDecreaseRate = 5f;//
+    public float sanityRegenRate = 2f;//
+    public float sanityRegenDelay = 3f;//
+    private float currentSanity;//
+    private float timeSinceLastSeen = 0f;//
+    public LayerMask lineOfSightObstacles;//
 
     void Start()
     {
@@ -80,11 +80,6 @@ public class FirstPersonController : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    Cursor.lockState = CursorLockMode.None;
-        //    Cursor.visible = true;
-        //}
         UpdateIsGrounded();
         HandleMouseLook();
         HandleCrouch();
@@ -94,7 +89,9 @@ public class FirstPersonController : MonoBehaviour
         HandleSanity();
 
     }
-
+    /// <summary>
+    /// //////////////////////////////////////////////////////////////////////////////
+    /// </summary>
     void HandleSanity()
     {
         SanityAffectingEntity[] targets = Object.FindObjectsByType<SanityAffectingEntity>(FindObjectsSortMode.None);
@@ -140,7 +137,9 @@ public class FirstPersonController : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// ////////////////////////////////////////////////////////////////////////////////////
+    /// </summary>
 
 
     void HandleMouseLook()
