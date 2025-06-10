@@ -7,7 +7,7 @@ public class Interactuable : MonoBehaviour
     public GameObject panelInteractuar;
     public GameObject panelUI;
     public string textoInteractuar = "Presiona E para interactuar";
-    public TMP_Text textoUI; // Si usas TextMeshPro, cambia a Text si usas el Text UI normal
+    public TMP_Text textoUI; 
     private Transform jugador;
     private bool dentroRango = false;
     public Light luzInteractuable;
