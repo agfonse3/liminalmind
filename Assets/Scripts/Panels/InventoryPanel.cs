@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class InventoryPanel : MonoBehaviour
+public class InventoryPanel : PanelBasic
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnEnable()
     {
-        
+
+        MouseActivatedInPanel();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

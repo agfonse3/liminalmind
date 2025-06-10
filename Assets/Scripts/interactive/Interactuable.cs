@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI; // Necesario para manejar UI
-using TMPro;
 public class Interactuable : MonoBehaviour
 {
     public float distanciaInteractuar = 3f;
     public GameObject panelInteractuar;
     public GameObject panelUI;
-    public string textoInteractuar = "Presiona E para interactuar";
-    public TMP_Text textoUI; 
+    //public string textoInteractuar = "Presiona E para interactuar";
+    public GameObject textInteractuable;
+    //public TMP_Text textoUI; 
     private Transform jugador;
     private bool dentroRango = false;
     public Light luzInteractuable;
@@ -19,10 +19,16 @@ public class Interactuable : MonoBehaviour
         if (panelInteractuar != null)
         {
             panelInteractuar.SetActive(false);
-            if (textoUI != null)
+            //if (textoUI != null)
+            //{
+            //    textoUI.text = textoInteractuarES;
+            //}
+            if (textInteractuable != null)
             {
-                textoUI.text = textoInteractuar;
+                //textoUI.text = textoInteractuarES;
+                textInteractuable.SetActive(true);
             }
+
         }
         if (panelUI != null)
         {
@@ -61,14 +67,9 @@ public class Interactuable : MonoBehaviour
                 CerrarPanelUI();
                 MostrarIndicador(false); // Desactivar el indicador y luz
                 Debug.Log("Jugador salió del rango.");
-                
-                
-
-
+             
             }
         }
-
-
     }
 
     void MostrarIndicador(bool mostrar)
@@ -91,6 +92,7 @@ public class Interactuable : MonoBehaviour
         if (panelUI != null)
         {
             panelUI.SetActive(!panelUI.activeSelf); // Alternar el panel UI
+            textInteractuable.SetActive(true);
 
             // Desbloquear o bloquear el cursor dependiendo del estado del panel
             Cursor.lockState = panelUI.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
@@ -98,12 +100,13 @@ public class Interactuable : MonoBehaviour
         }
         // Verificar si el objeto tiene el tag "Recolectable" antes de añadirlo al inventario
        if (gameObject.CompareTag("Recolectable"))
-    {
-         GameManager.Instance.AgregarObjetoAlInventario(gameObject);
+       {
+            
+            //GameManager.Instance.AgregarObjetoAlInventario(gameObject);
         Debug.Log("Objeto recogido: " + gameObject.name);
-        GameManager.Instance.MostrarInventario(); // Muestra el inventario después de recoger
+        //GameManager.Instance.MostrarInventario(); // Muestra el inventario después de recoger
        // Destroy(gameObject); // Elimina el objeto de la escena
-    }
+        }
          
         Debug.Log("Interacción con " + gameObject.name);
     }
