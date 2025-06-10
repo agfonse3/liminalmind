@@ -15,5 +15,5 @@ MonoBehaviour:
   id: KeyRed
   itemName: RedKey
   itemsprite: {fileID: 21300000, guid: 7cae059013390a443a3618f2a20496bf, type: 3}
-  itemprefab: {fileID: 3874798687770068871, guid: a1648482d42851340b0961f999414488, type: 3}
+  itemprefab: {fileID: 2144992041194189320, guid: f759cec5c2057fd4aadb43f787a23dca, type: 3}
   keyType: 5

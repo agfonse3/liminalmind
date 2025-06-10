@@ -36,14 +36,14 @@ public class AbrirPuertaConLlave : MonoBehaviour
 
             Debug.Log("Intentando abrir la puerta con: " + llaveNecesaria.name);
 
-            if (GameManager.Instance != null && GameManager.Instance.TieneObjeto(llaveNecesaria))
-            {
-                AbrirPuerta();
-            }
-            else
-            {
-                Debug.Log("No tienes el objeto necesario.");
-            }
+            //if (GameManager.Instance != null && GameManager.Instance.TieneObjeto(llaveNecesaria))
+            //{
+            //    AbrirPuerta();
+            //}
+            //else
+            //{
+            //    Debug.Log("No tienes el objeto necesario.");
+            //}
         }
     }
 

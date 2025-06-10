@@ -15,5 +15,5 @@ MonoBehaviour:
   id: KeyViolet
   itemName: VioletKey
   itemsprite: {fileID: 21300000, guid: 8d2033e4bd2bf794c86e1b130dd16278, type: 3}
-  itemprefab: {fileID: 70612519778865686, guid: 1cc197683708f85499761a2ccfd35c0f, type: 3}
+  itemprefab: {fileID: 7711664701859734465, guid: 46ef93d17e7da0e4da3ccf27a7cb2379, type: 3}
   keyType: 3

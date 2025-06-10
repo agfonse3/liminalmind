@@ -39,6 +39,10 @@ MonoBehaviour:
     m_Key: InstructionsHelpPanel
     m_Metadata:
       m_Items: []
+  - m_Id: 2575833748672512
+    m_Key: InteractText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

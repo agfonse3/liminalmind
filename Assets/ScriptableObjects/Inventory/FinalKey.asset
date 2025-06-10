@@ -15,5 +15,5 @@ MonoBehaviour:
   id: KeyFinal
   itemName: FinalKey
   itemsprite: {fileID: 21300000, guid: 741b8f6776deff149bc1ae98af10a282, type: 3}
-  itemprefab: {fileID: 5014697178012606965, guid: 844450ea1cf3d484c821dfdb20c71797, type: 3}
+  itemprefab: {fileID: 5510035450852391669, guid: a97a3c1e5c0fbf14488228158b7e1ccc, type: 3}
   keyType: 6
