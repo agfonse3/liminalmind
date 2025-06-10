@@ -11,6 +11,7 @@ public class Interactuable : MonoBehaviour
     private Transform jugador;
     private bool dentroRango = false;
     public Light luzInteractuable;
+    InventoryManager inventoryManager;
     //Inventario inventario;
     void Start()
     {
@@ -101,11 +102,15 @@ public class Interactuable : MonoBehaviour
         // Verificar si el objeto tiene el tag "Recolectable" antes de añadirlo al inventario
        if (gameObject.CompareTag("Recolectable"))
        {
-            
+            ItemClass dataitem = gameObject.GetComponentInChildren<PickUp>().itemdata;
+            if (dataitem != null) 
+            {
+                inventoryManager.AddItemsToInventory(dataitem);
+            }
             //GameManager.Instance.AgregarObjetoAlInventario(gameObject);
-        Debug.Log("Objeto recogido: " + gameObject.name);
-        //GameManager.Instance.MostrarInventario(); // Muestra el inventario después de recoger
-       // Destroy(gameObject); // Elimina el objeto de la escena
+            Debug.Log("Objeto recogido: " + gameObject.name);
+            //GameManager.Instance.MostrarInventario(); // Muestra el inventario después de recoger
+            Destroy(gameObject); // Elimina el objeto de la escena
         }
          
         Debug.Log("Interacción con " + gameObject.name);

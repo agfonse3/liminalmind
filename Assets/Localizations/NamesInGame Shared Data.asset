@@ -43,6 +43,10 @@ MonoBehaviour:
     m_Key: InteractText
     m_Metadata:
       m_Items: []
+  - m_Id: 2626984271613952
+    m_Key: WithoutKey
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

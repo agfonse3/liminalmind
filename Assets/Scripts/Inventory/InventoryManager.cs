@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     [SerializeField] private GameObject slotsHolder; //guarda los slots
-    [SerializeField] private ItemClass itemToAdd; // item aadicionar al inventario
+    //private ItemClass itemToAdd; // item aadicionar al inventario
     //private ItemClass itemToRemove;
     public List<ItemClass> items = new List<ItemClass>(); //lista de los items
     private GameObject[] slots;
@@ -21,7 +21,7 @@ public class InventoryManager : MonoBehaviour
             slots[i] = slotsHolder.transform.GetChild(i).gameObject;
         }
         UpdateInventoryUI();
-        AddItemsToInventory(itemToAdd);
+        //AddItemsToInventory(itemToAdd);
     }
     // metodo que actualiza el inventario
     public void UpdateInventoryUI() 
@@ -44,7 +44,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-
+    //metodo que adiciona items en el inventario
     public void AddItemsToInventory(ItemClass item) 
     {
         items.Add(item);
@@ -55,6 +55,19 @@ public class InventoryManager : MonoBehaviour
     //{
     //    items.Remove(item);
     //}
+
+    //metodo que verifica si hay un item en el inverntario
+    public bool IsOnInventory(ItemClass item) 
+    {
+        for (int i = 0; i <items.Count; i++)
+        {
+            if (items != null && items[i] == item)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 }
