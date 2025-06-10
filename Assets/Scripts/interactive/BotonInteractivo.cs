@@ -2,32 +2,50 @@ using UnityEngine;
 
 
 public class BotonInteractivo : MonoBehaviour
-{
-     public CameraManager cameraManager; // Referencia al script de cámara
-    public Transform objetoInteractivo;
-    public float distanciaCambioVista = 3f;
-    public int indiceVista; // Índice de la vista a activar
+{  
+    
+    public Animator botonAnimator;   // Animator del botón
+    public Animator puertasAnimator; // Animator de las puertas
 
-    private Transform jugador;
-
-    void Start()
-    {
-        jugador = GameObject.FindGameObjectWithTag("Player").transform; // Asegúrate de que tu jugador tenga el tag correcto
-    }
-
+    public string animacionBoton = "botonarriba"; // Animación del botón
+    public string animacionPuertas = "puertas";   // Animación de las puertas
+    public float delaySegundaAnimacion = 2f; // Tiempo de espera antes de reproducir la segunda animación
+ // ¡Referencia a la ActivarZona específica que controla este botón!
+    public ActivarZona zonaDeActivacion;
     void Update()
     {
-        if (jugador == null || cameraManager == null) return;
-
-        float distancia = Vector3.Distance(jugador.position, objetoInteractivo.position);
-
-        if (distancia <= distanciaCambioVista)
+        if (Input.GetKeyDown(KeyCode.E) && zonaDeActivacion.jugadorDentro) // Al presionar E, se activan las animaciones en orden
         {
-            cameraManager.CambiarVista(indiceVista, true); // Activa la vista
+            ReproducirAnimaciones();
+        }
+       
+    }   
+
+    void ReproducirAnimaciones()
+    {
+        if (botonAnimator != null)
+        {
+            botonAnimator.Play(animacionBoton);
+            Debug.Log("Animación del botón reproducida: " + animacionBoton);
         }
         else
         {
-            cameraManager.CambiarVista(-1, false); // Regresa la cámara a la vista normal
+            Debug.LogError("El Animator del botón no está asignado.");
+        }
+
+        Invoke(nameof(ReproducirSegundaAnimacion), delaySegundaAnimacion);
+    }
+
+    void ReproducirSegundaAnimacion()
+    {
+        if (puertasAnimator != null)
+        {
+            puertasAnimator.Play(animacionPuertas);
+            Debug.Log("Animación de las puertas reproducida: " + animacionPuertas);
+        }
+        else
+        {
+            Debug.LogError("El Animator de las puertas no está asignado.");
         }
     }
 }

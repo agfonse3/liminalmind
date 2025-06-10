@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-     public Transform[] views;
+    public Transform[] views;
     public float transitionSpeed;
     private Transform currentView;
     private Transform defaultView;
 
     public FirstPersonController playerController; // Referencia al jugador
     public bool camaraFinalizada = false; // Indica si la cámara ya terminó su movimiento
+    public bool teclaEPulsada = false; // Indica si la tecla E ha sido presionada
 
     void Start()
     {
@@ -18,25 +19,25 @@ public class CameraManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            currentView = views[0];
-            BloquearMovimiento(true); // Bloquea el movimiento del jugador
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            currentView = views[1];
-            BloquearMovimiento(true); // Bloquea el movimiento del jugador
-        }
-        if (Input.GetKeyDown(KeyCode.M)) // Nueva tecla para desbloquear
-        {
-
-            BloquearMovimiento(false); // Restaura el movimiento del jugador
-            currentView = defaultView; // Regresa la cámara a la vista del jugador
-        }
+        if (Input.GetKeyDown(KeyCode.E) && EncuentraZonaDeActivacion())
+    {
+        teclaEPulsada = true;
+        currentView = views[0];
+        BloquearMovimiento(true);
     }
 
+    if (Input.GetKeyDown(KeyCode.M))
+    {
+        BloquearMovimiento(false);
+        currentView = defaultView;
+        teclaEPulsada = false;
+    }
+    }
+private bool EncuentraZonaDeActivacion()
+{
+    return FindFirstObjectByType<ActivarZona>().jugadorDentro;
+// Verifica si el jugador está dentro
+}
     void LateUpdate()
     {
         if (currentView != null)

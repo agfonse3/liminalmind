@@ -94,20 +94,25 @@ public class GameManager : MonoBehaviour
 
     // Método para mostrar los objetos que están en el inventario
     public void MostrarInventario()
-{
-    Debug.Log("Inventario actual:");
-
-    foreach (GameObject obj in listaInventario)
     {
-        if (obj != null) // Verifica si el objeto no ha sido destruido
+        Debug.Log("Inventario actual:");
+
+        foreach (GameObject obj in listaInventario)
         {
-            Debug.Log("- " + obj.name);
-        }
-        else
-        {
-            Debug.Log("- Un objeto ha sido eliminado del inventario.");
+            if (obj != null) // Verifica si el objeto no ha sido destruido
+            {
+                Debug.Log("- " + obj.name);
+            }
+            else
+            {
+                Debug.Log("- Un objeto ha sido eliminado del inventario.");
+            }
         }
     }
+// Método para verificar si el jugador tiene un objeto específico en el inventario
+public bool TieneObjeto(GameObject objeto)
+{
+    return listaInventario.Contains(objeto);
 }
  void Update()
     {
