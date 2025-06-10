@@ -7,6 +7,10 @@ TagManager:
   - Recolectable
   - zonaAscensor
   - zonaExterna
+  - BlueKey
+  - RedKey
+  - BlackKey
+  - GreenKey
   layers:
   - Default
   - TransparentFX
