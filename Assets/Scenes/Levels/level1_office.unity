@@ -13946,6 +13946,18 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1094849901655589203, guid: e1bbad83ae2b7d048858fa993acc4bf9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 852402870}
+    - targetCorrespondingSourceObject: {fileID: 1094849901655589203, guid: e1bbad83ae2b7d048858fa993acc4bf9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 852402869}
+    - targetCorrespondingSourceObject: {fileID: 1094849901655589203, guid: e1bbad83ae2b7d048858fa993acc4bf9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 852402871}
+    - targetCorrespondingSourceObject: {fileID: 8790217858762999894, guid: e1bbad83ae2b7d048858fa993acc4bf9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2008480112}
     - targetCorrespondingSourceObject: {fileID: 8899726007972715884, guid: e1bbad83ae2b7d048858fa993acc4bf9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 536585969}
@@ -22353,6 +22365,70 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4517273775313414490, guid: e85ff5f5d4db9da4c96dd4b38ae4e0bd, type: 3}
+--- !u!1 &852402868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1094849901655589203, guid: e1bbad83ae2b7d048858fa993acc4bf9, type: 3}
+  m_PrefabInstance: {fileID: 324383719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &852402869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852402868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2246670390c6ce04f9c6083a89b9625d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelUI: {fileID: 2143466784}
+  textoMensaje: {fileID: 1596637833}
+  mensaje: Presiona la E para abrir la puerta
+  llaveNecesaria: {fileID: 986930590}
+--- !u!95 &852402870
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852402868}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a782cca38fabac4ba0125da93f74636, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &852402871
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852402868}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.77803993, y: 2.5289829, z: 1.7365171}
+  m_Center: {x: -0.16461349, y: 0.7644914, z: -0.106960036}
 --- !u!65 &857588250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73352,6 +73428,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1206400024893766885, guid: 39fad436ce6de814792c98c215005406, type: 3}
   m_PrefabInstance: {fileID: 616462545}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2008480107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8790217858762999894, guid: e1bbad83ae2b7d048858fa993acc4bf9, type: 3}
+  m_PrefabInstance: {fileID: 324383719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2008480112
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008480107}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 09da138c9947e644f9fdd5ad430ae9e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!64 &2008568196
 MeshCollider:
   m_ObjectHideFlags: 0
