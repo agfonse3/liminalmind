@@ -7,7 +7,7 @@ public class Interactuable : MonoBehaviour
     public GameObject panelInteractuar;
     public GameObject panelUI;
     public string textoInteractuar = "Presiona E para interactuar";
-    public TMP_Text textoUI; // Si usas TextMeshPro, cambia a Text si usas el Text UI normal
+    public TMP_Text textoUI; 
     private Transform jugador;
     private bool dentroRango = false;
     public Light luzInteractuable;
@@ -99,9 +99,8 @@ public class Interactuable : MonoBehaviour
         // Verificar si el objeto tiene el tag "Recolectable" antes de añadirlo al inventario
        if (gameObject.CompareTag("Recolectable"))
     {
-        GameManager.Instance.AgregarObjetoAlInventario(gameObject);
+         GameManager.Instance.AgregarObjetoAlInventario(gameObject);
         Debug.Log("Objeto recogido: " + gameObject.name);
-
         GameManager.Instance.MostrarInventario(); // Muestra el inventario después de recoger
        // Destroy(gameObject); // Elimina el objeto de la escena
     }
