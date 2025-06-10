@@ -32,8 +32,7 @@ public class PausePanel : PanelBasic
        
     }
 
-
-    public void SettingsButton() 
+        public void SettingsButton() 
     {
         AudiomanagerTemp.Instance.PlayEndMusic(audioBGS);
         pausePannel.SetActive(false);

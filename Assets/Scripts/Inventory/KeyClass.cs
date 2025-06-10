@@ -1,14 +1,15 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ItemScriptableObject", menuName = "item/key")]
-public class KeyClass : ItemClass
+public class KeyClass : ItemClass   // scriptable object key
 {
-    public KeyType keyType ;
-
+    public KeyType keyType ; // tipo de llave
     public enum KeyType 
     {
-        yellowDoorKey,
+        greenDoorKey,
         blueDoorKey,
+        blackDoorKey,
+        redDoorKey,
         FinalKey
     }
     public override ItemClass GetItem() { return this; }
