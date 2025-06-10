@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7010554e84a94f2459d9802f12f78f99, type: 3}
-  m_Name: BlackKey
+  m_Name: YellowKey
   m_EditorClassIdentifier: 
-  id: 
-  itemName: 
-  itemsprite: {fileID: 0}
-  itemprefab: {fileID: 0}
-  keyType: 0
+  id: KeyYellow
+  itemName: YellowKey
+  itemsprite: {fileID: 21300000, guid: a4ea9f6ef0f403640a61fae8a8c36303, type: 3}
+  itemprefab: {fileID: 3874798687770068871, guid: 974c90fb5c85e1145b28c692035ab2f2, type: 3}
+  keyType: 4

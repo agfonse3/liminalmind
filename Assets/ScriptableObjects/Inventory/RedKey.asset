@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7010554e84a94f2459d9802f12f78f99, type: 3}
   m_Name: RedKey
   m_EditorClassIdentifier: 
-  id: 
-  itemName: 
-  itemsprite: {fileID: 0}
-  itemprefab: {fileID: 0}
-  keyType: 0
+  id: KeyRed
+  itemName: RedKey
+  itemsprite: {fileID: 21300000, guid: 7cae059013390a443a3618f2a20496bf, type: 3}
+  itemprefab: {fileID: 3874798687770068871, guid: a1648482d42851340b0961f999414488, type: 3}
+  keyType: 5

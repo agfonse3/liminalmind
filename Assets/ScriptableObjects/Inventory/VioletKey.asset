@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7010554e84a94f2459d9802f12f78f99, type: 3}
-  m_Name: BlueKey
+  m_Name: VioletKey
   m_EditorClassIdentifier: 
-  id: KeyBlue
-  itemName: BlueKey
-  itemsprite: {fileID: 21300000, guid: 55e393058fc6ee643a8c0f86267c25db, type: 3}
-  itemprefab: {fileID: 6586380701880126115, guid: 9295189b4f03b8a47b9873a8492069d1, type: 3}
-  keyType: 1
+  id: KeyViolet
+  itemName: VioletKey
+  itemsprite: {fileID: 21300000, guid: 8d2033e4bd2bf794c86e1b130dd16278, type: 3}
+  itemprefab: {fileID: 70612519778865686, guid: 1cc197683708f85499761a2ccfd35c0f, type: 3}
+  keyType: 3

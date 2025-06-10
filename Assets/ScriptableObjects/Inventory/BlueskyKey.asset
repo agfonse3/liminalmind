@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7010554e84a94f2459d9802f12f78f99, type: 3}
-  m_Name: BlueKey
+  m_Name: BlueskyKey
   m_EditorClassIdentifier: 
-  id: KeyBlue
-  itemName: BlueKey
-  itemsprite: {fileID: 21300000, guid: 55e393058fc6ee643a8c0f86267c25db, type: 3}
-  itemprefab: {fileID: 6586380701880126115, guid: 9295189b4f03b8a47b9873a8492069d1, type: 3}
-  keyType: 1
+  id: KeyBlueSky
+  itemName: BlueSkyKey
+  itemsprite: {fileID: 21300000, guid: c772624e0404ef94e8852134eaea4683, type: 3}
+  itemprefab: {fileID: 594182472358273246, guid: 19a6cb4e4dea3d0428f5e0d5cb5c112e, type: 3}
+  keyType: 2

@@ -8,7 +8,9 @@ public class KeyClass : ItemClass   // scriptable object key
     {
         greenDoorKey,
         blueDoorKey,
-        blackDoorKey,
+        blueskydoorKey,
+        violetDoorKey,
+        yellowDoorKey,
         redDoorKey,
         FinalKey
     }
