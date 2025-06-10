@@ -12,7 +12,6 @@ public class FirstPersonController : MonoBehaviour
 
     [Header("Footstep Settings")]
     public AudioClip[] footstepClips;
-    public AudioSource footstepSource;
     public float minStepPitch = 0.9f;
     public float maxStepPitch = 1.1f;
 
@@ -61,6 +60,8 @@ public class FirstPersonController : MonoBehaviour
     private float currentSanity;//
     private float timeSinceLastSeen = 0f;//
     public LayerMask lineOfSightObstacles;//
+    private bool sonidoAgitacionYaDisparado = false;
+    private bool terrorYaDisparado = false;
 
     void Start()
     {
@@ -87,8 +88,8 @@ public class FirstPersonController : MonoBehaviour
         HandleHeadBob();
         RegenerateStamina();
         HandleSanity();
-
     }
+
     /// <summary>
     /// //////////////////////////////////////////////////////////////////////////////
     /// </summary>
@@ -125,6 +126,19 @@ public class FirstPersonController : MonoBehaviour
             currentSanity -= sanityDecreaseRate * Time.deltaTime;
             currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
             timeSinceLastSeen = 0f;
+
+            if (!sonidoAgitacionYaDisparado)
+            {
+                AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxAgitacion);
+                sonidoAgitacionYaDisparado = true;
+            }
+            if (!terrorYaDisparado)
+            {
+                AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxTerror);
+                terrorYaDisparado = true;
+            }
+
+
             Debug.Log($"[Sanity] Decreasing: {currentSanity:F2}");
         }
         else
@@ -135,13 +149,15 @@ public class FirstPersonController : MonoBehaviour
                 currentSanity += sanityRegenRate * Time.deltaTime;
                 currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
             }
+
+            sonidoAgitacionYaDisparado = false;
+            terrorYaDisparado = false;
         }
     }
+
     /// <summary>
     /// ////////////////////////////////////////////////////////////////////////////////////
     /// </summary>
-
-
     void HandleMouseLook()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
@@ -156,7 +172,6 @@ public class FirstPersonController : MonoBehaviour
 
     void HandleMovement()
     {
-      
         if (isGrounded && velocity.y < 0)
             velocity.y = -0.1f;
 
@@ -238,22 +253,24 @@ public class FirstPersonController : MonoBehaviour
 
     void PlayFootstep()
     {
-        if (footstepClips.Length == 0 || !footstepSource || !isGrounded)
+        if (!isGrounded)
             return;
 
-        int index = Random.Range(0, footstepClips.Length);
-        footstepSource.pitch = Random.Range(minStepPitch, maxStepPitch);
-        footstepSource.PlayOneShot(footstepClips[index]);
+        float moveX = Input.GetAxis("Horizontal");
+        float moveZ = Input.GetAxis("Vertical");
+
+        bool isMoving = Mathf.Abs(moveX) > 0.1f || Mathf.Abs(moveZ) > 0.1f;
+
+        if (isMoving)
+        {
+            AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxPaso);
+        }
     }
 
     void HandleHeadBob()
     {
-      
-
         bool isMovingAndGrounded = isGrounded &&
-    (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f);
-
-        
+            (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f);
 
         if (isMovingAndGrounded)
         {
@@ -275,11 +292,9 @@ public class FirstPersonController : MonoBehaviour
             float bobOffset = Mathf.Sin(bobTimer) * currentBobAmp;
             float sine = Mathf.Sin(bobTimer);
 
-           
             // Trigger step when bob reaches downward trough
             if (Mathf.Sin(bobTimer) < -0.95f && !stepTriggered)
             {
-                
                 PlayFootstep();
                 stepTriggered = true;
             }
@@ -302,5 +317,3 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 }
-
-

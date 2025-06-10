@@ -38,56 +38,60 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         gameOver = false;
         isGamePaused = false;
     }
-  public void NuevoJuego()
+    public void NuevoJuego()
     {
+        AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxBotonMenu);
         SceneManager.LoadScene(1);
         isGameActive = true;
     }
     //Metodo para determinar el idioma
     public void ChangeLanguage(int option)
     {
+        AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxBotonMenu);
         if (option == 0 || option == 1)
         {
             LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[option];
         }
     }
 
-      //metodo que almacena la ultima posicion del jugador
-    public void setLastPosition(Vector3 actualPosition) 
+    //metodo que almacena la ultima posicion del jugador
+    public void setLastPosition(Vector3 actualPosition)
     {
         lastPosition = actualPosition; // ultima posicion del player
     }
 
     //metodo que almacena la ultima escena del jugador
-    public void SetActualScene(int value) 
+    public void SetActualScene(int value)
     {
-        numberActualScene=value; // ultima escena en la que estuvo
+        numberActualScene = value; // ultima escena en la que estuvo
     }
 
-   public void SetGameOver() 
+    public void SetGameOver()
     {
-        gameOver=true;
+        gameOver = true;
     }
 
     //metodo de gameover
     public void GameOver()
     {
+        AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxBotonMenu);
         gameOverPannel.SetActive(true);
         //SceneManager.LoadScene(1);// carga UI scene
         isGameActive = false;
         gameOver = true;
     }
 
-// MÉTODOS DEL INVENTARIO
+    // MÉTODOS DEL INVENTARIO
     // Método para agregar un objeto al inventario
     public void AgregarObjetoAlInventario(GameObject objeto)
     {
+                AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxBotonMenu);
         listaInventario.Add(objeto);
         Debug.Log("Objeto agregado al inventario: " + objeto.name);
     }
@@ -95,6 +99,7 @@ public class GameManager : MonoBehaviour
     // Método para mostrar los objetos que están en el inventario
     public void MostrarInventario()
     {
+         AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxBotonMenu);
         Debug.Log("Inventario actual:");
 
         foreach (GameObject obj in listaInventario)
@@ -109,16 +114,17 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-// Método para verificar si el jugador tiene un objeto específico en el inventario
-public bool TieneObjeto(GameObject objeto)
-{
-    return listaInventario.Contains(objeto);
-}
- void Update()
+    // Método para verificar si el jugador tiene un objeto específico en el inventario
+    public bool TieneObjeto(GameObject objeto)
+    {
+        return listaInventario.Contains(objeto);
+    }
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.I)) // Presionar "I" para abrir el inventario
         {
             GameManager.Instance.MostrarInventario();
         }
     }
+    
 }
