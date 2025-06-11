@@ -7,8 +7,10 @@ public class AbrirPuertaConLlave : MonoBehaviour
 
     public GameObject panelUI; // Panel que muestra el mensaje
     public TextMeshProUGUI textoMensaje; // Texto dentro del panel
-    public string mensaje = "Presiona la E para abrir la puerta"; // Mensaje a mostrar
-    public GameObject llaveNecesaria; // Referencia directa al objeto
+    public GameObject textInteractuable; // gameobject del texto
+    //public string mensaje = "Presiona la E para abrir la puerta"; // Mensaje a mostrar
+    //public GameObject llaveNecesaria; // Referencia directa al objeto
+    public GameObject puerta;
 
     private void Start()
     {
@@ -28,13 +30,15 @@ public class AbrirPuertaConLlave : MonoBehaviour
     {
         if (jugadorEnZona && Input.GetKeyDown(KeyCode.E))
         {
-            if (llaveNecesaria == null)
-            {
-                Debug.LogError("La referencia a 'llaveNecesaria' no está asignada en " + gameObject.name);
-                return;
-            }
+            //if (llaveNecesaria == null)
+            //{
+            //    Debug.LogError("La referencia a 'llaveNecesaria' no está asignada en " + gameObject.name);
+            //    return;
+            //}
+            bool hasKey = puerta.GetComponent<DoorRequirement>().HasKeyToOpen(); // rectifica si tiene la llave que requiere la puerta
 
-            Debug.Log("Intentando abrir la puerta con: " + llaveNecesaria.name);
+
+            Debug.Log("Intentando abrir la puerta con: " + puerta.GetComponent<DoorRequirement>().itemdata.itemName);
 
             //if (GameManager.Instance != null && GameManager.Instance.TieneObjeto(llaveNecesaria))
             //{
@@ -72,7 +76,8 @@ public class AbrirPuertaConLlave : MonoBehaviour
             panelUI.SetActive(activar);
             if (activar)
             {
-                textoMensaje.text = mensaje;
+                //textoMensaje.text = mensaje;
+                textInteractuable.SetActive(true);
             }
         }
     }
@@ -83,6 +88,7 @@ public class AbrirPuertaConLlave : MonoBehaviour
         if (panelUI != null)
         {
             panelUI.SetActive(false);
+            textInteractuable.SetActive(false);
         }
         Debug.Log("La puerta se ha abierto.");
     }

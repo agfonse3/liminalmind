@@ -47,6 +47,10 @@ MonoBehaviour:
     m_Localized: Press E to Interact
     m_Metadata:
       m_Items: []
+  - m_Id: 2626984271613952
+    m_Localized: You dont have the key
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

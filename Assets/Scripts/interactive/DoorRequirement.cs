@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class DoorRequirement : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public ItemClass itemdata; // detos de la llave requerida
+    //
+    public bool HasKeyToOpen()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        InventoryManager inventoryManager = GetComponent<InventoryManager>();
+        if (inventoryManager != null) 
+        {
+            return inventoryManager.IsOnInventory(itemdata);
+        }
+        return false;
     }
 }
