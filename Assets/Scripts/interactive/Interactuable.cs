@@ -105,6 +105,7 @@ public class Interactuable : MonoBehaviour
             ItemClass dataitem = gameObject.GetComponentInChildren<PickUp>().itemdata;
             if (dataitem != null) 
             {
+                Debug.Log("inventory");
                 inventoryManager.AddItemsToInventory(dataitem);
             }
             //GameManager.Instance.AgregarObjetoAlInventario(gameObject);
