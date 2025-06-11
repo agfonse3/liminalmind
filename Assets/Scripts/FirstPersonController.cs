@@ -12,14 +12,13 @@ public class FirstPersonController : MonoBehaviour
 
     [Header("Footstep Settings")]
     public AudioClip[] footstepClips;
-    public AudioSource footstepSource;
     public float minStepPitch = 0.9f;
     public float maxStepPitch = 1.1f;
 
     [Header("Mouse Look")]
     public float mouseSensitivity = 100f;
-    public Transform cameraTransform; // Asigna el transform de la cámara en el inspector.
-    private float xRotation = 0f; // Rotación actual de la cámara sobre el eje X.
+    public Transform cameraTransform;
+    private float xRotation = 0f;
 
     [Header("Crouch Settings")]
     public float crouchHeight = 1f;
@@ -46,21 +45,27 @@ public class FirstPersonController : MonoBehaviour
     private bool stepTriggered = false;
     private Vector3 cameraStartPos;
 
-    private CharacterController controller; // Referencia al componente CharacterController.
-    private Vector3 velocity; // Velocidad actual del jugador.
-    private bool isGrounded; // Confirma si el juegador está en el suelo
+    private CharacterController controller;
+    private Vector3 velocity;
+    private bool isGrounded;
     private float standingCameraY;
     private float crouchingCameraY;
     private float currentCameraY;
 
-    private SanitySystem sanitySystem; // Referencia al componente SanitySystem.
+    [Header("Sanity Settings")]//
+    public float maxSanity = 100f;//
+    public float sanityDecreaseRate = 5f;//
+    public float sanityRegenRate = 2f;//
+    public float sanityRegenDelay = 3f;//
+    private float currentSanity;//
+    private float timeSinceLastSeen = 0f;//
+    public LayerMask lineOfSightObstacles;//
+    private bool sonidoAgitacionYaDisparado = false;
+    private bool terrorYaDisparado = false;
 
     void Start()
     {
-        // Conseguir el componente CharacterController ligado al GameObject.
         controller = GetComponent<CharacterController>();
-
-        // Deja el cursos en el centro de la pantalla y lo esconde.
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -71,107 +76,143 @@ public class FirstPersonController : MonoBehaviour
         standingCameraY = cameraStartPos.y;
         crouchingCameraY = standingCameraY - 0.5f;
         currentCameraY = standingCameraY;
-
-        // Conseguir el componente SanitySystem, o lo añade si no existe para prevenir componentes duplicados.
-        sanitySystem = GetComponent<SanitySystem>();
-        if (sanitySystem == null)
-        {
-            sanitySystem = gameObject.AddComponent<SanitySystem>();
-        }
-        sanitySystem.cameraTransform = cameraTransform; // Asignar transform de la cámara al SanitySystem.
+        currentSanity = maxSanity;
     }
 
     void Update()
     {
-        // Desbloquear curso si se presiona Esc.
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        UpdateIsGrounded(); // Revisa si el jugador está en el suelo.
-
-        HandleMouseLook(); // Se encarga de la rotación de la cámara basada en el input del ratón.
-        HandleCrouch(); // Se encarga del input para agacharse y las transiciones de ese estado.
-        HandleMovement(); // Se encarga del movimiento del jugador(caminar, correr, saltar).
-        HandleHeadBob(); // Se encarga del meneo de la cabeza.
-        RegenerateStamina(); // Regenera energía con el tiempo.
-        sanitySystem.HandleSanity(); // LLama la lógica del Update de SanitySystem.
-
+        UpdateIsGrounded();
+        HandleMouseLook();
+        HandleCrouch();
+        HandleMovement();
+        HandleHeadBob();
+        RegenerateStamina();
+        HandleSanity();
     }
 
+    /// <summary>
+    /// //////////////////////////////////////////////////////////////////////////////
+    /// </summary>
+    void HandleSanity()
+    {
+        SanityAffectingEntity[] targets = Object.FindObjectsByType<SanityAffectingEntity>(FindObjectsSortMode.None);
+        bool seesAnyEntity = false;
+
+        foreach (var entity in targets)
+        {
+            Vector3 directionToTarget = entity.transform.position - cameraTransform.position;
+            Vector3 dirNormalized = directionToTarget.normalized;
+            float distance = directionToTarget.magnitude;
+
+            if (Vector3.Dot(cameraTransform.forward, dirNormalized) > 0.5f) // ~60 deg FOV
+            {
+                Ray ray = new Ray(cameraTransform.position, dirNormalized);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit, distance, lineOfSightObstacles))
+                {
+                    var sanityComponent = hit.transform.GetComponentInParent<SanityAffectingEntity>();
+                    if (sanityComponent == entity)
+                    {
+                        seesAnyEntity = true;
+                        break; // Stop checking others once one is seen
+                    }
+                }
+            }
+        }
+
+        if (seesAnyEntity)
+        {
+            currentSanity -= sanityDecreaseRate * Time.deltaTime;
+            currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
+            timeSinceLastSeen = 0f;
+
+            if (!sonidoAgitacionYaDisparado)
+            {
+                AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxAgitacion);
+                sonidoAgitacionYaDisparado = true;
+            }
+            if (!terrorYaDisparado)
+            {
+                AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxTerror);
+                terrorYaDisparado = true;
+            }
+
+
+            Debug.Log($"[Sanity] Decreasing: {currentSanity:F2}");
+        }
+        else
+        {
+            timeSinceLastSeen += Time.deltaTime;
+            if (timeSinceLastSeen >= sanityRegenDelay)
+            {
+                currentSanity += sanityRegenRate * Time.deltaTime;
+                currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
+            }
+
+            sonidoAgitacionYaDisparado = false;
+            terrorYaDisparado = false;
+        }
+    }
+
+    /// <summary>
+    /// ////////////////////////////////////////////////////////////////////////////////////
+    /// </summary>
     void HandleMouseLook()
     {
-        // Conseguir input del ratón.
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        // Ajustar rotación de la cámara en base al input del ratón.
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f); // Limita la rotación vertical de la cámara.
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        // Aplica la rotación al transform de la cámara.
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-
-        // Gira al GameObject jugador horizontalmente.
         transform.Rotate(Vector3.up * mouseX);
     }
 
     void HandleMovement()
     {
-        // Reinicia velocidad vertical cuando está en el suelo.
         if (isGrounded && velocity.y < 0)
             velocity.y = -0.1f;
 
-        // Conseguir input horizontal y vertical.
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
-        Vector3 move = transform.right * moveX + transform.forward * moveZ; // Calcular dirección del movimiento.
+        Vector3 move = transform.right * moveX + transform.forward * moveZ;
 
-        // Determina si el jugador quiere correr.
         bool wantsToSprint = Input.GetKey(KeyCode.LeftShift) && !isCrouching && move.magnitude > 0.1f;
 
-        // Se encarga de correr y consumo de energía.
         if (wantsToSprint && currentStamina > sprintStaminaThreshold)
         {
             isSprinting = true;
             currentStamina -= staminaDrain * Time.deltaTime;
-            regenTimer = 0f; // Reinicia el contador de regeneración de energía.
+            regenTimer = 0f;
         }
         else
         {
             isSprinting = false;
         }
 
-        // Evita poder correr con 0 de energía.
         if (currentStamina <= 0f)
         {
             currentStamina = 0f;
             isSprinting = false;
         }
 
-        // Comienza a regenerar energía después de un momento.
         if (!isSprinting && !wasSprintingLastFrame)
             regenTimer += Time.deltaTime;
 
-        // Determina la velocidad de moviemiento actual.
         float speed = walkSpeed;
         if (isSprinting)
             speed = sprintSpeed;
         else if (isCrouching)
             speed = crouchSpeed;
 
-        // Mueve al jugador usando el CharacterController.
         controller.Move(move * speed * Time.deltaTime);
 
-        // Se encarga de saltar.
         if (Input.GetButtonDown("Jump") && isGrounded && !isCrouching)
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
-        // Aplicar gravedad.
         velocity.y += gravity * Time.deltaTime;
-
-        // Mueve al jugador verticalmente.
         controller.Move(velocity * Time.deltaTime);
 
         wasSprintingLastFrame = isSprinting;
@@ -179,38 +220,32 @@ public class FirstPersonController : MonoBehaviour
 
     void HandleCrouch()
     {
-        // Cambia entre agachado/erguido cuando se presiona la tecla.
         if (Input.GetKeyDown(KeyCode.LeftControl))
             isCrouching = !isCrouching;
 
-        // Transición más suave de la altura entre estados agachado/erguido.
         float targetHeight = isCrouching ? crouchHeight : originalHeight;
         controller.height = Mathf.MoveTowards(controller.height, targetHeight, crouchTransitionSpeed * Time.deltaTime);
 
-        // Transición más suave de la posición vertical de la cámara.
         float targetCamY = isCrouching ? crouchingCameraY : standingCameraY;
         currentCameraY = Mathf.MoveTowards(currentCameraY, targetCamY, crouchTransitionSpeed * Time.deltaTime);
     }
 
     void RegenerateStamina()
     {
-        // Regenera energía si no se está corriendo y después de un momento.
         if (!isSprinting && regenTimer >= regenDelay && currentStamina < maxStamina)
         {
             currentStamina += staminaRegen * Time.deltaTime;
-            currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina); // Cappear energía a valor máximo.
+            currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
         }
     }
 
     void UpdateIsGrounded()
     {
-        // Ver si el jugaro está en el suelo usando CharacterController.isGrounded.
         isGrounded = controller.isGrounded;
 
-        // Realiza un raycast adicional´para detección de suelo más precisa.
         if (!isGrounded)
         {
-            // Lanza un pequeño rayp hacia abajo para revisar si esta en el suelo.
+            // Check a short distance below the player to be sure
             Vector3 origin = transform.position + Vector3.up * 0.1f;
             isGrounded = Physics.Raycast(origin, Vector3.down, out _, 0.2f);
         }
@@ -218,24 +253,24 @@ public class FirstPersonController : MonoBehaviour
 
     void PlayFootstep()
     {
-        // Reproduce sonidos de pasos.
-
-        if (footstepClips.Length == 0 || !footstepSource || !isGrounded)
+        if (!isGrounded)
             return;
 
-        int index = Random.Range(0, footstepClips.Length);
-        footstepSource.pitch = Random.Range(minStepPitch, maxStepPitch);
-        footstepSource.PlayOneShot(footstepClips[index]);
+        float moveX = Input.GetAxis("Horizontal");
+        float moveZ = Input.GetAxis("Vertical");
+
+        bool isMoving = Mathf.Abs(moveX) > 0.1f || Mathf.Abs(moveZ) > 0.1f;
+
+        if (isMoving)
+        {
+            AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxPaso);
+        }
     }
 
     void HandleHeadBob()
     {
-        // Se encarga del efecto de menear la cabeza.
-
         bool isMovingAndGrounded = isGrounded &&
-    (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f);
-
-
+            (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f);
 
         if (isMovingAndGrounded)
         {
@@ -257,11 +292,9 @@ public class FirstPersonController : MonoBehaviour
             float bobOffset = Mathf.Sin(bobTimer) * currentBobAmp;
             float sine = Mathf.Sin(bobTimer);
 
-
-            // Activa un paso para reproducir un sonido cuando termina de menear la cabeza del todo.
+            // Trigger step when bob reaches downward trough
             if (Mathf.Sin(bobTimer) < -0.95f && !stepTriggered)
             {
-
                 PlayFootstep();
                 stepTriggered = true;
             }
@@ -284,8 +317,3 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 }
-
-
-
-
-

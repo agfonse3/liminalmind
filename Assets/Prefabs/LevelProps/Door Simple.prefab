@@ -26,23 +26,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c88d6360b3d774443a110fbbd4bc46ba, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c88d6360b3d774443a110fbbd4bc46ba, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c88d6360b3d774443a110fbbd4bc46ba, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.70710677
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c88d6360b3d774443a110fbbd4bc46ba, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.70710677
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c88d6360b3d774443a110fbbd4bc46ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c88d6360b3d774443a110fbbd4bc46ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -82,14 +82,45 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -6799533621306556812, guid: c88d6360b3d774443a110fbbd4bc46ba, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 783151153093186416}
+      addedObject: {fileID: 3390352358001778057}
+    - targetCorrespondingSourceObject: {fileID: -6799533621306556812, guid: c88d6360b3d774443a110fbbd4bc46ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7162766584748397709}
+    - targetCorrespondingSourceObject: {fileID: -6799533621306556812, guid: c88d6360b3d774443a110fbbd4bc46ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1214476912266577228}
+    - targetCorrespondingSourceObject: {fileID: -6799533621306556812, guid: c88d6360b3d774443a110fbbd4bc46ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8519728223499671256}
   m_SourcePrefab: {fileID: 100100000, guid: c88d6360b3d774443a110fbbd4bc46ba, type: 3}
 --- !u!1 &8216791988028810408 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6799533621306556812, guid: c88d6360b3d774443a110fbbd4bc46ba, type: 3}
   m_PrefabInstance: {fileID: 6027185146959616732}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &783151153093186416
+--- !u!95 &3390352358001778057
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216791988028810408}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c36ff66cdbb4a93468e98ae8e49b261b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &7162766584748397709
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,5 +139,41 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.80000025, y: 0.035000015, z: 2.04}
-  m_Center: {x: -0.39999667, y: -0.0000018954278, z: 1.02}
+  m_Size: {x: 0.8, y: 0.03500003, z: 2.0400004}
+  m_Center: {x: -0.4000006, y: -0.0000018954278, z: 1.0200002}
+--- !u!114 &1214476912266577228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216791988028810408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44325b52d0c4e8441b66b9a99f24a512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelUI: {fileID: 0}
+  textoMensaje: {fileID: 0}
+  mensaje: Presiona la E para abrir la puerta
+--- !u!65 &8519728223499671256
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216791988028810408}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8, y: 0.41621765, z: 2.0400004}
+  m_Center: {x: -0.40000057, y: -0.041493673, z: 1.0200002}
