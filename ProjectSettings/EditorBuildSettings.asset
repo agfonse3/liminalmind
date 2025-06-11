@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/UItemp.unity
     guid: ce1a9148fc6e8e146901bcf812ef6ad4
   - enabled: 1
-    path: Assets/Scenes/primer_sprint.unity
-    guid: f73cc34fa42f2bb4faf558bc8054e1a9
+    path: Assets/Scenes/Levels/level1_office.unity
+    guid: 300dda2310437634b85147245caa00be
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: e391dca27aeaadf4b92035e1b662d2dd, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
