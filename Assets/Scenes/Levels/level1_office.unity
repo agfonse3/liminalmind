@@ -1611,7 +1611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2051574413554811301, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2689401814951259255, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_AnchorMax.x
@@ -13847,6 +13847,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1094849901655589203, guid: e1bbad83ae2b7d048858fa993acc4bf9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 852402871}
+    - targetCorrespondingSourceObject: {fileID: 1094849901655589203, guid: e1bbad83ae2b7d048858fa993acc4bf9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 852402872}
     - targetCorrespondingSourceObject: {fileID: 8790217858762999894, guid: e1bbad83ae2b7d048858fa993acc4bf9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2008480112}
@@ -16097,6 +16100,10 @@ PrefabInstance:
       propertyPath: textInteractuable
       value: 
       objectReference: {fileID: 1596637832}
+    - target: {fileID: 7689586449187942139, guid: 9295189b4f03b8a47b9873a8492069d1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bb193f4134dde224aa2718f271e4f1f2, type: 2}
     - target: {fileID: 7863301623646972091, guid: 9295189b4f03b8a47b9873a8492069d1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.585497
@@ -22309,8 +22316,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelUI: {fileID: 2143466784}
   textoMensaje: {fileID: 1596637833}
-  textInteractuable: {fileID: 0}
-  puerta: {fileID: 0}
+  textInteractuable: {fileID: 2143466784}
+  puerta: {fileID: 852402868}
 --- !u!95 &852402870
 Animator:
   serializedVersion: 7
@@ -22354,6 +22361,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.77803993, y: 2.5289829, z: 1.7365171}
   m_Center: {x: -0.16461349, y: 0.7644914, z: -0.106960036}
+--- !u!114 &852402872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852402868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11810d93b9a8f0248a9c0993e406b91e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemdata: {fileID: 11400000, guid: 09f236c904168644699e73a1563b341e, type: 2}
 --- !u!65 &857588250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74681,15 +74701,23 @@ PrefabInstance:
     - target: {fileID: 5436721242770437866, guid: 19a6cb4e4dea3d0428f5e0d5cb5c112e, type: 3}
       propertyPath: panelUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2143466784}
     - target: {fileID: 5436721242770437866, guid: 19a6cb4e4dea3d0428f5e0d5cb5c112e, type: 3}
       propertyPath: textoUI
       value: 
       objectReference: {fileID: 1596637833}
     - target: {fileID: 5436721242770437866, guid: 19a6cb4e4dea3d0428f5e0d5cb5c112e, type: 3}
+      propertyPath: inventary
+      value: 
+      objectReference: {fileID: 398837119}
+    - target: {fileID: 5436721242770437866, guid: 19a6cb4e4dea3d0428f5e0d5cb5c112e, type: 3}
       propertyPath: panelInteractuar
       value: 
       objectReference: {fileID: 2143466784}
+    - target: {fileID: 5436721242770437866, guid: 19a6cb4e4dea3d0428f5e0d5cb5c112e, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
