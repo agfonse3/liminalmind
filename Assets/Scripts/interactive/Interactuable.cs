@@ -11,6 +11,7 @@ public class Interactuable : MonoBehaviour
     private Transform jugador;
     private bool dentroRango = false;
     public Light luzInteractuable;
+    public GameObject inventary;
     InventoryManager inventoryManager;
     //Inventario inventario;
     void Start()
@@ -35,6 +36,8 @@ public class Interactuable : MonoBehaviour
         {
             panelUI.SetActive(false);
         }
+
+        inventoryManager = inventary.GetComponent<InventoryManager>();
     }
 
     void Update()
@@ -105,6 +108,8 @@ public class Interactuable : MonoBehaviour
             ItemClass dataitem = gameObject.GetComponentInChildren<PickUp>().itemdata;
             if (dataitem != null) 
             {
+                Debug.Log("inventory");
+                Debug.Log(dataitem);
                 inventoryManager.AddItemsToInventory(dataitem);
             }
             //GameManager.Instance.AgregarObjetoAlInventario(gameObject);

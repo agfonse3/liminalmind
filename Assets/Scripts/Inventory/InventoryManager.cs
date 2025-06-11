@@ -47,6 +47,8 @@ public class InventoryManager : MonoBehaviour
     //metodo que adiciona items en el inventario
     public void AddItemsToInventory(ItemClass item) 
     {
+        Debug.Log("adiciona un item");
+        Debug.Log(item);
         items.Add(item);
         UpdateInventoryUI();
     }
