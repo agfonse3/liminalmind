@@ -8,6 +8,7 @@ public class AbrirPuertaConLlave : MonoBehaviour
     public GameObject panelUI; // Panel que muestra el mensaje
     public TextMeshProUGUI textoMensaje; // Texto dentro del panel
     public GameObject textInteractuable; // gameobject del texto
+
     //public string mensaje = "Presiona la E para abrir la puerta"; // Mensaje a mostrar
     //public GameObject llaveNecesaria; // Referencia directa al objeto
     public GameObject puerta;

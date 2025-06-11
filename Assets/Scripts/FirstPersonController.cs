@@ -53,7 +53,7 @@ public class FirstPersonController : MonoBehaviour
     private float crouchingCameraY;
     private float currentCameraY;
 
-    private SanityController sanitySystem; // Referencia al componente SanitySystem.
+    private SanitySystem sanitySystem; //  Referencia al componente SanitySystem.
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -69,10 +69,10 @@ public class FirstPersonController : MonoBehaviour
         currentCameraY = standingCameraY;
 
         // Conseguir el componente SanitySystem, o lo añade si no existe para prevenir componentes duplicados.
-        sanitySystem = GetComponent<SanityController>();
+        sanitySystem = GetComponent<SanitySystem>();
         if (sanitySystem == null)
         {
-            sanitySystem = gameObject.AddComponent<SanityController>();
+            sanitySystem = gameObject.AddComponent<SanitySystem>();
         }
         sanitySystem.cameraTransform = cameraTransform; // Asignar transform de la cámara al SanitySystem.
     }
