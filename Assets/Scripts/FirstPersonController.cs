@@ -12,6 +12,7 @@ public class FirstPersonController : MonoBehaviour
 
     [Header("Footstep Settings")]
     public AudioClip[] footstepClips;
+    public AudioSource footstepSource;
     public float minStepPitch = 0.9f;
     public float maxStepPitch = 1.1f;
 
@@ -52,17 +53,7 @@ public class FirstPersonController : MonoBehaviour
     private float crouchingCameraY;
     private float currentCameraY;
 
-    [Header("Sanity Settings")]//
-    public float maxSanity = 100f;//
-    public float sanityDecreaseRate = 5f;//
-    public float sanityRegenRate = 2f;//
-    public float sanityRegenDelay = 3f;//
-    private float currentSanity;//
-    private float timeSinceLastSeen = 0f;//
-    public LayerMask lineOfSightObstacles;//
-    private bool sonidoAgitacionYaDisparado = false;
-    private bool terrorYaDisparado = false;
-
+    private SanityController sanitySystem; // Referencia al componente SanitySystem.
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -76,7 +67,14 @@ public class FirstPersonController : MonoBehaviour
         standingCameraY = cameraStartPos.y;
         crouchingCameraY = standingCameraY - 0.5f;
         currentCameraY = standingCameraY;
-        currentSanity = maxSanity;
+
+        // Conseguir el componente SanitySystem, o lo añade si no existe para prevenir componentes duplicados.
+        sanitySystem = GetComponent<SanityController>();
+        if (sanitySystem == null)
+        {
+            sanitySystem = gameObject.AddComponent<SanityController>();
+        }
+        sanitySystem.cameraTransform = cameraTransform; // Asignar transform de la cámara al SanitySystem.
     }
 
     void Update()
@@ -87,77 +85,10 @@ public class FirstPersonController : MonoBehaviour
         HandleMovement();
         HandleHeadBob();
         RegenerateStamina();
-        HandleSanity();
+        sanitySystem.HandleSanity();
     }
 
-    /// <summary>
-    /// //////////////////////////////////////////////////////////////////////////////
-    /// </summary>
-    void HandleSanity()
-    {
-        SanityAffectingEntity[] targets = Object.FindObjectsByType<SanityAffectingEntity>(FindObjectsSortMode.None);
-        bool seesAnyEntity = false;
-
-        foreach (var entity in targets)
-        {
-            Vector3 directionToTarget = entity.transform.position - cameraTransform.position;
-            Vector3 dirNormalized = directionToTarget.normalized;
-            float distance = directionToTarget.magnitude;
-
-            if (Vector3.Dot(cameraTransform.forward, dirNormalized) > 0.5f) // ~60 deg FOV
-            {
-                Ray ray = new Ray(cameraTransform.position, dirNormalized);
-                RaycastHit hit;
-
-                if (Physics.Raycast(ray, out hit, distance, lineOfSightObstacles))
-                {
-                    var sanityComponent = hit.transform.GetComponentInParent<SanityAffectingEntity>();
-                    if (sanityComponent == entity)
-                    {
-                        seesAnyEntity = true;
-                        break; // Stop checking others once one is seen
-                    }
-                }
-            }
-        }
-
-        if (seesAnyEntity)
-        {
-            currentSanity -= sanityDecreaseRate * Time.deltaTime;
-            currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
-            timeSinceLastSeen = 0f;
-
-            if (!sonidoAgitacionYaDisparado)
-            {
-                AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxAgitacion);
-                sonidoAgitacionYaDisparado = true;
-            }
-            if (!terrorYaDisparado)
-            {
-                AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxTerror);
-                terrorYaDisparado = true;
-            }
-
-
-            Debug.Log($"[Sanity] Decreasing: {currentSanity:F2}");
-        }
-        else
-        {
-            timeSinceLastSeen += Time.deltaTime;
-            if (timeSinceLastSeen >= sanityRegenDelay)
-            {
-                currentSanity += sanityRegenRate * Time.deltaTime;
-                currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
-            }
-
-            sonidoAgitacionYaDisparado = false;
-            terrorYaDisparado = false;
-        }
-    }
-
-    /// <summary>
-    /// ////////////////////////////////////////////////////////////////////////////////////
-    /// </summary>
+    
     void HandleMouseLook()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
@@ -253,18 +184,26 @@ public class FirstPersonController : MonoBehaviour
 
     void PlayFootstep()
     {
-        if (!isGrounded)
+        //if (!isGrounded)
+        //    return;
+
+        //float moveX = Input.GetAxis("Horizontal");
+        //float moveZ = Input.GetAxis("Vertical");
+
+        //bool isMoving = Mathf.Abs(moveX) > 0.1f || Mathf.Abs(moveZ) > 0.1f;
+
+        //if (isMoving)
+        //{
+        //    AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxPaso);
+        //}
+
+        // Reproduce sonidos de pasos.
+
+        if (footstepClips.Length == 0 || !footstepSource || !isGrounded)
             return;
-
-        float moveX = Input.GetAxis("Horizontal");
-        float moveZ = Input.GetAxis("Vertical");
-
-        bool isMoving = Mathf.Abs(moveX) > 0.1f || Mathf.Abs(moveZ) > 0.1f;
-
-        if (isMoving)
-        {
-            AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxPaso);
-        }
+        int index = Random.Range(0, footstepClips.Length);
+        footstepSource.pitch = Random.Range(minStepPitch, maxStepPitch);
+        footstepSource.PlayOneShot(footstepClips[index]);
     }
 
     void HandleHeadBob()
