@@ -48,6 +48,16 @@ public class AbrirPuertaConLlave : MonoBehaviour
             //{
             //    Debug.Log("No tienes el objeto necesario.");
             //}
+
+            if (hasKey)
+            {
+                AbrirPuerta();
+            }
+            else
+            {
+                Debug.Log("No tienes el objeto necesario.");
+            }
+
         }
     }
 
