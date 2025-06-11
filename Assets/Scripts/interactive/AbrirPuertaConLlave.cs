@@ -6,8 +6,9 @@ public class AbrirPuertaConLlave : MonoBehaviour
     private bool jugadorEnZona = false;
 
     public GameObject panelUI; // Panel que muestra el mensaje
-    public TextMeshProUGUI textoMensaje; // Texto dentro del panel
+    //public TextMeshProUGUI textoMensaje; // Texto dentro del panel
     public GameObject textInteractuable; // gameobject del texto
+    public GameObject textLlave; // gameobject del texto de la llave
 
     //public string mensaje = "Presiona la E para abrir la puerta"; // Mensaje a mostrar
     //public GameObject llaveNecesaria; // Referencia directa al objeto
@@ -57,6 +58,7 @@ public class AbrirPuertaConLlave : MonoBehaviour
             else
             {
                 Debug.Log("No tienes el objeto necesario.");
+                textLlave.SetActive(true);
             }
 
         }
@@ -89,6 +91,10 @@ public class AbrirPuertaConLlave : MonoBehaviour
             {
                 //textoMensaje.text = mensaje;
                 textInteractuable.SetActive(true);
+            }
+            else 
+            {
+                textInteractuable.SetActive(false);
             }
         }
     }

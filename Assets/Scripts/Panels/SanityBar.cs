@@ -16,7 +16,7 @@ public class SanityBar : MonoBehaviour
 
     public void Update()
     {
-        ChangeCurrentSanity(sanitytemp);
+        ChangeCurrentSanity(sanityScriptableObject.currentSanity);
     }
     public void ChangeSanityMax(float sanityMax)  // variable scritable object
     {

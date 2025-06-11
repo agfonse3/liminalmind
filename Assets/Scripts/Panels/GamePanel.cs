@@ -7,12 +7,15 @@ public class GamePanel : MonoBehaviour
     [SerializeField] GameObject pausePannel; //panel configuracion
     [SerializeField] GameObject helpPannel; //panel ayuda
     [SerializeField] GameObject inventoryPannel; //panel inventario
+    [SerializeField] GameObject player;
+    SanitySystem sanitySystem;
 
     public PausePanel PausePanel;
 
     void Start()
     {
         PausePanel = pausePannel.GetComponent<PausePanel>();
+        sanitySystem = player.gameObject.GetComponent<SanitySystem>();
     }
 
     public void Update()
