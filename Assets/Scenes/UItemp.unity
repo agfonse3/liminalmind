@@ -853,7 +853,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f679aaea3dd75ff439db07e2abea3be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityOfPlayer: 0
   numberActualScene: 0
   lastPosition: {x: 0, y: 0, z: 0}
   listaInventario: []
@@ -884,21 +883,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 780353593451047094, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
-      propertyPath: inventoryPannel
-      value: 
-      objectReference: {fileID: 7588668401188757527}
-    - target: {fileID: 1902801315580116892, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2051574413554811301, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 2158586049601041743, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4597126652950981326, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_AnchorMax.x
@@ -997,11 +984,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
---- !u!1 &7588668401188757527 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2158586049601041743, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
-  m_PrefabInstance: {fileID: 7588668401188757526}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

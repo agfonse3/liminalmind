@@ -2952,7 +2952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4785292873924935762
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3407,6 +3407,7 @@ GameObject:
   - component: {fileID: 1792992458667872927}
   - component: {fileID: 874079555063282047}
   - component: {fileID: 9179921094416423488}
+  - component: {fileID: 5038537931523598366}
   m_Layer: 5
   m_Name: InventoryPanel
   m_TagString: Untagged
@@ -3476,6 +3477,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5038537931523598366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2158586049601041743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19130f9b5e5bc51438550e3a056545ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InventoryPannel: {fileID: 2158586049601041743}
 --- !u!1 &2374991126533170794
 GameObject:
   m_ObjectHideFlags: 0
@@ -4900,9 +4914,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2158586049601041743}
-        m_TargetAssemblyTypeName: HelpPanel, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 5038537931523598366}
+        m_TargetAssemblyTypeName: InventoryPanel, Assembly-CSharp
+        m_MethodName: ExitPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7153,7 +7167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.49803925, g: 0.49803925, b: 0.49803925, a: 0.392}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7185,6 +7199,7 @@ MonoBehaviour:
   pausePannel: {fileID: 4439714674217027028}
   helpPannel: {fileID: 6313855306872486494}
   inventoryPannel: {fileID: 2158586049601041743}
+  player: {fileID: 0}
   PausePanel: {fileID: 0}
 --- !u!1 &4898017151327344970
 GameObject:
@@ -7279,7 +7294,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60.4
+  m_fontSize: 64.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9171,7 +9186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -250, y: -20}
+  m_AnchoredPosition: {x: -245, y: -20}
   m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &8716273902015821766

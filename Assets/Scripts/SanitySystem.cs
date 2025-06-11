@@ -6,10 +6,11 @@ public class SanitySystem : MonoBehaviour
     public float sanityDecreaseRate = 5f; // Cordura perdida/segundo.
     public float sanityRegenRate = 2f; // Regeneración de cordura/segundo.
     public float sanityRegenDelay = 3f; // Retraso antés que la regeneración comience.
-    private float currentSanity;
+    public float currentSanity;
     private float timeSinceLastSeen = 0f;
     public LayerMask lineOfSightObstacles; // Obstáculos para el raycast (paredes, puertas).
     public Transform cameraTransform; // Transform de la cámara.
+    public SanityScriptableObject sanityScriptableObject;
 
     public float CurrentSanity { get { return currentSanity; } private set { currentSanity = value; } }
 
@@ -52,6 +53,7 @@ public class SanitySystem : MonoBehaviour
             currentSanity -= sanityDecreaseRate * Time.deltaTime;
             currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
             timeSinceLastSeen = 0f;
+            sanityScriptableObject.currentSanity= currentSanity;
             Debug.Log($"[Sanity] Decreasing: {currentSanity:F2}");
         }
         else

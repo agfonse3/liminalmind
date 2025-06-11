@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public float sanityOfPlayer; //cordura del jugador
+    //public float sanityOfPlayer; //cordura del jugador
     public int numberActualScene; //guarda el numero de la escena actual
 
     //ultima escena
