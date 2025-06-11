@@ -60,6 +60,14 @@ MonoBehaviour:
       Ctrl => Agacharse'
     m_Metadata:
       m_Items: []
+  - m_Id: 2575833748672512
+    m_Localized: Presiona E para interactuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2626984271613952
+    m_Localized: No tienes la llave
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

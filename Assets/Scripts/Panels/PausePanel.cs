@@ -11,7 +11,7 @@ public class PausePanel : PanelBasic
 
     void Start()
     {
-        AudiomanagerTemp.Instance.PlayMusic(audioBGS);
+//        AudiomanagerTemp.Instance.PlayMusic(audioBGS);
         settingsPanel = settingsPannel.GetComponent<SettingsPanel>();
         confirmationPanel=confirmationPannel.GetComponent<ConfirmationPanel>();
     }
@@ -32,8 +32,7 @@ public class PausePanel : PanelBasic
        
     }
 
-
-    public void SettingsButton() 
+        public void SettingsButton() 
     {
         AudiomanagerTemp.Instance.PlayEndMusic(audioBGS);
         pausePannel.SetActive(false);

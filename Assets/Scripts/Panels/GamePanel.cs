@@ -6,11 +6,16 @@ public class GamePanel : MonoBehaviour
 
     [SerializeField] GameObject pausePannel; //panel configuracion
     [SerializeField] GameObject helpPannel; //panel ayuda
+    [SerializeField] GameObject inventoryPannel; //panel inventario
+    [SerializeField] GameObject player;
+    SanitySystem sanitySystem;
+
     public PausePanel PausePanel;
 
     void Start()
     {
         PausePanel = pausePannel.GetComponent<PausePanel>();
+        sanitySystem = player.gameObject.GetComponent<SanitySystem>();
     }
 
     public void Update()
@@ -26,6 +31,12 @@ public class GamePanel : MonoBehaviour
             GameManager.Instance.isGamePaused = true;
             HelpPan();
         }
+
+        if (Input.GetKey(KeyCode.F) && !GameManager.Instance.gameOver)
+        {
+            GameManager.Instance.isGamePaused = true;
+            InventoryPan();
+        }
     }
 
     //Metodo que activa panel de pausa
@@ -35,11 +46,7 @@ public class GamePanel : MonoBehaviour
         if (PausePanel != null)
         {
             //Asigna la musica del panel objetivo
-            AudiomanagerTemp.Instance.PlayMusic(PausePanel.audioBGS);
-        }
-        else
-        {
-            Debug.Log("no se encontro el objeto");
+           // AudiomanagerTemp.Instance.PlayMusic(PausePanel.audioBGS);
         }
         pausePannel.SetActive(true);
     }
@@ -49,6 +56,13 @@ public class GamePanel : MonoBehaviour
     {
         Time.timeScale = 0f;
         helpPannel.SetActive(true);
+    }
+
+    //metodo que activa panel de inventario
+    public void InventoryPan()
+    {
+        Time.timeScale = 0f;
+        inventoryPannel.SetActive(true);
     }
 
 }

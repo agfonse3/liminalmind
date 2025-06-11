@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d8b26c66659a0340877f91378419eb3, type: 3}
+  m_Name: NumberNote
+  m_EditorClassIdentifier: 
+  id: NoteNumber
+  itemName: NoteWithoutNumbers
+  itemsprite: {fileID: 21300000, guid: c9a1c5cc40399f54e8be73b1e122f6c0, type: 3}
+  itemprefab: {fileID: 1775953111410325569, guid: 5e0ce941de6572d4ba144202f95ee2f4, type: 3}
+  noteInPieces:
+  - {fileID: 21300000, guid: e10025f6d337e524fb792b388e4df3f7, type: 3}
+  - {fileID: 21300000, guid: c09fe511f8eb507479c6134cfb1ec2be, type: 3}
+  - {fileID: 21300000, guid: 2d146f21ee63bb24c8ce883eb86233ed, type: 3}
+  - {fileID: 21300000, guid: 4e1337b295ec7764da8e8a4ed6b200d2, type: 3}

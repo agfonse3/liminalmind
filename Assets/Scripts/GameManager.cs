@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public float sanityOfPlayer; //cordura del jugador
+    //public float sanityOfPlayer; //cordura del jugador
     public int numberActualScene; //guarda el numero de la escena actual
 
     //ultima escena
@@ -86,34 +86,39 @@ public class GameManager : MonoBehaviour
 
 // MÉTODOS DEL INVENTARIO
     // Método para agregar un objeto al inventario
-    public void AgregarObjetoAlInventario(GameObject objeto)
-    {
-        listaInventario.Add(objeto);
-        Debug.Log("Objeto agregado al inventario: " + objeto.name);
-    }
+    //public void AgregarObjetoAlInventario(GameObject objeto)
+    //{
+    //    listaInventario.Add(objeto);
+    //    Debug.Log("Objeto agregado al inventario: " + objeto.name);
+    //}
 
-    // Método para mostrar los objetos que están en el inventario
-    public void MostrarInventario()
-{
-    Debug.Log("Inventario actual:");
+    //// Método para mostrar los objetos que están en el inventario
+    //public void MostrarInventario()
+    //{
+    //    Debug.Log("Inventario actual:");
 
-    foreach (GameObject obj in listaInventario)
-    {
-        if (obj != null) // Verifica si el objeto no ha sido destruido
-        {
-            Debug.Log("- " + obj.name);
-        }
-        else
-        {
-            Debug.Log("- Un objeto ha sido eliminado del inventario.");
-        }
-    }
-}
+    //    foreach (GameObject obj in listaInventario)
+    //    {
+    //        if (obj != null) // Verifica si el objeto no ha sido destruido
+    //        {
+    //            Debug.Log("- " + obj.name);
+    //        }
+    //        else
+    //        {
+    //            Debug.Log("- Un objeto ha sido eliminado del inventario.");
+    //        }
+    //    }
+    //}
+// Método para verificar si el jugador tiene un objeto específico en el inventario
+//public bool TieneObjeto(GameObject objeto)
+//{
+//    return listaInventario.Contains(objeto);
+//}
  void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I)) // Presionar "I" para abrir el inventario
-        {
-            GameManager.Instance.MostrarInventario();
-        }
+        //if (Input.GetKeyDown(KeyCode.I)) // Presionar "I" para abrir el inventario
+        //{
+        //    GameManager.Instance.MostrarInventario();
+        //}
     }
 }

@@ -7,15 +7,19 @@ TagManager:
   - Recolectable
   - zonaAscensor
   - zonaExterna
+  - BlueKey
+  - RedKey
+  - BlackKey
+  - GreenKey
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstacles
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Player
   - 
   - 
   - 
