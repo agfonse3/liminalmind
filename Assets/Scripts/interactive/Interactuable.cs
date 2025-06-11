@@ -115,7 +115,7 @@ public class Interactuable : MonoBehaviour
             //GameManager.Instance.AgregarObjetoAlInventario(gameObject);
             Debug.Log("Objeto recogido: " + gameObject.name);
             //GameManager.Instance.MostrarInventario(); // Muestra el inventario después de recoger
-            Destroy(gameObject); // Elimina el objeto de la escena
+           // Destroy(gameObject); // Elimina el objeto de la escena
         }
          
         Debug.Log("Interacción con " + gameObject.name);

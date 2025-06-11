@@ -287,6 +287,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music: {fileID: 728810836}
   soundEffects: {fileID: 1347951094}
+  sfxAgitacion: {fileID: 0}
+  sfxAscensor: {fileID: 0}
+  sfxPaso: {fileID: 0}
+  sfxBotonAscensor: {fileID: 0}
+  sfxPapel: {fileID: 0}
+  sfxTerror: {fileID: 0}
+  sfxBotonMenu: {fileID: 0}
+  musicMisterio: {fileID: 0}
+  musicAscensor: {fileID: 0}
+  musicMenu: {fileID: 0}
+  musicOficina: {fileID: 0}
 --- !u!4 &467176647
 Transform:
   m_ObjectHideFlags: 0
@@ -468,7 +479,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotsHolder: {fileID: 580680826}
-  itemToAdd: {fileID: 11400000, guid: 3d0ca243d9c6797429245cdf0e52a225, type: 2}
   items: []
 --- !u!4 &899948421
 Transform:
@@ -878,9 +888,17 @@ PrefabInstance:
       propertyPath: inventoryPannel
       value: 
       objectReference: {fileID: 7588668401188757527}
+    - target: {fileID: 1902801315580116892, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2051574413554811301, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158586049601041743, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4597126652950981326, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_AnchorMax.x

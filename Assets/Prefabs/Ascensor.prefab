@@ -769,7 +769,7 @@ MonoBehaviour:
   - tecla: 49
     nombreAnimacion: boton1
     objetoRenderer: {fileID: 7030591500789085154}
-    indiceEscena: 0
+    indiceEscena: 1
   shaderMaterial: {fileID: 2100000, guid: 1c9fffbabd8634941bf8a449056de793, type: 2}
   indiceMaterial: 1
   cameraManager: {fileID: 0}
