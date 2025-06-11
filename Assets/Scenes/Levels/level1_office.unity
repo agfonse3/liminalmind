@@ -16086,6 +16086,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2143466784}
     - target: {fileID: 7402365057231435552, guid: 9295189b4f03b8a47b9873a8492069d1, type: 3}
+      propertyPath: inventary
+      value: 
+      objectReference: {fileID: 398837119}
+    - target: {fileID: 7402365057231435552, guid: 9295189b4f03b8a47b9873a8492069d1, type: 3}
       propertyPath: panelInteractuar
       value: 
       objectReference: {fileID: 2143466784}
@@ -22693,7 +22697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &933169366
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41280,7 +41284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1596637833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74540,7 +74544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2143466785
 RectTransform:
   m_ObjectHideFlags: 0
