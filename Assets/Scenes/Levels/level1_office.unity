@@ -30497,6 +30497,18 @@ PrefabInstance:
       value: Entity
       objectReference: {fileID: 0}
     - target: {fileID: 7894076932160515371, guid: 6a784086d1499464d9089d4474548c1b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5869
+      objectReference: {fileID: 0}
+    - target: {fileID: 7894076932160515371, guid: 6a784086d1499464d9089d4474548c1b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5869
+      objectReference: {fileID: 0}
+    - target: {fileID: 7894076932160515371, guid: 6a784086d1499464d9089d4474548c1b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5869
+      objectReference: {fileID: 0}
+    - target: {fileID: 7894076932160515371, guid: 6a784086d1499464d9089d4474548c1b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.674
       objectReference: {fileID: 0}
@@ -35345,7 +35357,7 @@ MonoBehaviour:
   currentSanity: 0
   lineOfSightObstacles:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   cameraTransform: {fileID: 1277310295}
   sanityScriptableObject: {fileID: 11400000, guid: 09f3cdf103d3f3948a1ff63979ab7db6, type: 2}
 --- !u!114 &1466971473
@@ -73863,6 +73875,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1466971465}
+    - target: {fileID: 1902801315580116892, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2051574413554811301, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -73870,6 +73886,10 @@ PrefabInstance:
     - target: {fileID: 2051574413554811301, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243559624055112065, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+      propertyPath: m_fontSize
+      value: 60.4
       objectReference: {fileID: 0}
     - target: {fileID: 2902784507206259157, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: settingsPanel
@@ -73890,6 +73910,10 @@ PrefabInstance:
     - target: {fileID: 4770662457746907261, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6687288480698175863, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+      propertyPath: m_fontSize
+      value: 60.5
       objectReference: {fileID: 0}
     - target: {fileID: 6764766364173830736, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_Pivot.x

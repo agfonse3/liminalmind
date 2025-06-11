@@ -1,55 +1,31 @@
 using UnityEngine;
 using TMPro;
+
 public class AbrirPuertaConLlave : MonoBehaviour
 {
     private Animator animator;
     private bool jugadorEnZona = false;
 
-    public GameObject panelUI; // Panel que muestra el mensaje
-    //public TextMeshProUGUI textoMensaje; // Texto dentro del panel
-    public GameObject textInteractuable; // gameobject del texto
-    public GameObject textLlave; // gameobject del texto de la llave
-
-    //public string mensaje = "Presiona la E para abrir la puerta"; // Mensaje a mostrar
-    //public GameObject llaveNecesaria; // Referencia directa al objeto
+    public GameObject panelUI;
+    public GameObject textInteractuable;
+    public GameObject textLlave;
     public GameObject puerta;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        if (animator == null)
-        {
-            Debug.LogError("No se encontró un Animator en el objeto: " + gameObject.name);
-        }
 
-        if (panelUI != null)
-        {
-            panelUI.SetActive(false); // Oculta el mensaje hasta que el jugador entre en la zona
-        }
+        if (panelUI != null) panelUI.SetActive(false);
+        if (textLlave != null) textLlave.SetActive(false);
     }
 
     void Update()
     {
         if (jugadorEnZona && Input.GetKeyDown(KeyCode.E))
         {
-            //if (llaveNecesaria == null)
-            //{
-            //    Debug.LogError("La referencia a 'llaveNecesaria' no está asignada en " + gameObject.name);
-            //    return;
-            //}
-            bool hasKey = puerta.GetComponent<DoorRequirement>().HasKeyToOpen(); // rectifica si tiene la llave que requiere la puerta
-
+            bool hasKey = puerta.GetComponent<DoorRequirement>().HasKeyToOpen();
 
             Debug.Log("Intentando abrir la puerta con: " + puerta.GetComponent<DoorRequirement>().itemdata.itemName);
-
-            //if (GameManager.Instance != null && GameManager.Instance.TieneObjeto(llaveNecesaria))
-            //{
-            //    AbrirPuerta();
-            //}
-            //else
-            //{
-            //    Debug.Log("No tienes el objeto necesario.");
-            //}
 
             if (hasKey)
             {
@@ -57,10 +33,8 @@ public class AbrirPuertaConLlave : MonoBehaviour
             }
             else
             {
-                Debug.Log("No tienes el objeto necesario.");
-                textLlave.SetActive(true);
+                MostrarMensajeSinLlave();
             }
-
         }
     }
 
@@ -78,35 +52,54 @@ public class AbrirPuertaConLlave : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             jugadorEnZona = false;
-            MostrarTexto(false);
+            OcultarTextos();
         }
     }
 
     private void MostrarTexto(bool activar)
     {
-        if (panelUI != null)
+        if (panelUI != null) panelUI.SetActive(activar);
+
+        if (textInteractuable != null)
         {
-            panelUI.SetActive(activar);
-            if (activar)
-            {
-                //textoMensaje.text = mensaje;
-                textInteractuable.SetActive(true);
-            }
-            else 
-            {
-                textInteractuable.SetActive(false);
-            }
+            textInteractuable.SetActive(activar && (textLlave == null || !textLlave.activeSelf));
+            Debug.Log("Estado de textInteractuable: " + textInteractuable.activeSelf);
         }
+
+        if (!activar && textLlave != null)
+        {
+            textLlave.SetActive(false);
+        }
+    }
+
+    private void MostrarMensajeSinLlave()
+    {
+        if (textLlave != null)
+        {
+            textLlave.SetActive(true);
+        }
+
+        if (textInteractuable != null)
+        {
+            textInteractuable.SetActive(false);
+        }
+
+        Debug.Log("No tienes la llave para abrir la puerta.");
+    }
+
+    private void OcultarTextos()
+    {
+        if (textInteractuable != null) textInteractuable.SetActive(false);
+        if (textLlave != null) textLlave.SetActive(false);
+        if (panelUI != null) panelUI.SetActive(false);
     }
 
     void AbrirPuerta()
     {
-        animator.Play("puerta azul"); // Reproduce la animación de apertura
-        if (panelUI != null)
-        {
-            panelUI.SetActive(false);
-            textInteractuable.SetActive(false);
-        }
+        animator.Play("puerta azul");
+
+        OcultarTextos();
+
         Debug.Log("La puerta se ha abierto.");
     }
 }
