@@ -11,6 +11,7 @@ TagManager:
   - RedKey
   - BlackKey
   - GreenKey
+  - Obstacle
   layers:
   - Default
   - TransparentFX
