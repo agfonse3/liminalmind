@@ -75,5 +75,9 @@ public class ActivarZona : MonoBehaviour
         {
             panelUI.SetActive(activar);
         }
+        if (textInteractuable != null)
+    {
+        textInteractuable.SetActive(activar);
+    }
     }
 }

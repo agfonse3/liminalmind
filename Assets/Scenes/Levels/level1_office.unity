@@ -2089,6 +2089,10 @@ PrefabInstance:
       propertyPath: scriptAActivar
       value: 
       objectReference: {fileID: 1221344985}
+    - target: {fileID: 8793308127575981032, guid: 171f493544654ff48a024af37126cd09, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12067,6 +12071,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5038537931523598366, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 398837119}
     - target: {fileID: 6687288480698175863, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_fontSize
       value: 60.5
