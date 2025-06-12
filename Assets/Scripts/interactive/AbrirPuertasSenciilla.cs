@@ -5,17 +5,27 @@ public class AbrirPuertasSencilla : MonoBehaviour
     private Animator animator;
     private bool jugadorEnZona = false;
 
-    public GameObject panelUI; // Panel que muestra el mensaje
-    public TextMeshProUGUI textoMensaje; // Texto dentro del panel
-    public string mensaje = "Presiona la E para abrir la puerta"; // Mensaje a mostrar
+    public GameObject panelUI;
+    public GameObject textInteractuable;
+    public Animator puertaAnimator; // Se asigna el Animator desde el Inspector
 
-    void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
 
-        if (panelUI != null)
+        if (animator == null)
         {
-            panelUI.SetActive(false); // Asegura que el mensaje no aparezca hasta que el jugador entre en la zona
+            Debug.LogError("No se encontró un Animator en el objeto: " + gameObject.name);
+        }
+
+        if (panelUI != null) panelUI.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (jugadorEnZona && Input.GetKeyDown(KeyCode.E))
+        {
+            AbrirPuerta();
         }
     }
 
@@ -33,27 +43,40 @@ public class AbrirPuertasSencilla : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             jugadorEnZona = false;
-            MostrarTexto(false);
-        }
-    }
-
-    void Update()
-    {
-        if (jugadorEnZona && Input.GetKeyDown(KeyCode.E))
-        {
-            animator.Play("puertasencilla");
-            MostrarTexto(false); // Oculta el mensaje cuando la puerta se abre
-            Debug.Log("Puerta abierta");
+            OcultarTextos();
         }
     }
 
     private void MostrarTexto(bool activar)
     {
-        if (panelUI != null)
+        if (panelUI != null) panelUI.SetActive(activar);
+
+        if (textInteractuable != null)
         {
-            textoMensaje.text = mensaje;
-            panelUI.SetActive(activar);
+            textInteractuable.SetActive(activar);
+            Debug.Log("Estado de textInteractuable: " + textInteractuable.activeSelf);
         }
     }
-    
+
+    private void OcultarTextos()
+    {
+        if (textInteractuable != null) textInteractuable.SetActive(false);
+        if (panelUI != null) panelUI.SetActive(false);
+    }
+
+    void AbrirPuerta()
+    {
+        if (puertaAnimator != null)
+        {
+            puertaAnimator.SetTrigger("Abrir"); // Dispara la animación con un Trigger
+            Debug.Log("Activando animación en puerta: " + puertaAnimator.gameObject.name);
+        }
+        else
+        {
+            Debug.LogError("No se ha asignado un Animator para esta puerta.");
+        }
+
+        OcultarTextos();
+        Debug.Log("La puerta se ha abierto.");
+    }
 }
