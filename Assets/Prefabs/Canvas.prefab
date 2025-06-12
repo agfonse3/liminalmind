@@ -229,7 +229,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.05
+  m_fontSize: 60.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1418,7 +1418,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.05
+  m_fontSize: 60.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2952,7 +2952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4785292873924935762
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7124,7 +7124,6 @@ MonoBehaviour:
   pausePannel: {fileID: 4439714674217027028}
   helpPannel: {fileID: 6313855306872486494}
   inventoryPannel: {fileID: 2158586049601041743}
-  player: {fileID: 0}
   PausePanel: {fileID: 0}
 --- !u!1 &4898017151327344970
 GameObject:
