@@ -56,6 +56,22 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 1dd97a30ded29cc47b3f74c214c55bbb, type: 2}
+    - target: {fileID: -4768420162550767022, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3997273729220490800, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3491681035301426707, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1872083494049450313, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -1635157310089526351, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -64,6 +80,22 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a982791eff827d741be67543186556ee, type: 2}
+    - target: {fileID: -967735198901529315, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -544103944335105682, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -428412133263428524, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 453433209775209491, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 731090724674487719, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -72,14 +104,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door Double
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044983157302244508, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6781302804601500628, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 26ea71907f052e84e929b48ae47292ad, type: 2}
+    - target: {fileID: 8933271660690219254, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1984037999202101145}
     - targetCorrespondingSourceObject: {fileID: -428412133263428524, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5179494548790461478}
@@ -202,6 +249,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5940050706549610559, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+--- !u!1 &6719042703462253643 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+  m_PrefabInstance: {fileID: 5908648410432502042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1984037999202101145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6719042703462253643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44325b52d0c4e8441b66b9a99f24a512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelUI: {fileID: 3184518345062138473, guid: 8a2c6490dd7d3924aa062fe969648047, type: 3}
+  textInteractuable: {fileID: 1269337624754358051, guid: 1be71b9530b065e45af8d0558e4bc543, type: 3}
+  puertaAnimator: {fileID: 0}
 --- !u!1 &7794771411265428296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4768420162550767022, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}

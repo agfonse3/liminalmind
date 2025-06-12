@@ -8,9 +8,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8588509463276861195}
     m_Modifications:
+    - target: {fileID: 4453945187333568418, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513730216436445105, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4642154672735271909, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
       propertyPath: m_Name
       value: prf_lock_front
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642154672735271909, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7173297206326680262, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
       propertyPath: m_LocalScale.x
@@ -67,6 +79,10 @@ PrefabInstance:
     - target: {fileID: 7173297206326680262, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173815645951476725, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -134,6 +150,22 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 1dd97a30ded29cc47b3f74c214c55bbb, type: 2}
+    - target: {fileID: -4768420162550767022, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3997273729220490800, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -3491681035301426707, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1872083494049450313, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -1635157310089526351, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -142,6 +174,22 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a982791eff827d741be67543186556ee, type: 2}
+    - target: {fileID: -967735198901529315, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -544103944335105682, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -428412133263428524, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 453433209775209491, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 731090724674487719, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -150,10 +198,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door Double W Lock
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044983157302244508, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6781302804601500628, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 26ea71907f052e84e929b48ae47292ad, type: 2}
+    - target: {fileID: 8933271660690219254, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -331,9 +391,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2707329127083613245}
     m_Modifications:
+    - target: {fileID: 4453945187333568418, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513730216436445105, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4642154672735271909, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
       propertyPath: m_Name
       value: prf_lock_back
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642154672735271909, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7173297206326680262, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
       propertyPath: m_LocalScale.x
@@ -390,6 +462,10 @@ PrefabInstance:
     - target: {fileID: 7173297206326680262, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173815645951476725, guid: 0bff3850fb8b0914ba97ae33a25041c1, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
