@@ -17,6 +17,9 @@ public class SanitySystem : MonoBehaviour
     void Start()
     {
         currentSanity = maxSanity;
+        sanityScriptableObject = GetComponent<Playerdata>().SanityScriptableObject;
+        sanityScriptableObject.currentSanity = currentSanity;
+
     }
     // Detectar GameObject que bajen la cordura con un raycast, disminuirla si se encuentra en el campo de visión y regererarla poco a poco.
     public void HandleSanity()
@@ -63,6 +66,7 @@ public class SanitySystem : MonoBehaviour
             {
                 currentSanity += sanityRegenRate * Time.deltaTime;
                 currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
+                sanityScriptableObject.currentSanity = currentSanity;
             }
         }
     }
