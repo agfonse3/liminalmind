@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 5.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -8.76
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -83,9 +83,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -428412133263428524, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5179494548790461478}
+    - targetCorrespondingSourceObject: {fileID: -544103944335105682, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7746829553074542495}
     - targetCorrespondingSourceObject: {fileID: -967735198901529315, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6090292058107447069}
+    - targetCorrespondingSourceObject: {fileID: -4768420162550767022, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7921759390852097993}
     - targetCorrespondingSourceObject: {fileID: 8933271660690219254, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2367459582483827899}
@@ -116,6 +122,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.58499855, y: 0.05000087, z: 2.090001}
   m_Center: {x: -0.29249778, y: -0.0000010049718, z: 1.0450004}
+--- !u!1 &2994128719398115444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -544103944335105682, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+  m_PrefabInstance: {fileID: 5908648410432502042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7746829553074542495
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994128719398115444}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f023ca5736f327e4986326066090c6d6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3028362139749341676 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8933271660690219254, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
@@ -169,3 +202,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5940050706549610559, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+--- !u!1 &7794771411265428296 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4768420162550767022, guid: 10ecd8056ab4ae64ab462f3f4fb7576d, type: 3}
+  m_PrefabInstance: {fileID: 5908648410432502042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7921759390852097993
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7794771411265428296}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a1b8730d6f7fb1648a5c9725e97aeb99, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
