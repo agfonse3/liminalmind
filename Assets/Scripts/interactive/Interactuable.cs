@@ -107,7 +107,7 @@ public class Interactuable : MonoBehaviour
                     inventoryManager.AddItemsToInventory(dataitem);
                     // Optionally, deactivate or destroy the collectible object after picking up
                     // gameObject.SetActive(false); 
-                    // Destroy(gameObject);
+                     Destroy(gameObject);
                 }
             }
             else

@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44325b52d0c4e8441b66b9a99f24a512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelUI: {fileID: 0}
-  textInteractuable: {fileID: 0}
+  panelUI: {fileID: 3184518345062138473, guid: 8a2c6490dd7d3924aa062fe969648047, type: 3}
+  textInteractuable: {fileID: 1269337624754358051, guid: 1be71b9530b065e45af8d0558e4bc543, type: 3}
   puertaAnimator: {fileID: 1420117164432894289}
 --- !u!95 &1420117164432894289
 Animator:

@@ -115,9 +115,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2246670390c6ce04f9c6083a89b9625d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelUI: {fileID: 0}
-  textInteractuable: {fileID: 0}
-  textLlave: {fileID: 0}
+  panelUI: {fileID: 3184518345062138473, guid: 8a2c6490dd7d3924aa062fe969648047, type: 3}
+  textInteractuable: {fileID: 1269337624754358051, guid: 1be71b9530b065e45af8d0558e4bc543, type: 3}
+  textLlave: {fileID: 2583234865985426969, guid: db57d29165232e748a8b03145799768d, type: 3}
   puerta: {fileID: 2722722113038624362}
   puertaAnimator: {fileID: 2038875796075751319}
 --- !u!95 &2038875796075751319
