@@ -68,6 +68,10 @@ MonoBehaviour:
     m_Localized: No tienes la llave
     m_Metadata:
       m_Items: []
+  - m_Id: 3291024111112192
+    m_Localized: Has adquirido un fragmento de Nota. Revisa tu inventario para verlo
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
