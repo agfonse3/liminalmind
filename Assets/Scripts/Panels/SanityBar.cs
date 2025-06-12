@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class SanityBar : MonoBehaviour
 {
     public Slider sanitySlider;
+    [SerializeField]  GameObject player;
     public SanityScriptableObject sanityScriptableObject;
 
     public float sanitytemp; // esta se va a cambiar con el script de vida 
@@ -11,6 +12,7 @@ public class SanityBar : MonoBehaviour
     private void Start()
     {
         sanitySlider = GetComponent<Slider>();
+        sanityScriptableObject=player.GetComponent<Playerdata>().SanityScriptableObject;
         ChangeSanityMax(sanityScriptableObject.maxSanity);
     }
 
