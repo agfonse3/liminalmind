@@ -46,7 +46,7 @@ public class GamePanel : MonoBehaviour
         if (PausePanel != null)
         {
             //Asigna la musica del panel objetivo
-           // AudiomanagerTemp.Instance.PlayMusic(PausePanel.audioBGS);
+            AudiomanagerTemp.Instance.PlayMusic(PausePanel.audioBGS);
         }
         pausePannel.SetActive(true);
     }

@@ -31,9 +31,18 @@ public class InventoryPanel : PanelBasic
 
         MouseActivatedInPanel();
     }
+    private void OnDisable()
+    {
+        if (GameManager.Instance.isGamePaused)
+        {
+            MouseDesctivatedOutOfPanel();
+            GameManager.Instance.isGamePaused = false;
+        }
+    }
 
     public void ExitPanel()
     {
+        Time.timeScale = 1.0f;
         InventoryPannel.SetActive(false);
     }
 
