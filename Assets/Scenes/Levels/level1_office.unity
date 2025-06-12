@@ -2073,6 +2073,10 @@ PrefabInstance:
       propertyPath: scriptAActivar
       value: 
       objectReference: {fileID: 1221344985}
+    - target: {fileID: 7018295008348342871, guid: 171f493544654ff48a024af37126cd09, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
     - target: {fileID: 8793308127575981032, guid: 171f493544654ff48a024af37126cd09, type: 3}
       propertyPath: panelUI
       value: 
@@ -3815,7 +3819,7 @@ PrefabInstance:
       objectReference: {fileID: 1596637832}
     - target: {fileID: 7402365057231435552, guid: 9295189b4f03b8a47b9873a8492069d1, type: 3}
       propertyPath: distanciaInteractuar
-      value: 1.39
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 7504951138074646926, guid: 9295189b4f03b8a47b9873a8492069d1, type: 3}
       propertyPath: m_LocalPosition.z

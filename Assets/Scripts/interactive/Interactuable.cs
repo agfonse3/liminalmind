@@ -1,12 +1,12 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class Interactuable : MonoBehaviour
-{    
+{     
     public float distanciaInteractuar = 3f;
     public GameObject panelInteractuar;
     public GameObject panelUI;
-    public GameObject textInteractuable; // This is the text you want to show *before* interaction
+    public GameObject textInteractuable;
     private Transform jugador;
     private bool dentroRango = false;
     public Light luzInteractuable;
@@ -17,18 +17,16 @@ public class Interactuable : MonoBehaviour
     {
         jugador = GameObject.FindGameObjectWithTag("Player").transform;
         if (panelInteractuar != null) panelInteractuar.SetActive(false);
-        // textInteractuable should also be initially false, and then activated by MostrarIndicador
-        if (textInteractuable != null) textInteractuable.SetActive(false); 
+        if (textInteractuable != null) textInteractuable.SetActive(false);
         if (panelUI != null) panelUI.SetActive(false);
 
-        // Ensure inventoryManager is properly assigned. Handle null case if 'inventary' might be null.
         if (inventary != null)
         {
             inventoryManager = inventary.GetComponent<InventoryManager>();
         }
         else
         {
-            Debug.LogError("Inventory GameObject not assigned in Interactuable script on " + gameObject.name);
+            Debug.LogError("Inventory GameObject no asignado en " + gameObject.name);
         }
     }
 
@@ -43,7 +41,7 @@ public class Interactuable : MonoBehaviour
             if (!dentroRango)
             {
                 dentroRango = true;
-                MostrarIndicador(true); // Show interaction indicator and text
+                MostrarIndicador(true);
             }
 
             if (Input.GetKeyDown(KeyCode.E))
@@ -56,8 +54,7 @@ public class Interactuable : MonoBehaviour
             if (dentroRango)
             {
                 dentroRango = false;
-                CerrarPanelUI(); // Close UI panel if open
-                MostrarIndicador(false); // Hide interaction indicator and text
+                CerrarPanelUI();
             }
         }
     }
@@ -65,71 +62,60 @@ public class Interactuable : MonoBehaviour
     void MostrarIndicador(bool mostrar)
     {
         if (panelInteractuar != null) panelInteractuar.SetActive(mostrar);
-        if (textInteractuable != null) textInteractuable.SetActive(mostrar); // Activate/Deactivate text here
+        if (textInteractuable != null) textInteractuable.SetActive(mostrar); 
         if (luzInteractuable != null) luzInteractuable.enabled = mostrar;
-        
-        // Only unlock cursor if no other UI panel is active (like panelUI)
-        // This prevents the cursor from unlocking if you interact with an object that brings up a panel
-        if (!panelUI.activeSelf) 
-        {
-            Cursor.lockState = mostrar ? CursorLockMode.None : CursorLockMode.Locked;
-            Cursor.visible = mostrar;
-        }
     }
 
     void Interactuar()
     {
         if (panelUI != null)
         {
-            // Toggle panelUI active state
-            panelUI.SetActive(!panelUI.activeSelf); 
-            
-            // Manage cursor based on panelUI's new state
+            panelUI.SetActive(!panelUI.activeSelf);
+            // Invoke("CerrarPanelUI", 5f); // Oculta el UI después de 5 segundos
             Cursor.lockState = panelUI.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
             Cursor.visible = panelUI.activeSelf;
 
-            // When panelUI is active, you might want to hide the "Press E" text
-            // and show it again when panelUI is closed.
             if (textInteractuable != null)
             {
-                textInteractuable.SetActive(!panelUI.activeSelf);
+                textInteractuable.SetActive(false);
+            }
+
+            if (panelInteractuar != null)
+            {
+                panelInteractuar.SetActive(false);
             }
         }
 
         if (gameObject.CompareTag("Recolectable"))
         {
-            // Ensure inventoryManager is not null before trying to use it
             if (inventoryManager != null)
             {
-                ItemClass dataitem = gameObject.GetComponentInChildren<PickUp>()?.itemdata;
+                ItemClass dataitem = gameObject.GetComponent<PickUp>()?.itemdata;
                 if (dataitem != null)
                 {
                     inventoryManager.AddItemsToInventory(dataitem);
-                    // Optionally, deactivate or destroy the collectible object after picking up
-                    // gameObject.SetActive(false); 
-                     Destroy(gameObject);
+                    Debug.Log("Objeto agregado al inventario: " + dataitem.itemName);
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    Debug.LogError("No se encontró `itemdata` en el objeto recolectable: " + gameObject.name);
                 }
             }
             else
             {
-                Debug.LogWarning("InventoryManager is null. Cannot add item to inventory.");
+                Debug.LogError("InventoryManager no está asignado en " + gameObject.name);
             }
         }
     }
 
     void CerrarPanelUI()
     {
-        if (panelUI != null)
-        {
-            panelUI.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-        // When closing the UI panel, ensure the interaction text reappears if still in range
-        if (dentroRango) 
-        {
-            MostrarIndicador(true); 
-        }
+        if (panelUI != null) panelUI.SetActive(false);
+        if (panelInteractuar != null) panelInteractuar.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void OnDrawGizmosSelected()
@@ -138,3 +124,4 @@ public class Interactuable : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, distanciaInteractuar);
     }
 }
+
