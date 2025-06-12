@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotsHolder: {fileID: 0}
   items: []
+  quantityOfNotes: 0
