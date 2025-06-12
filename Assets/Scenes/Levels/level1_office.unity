@@ -3968,11 +3968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21e353109ed1a747981b3643aa99e2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelUI: {fileID: 2143466784}
-  textoMensaje: {fileID: 1596637833}
-  textInteractuable: {fileID: 1596637832}
-  puerta: {fileID: 1471682604}
-  mensajeSinLlave: {fileID: 933169365}
 --- !u!1 &563779499
 GameObject:
   m_ObjectHideFlags: 0
@@ -5084,6 +5079,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 6012111039333785304, guid: d181da34e1c6cb349bdad6c21f7b5d33, type: 3}
+      propertyPath: panelUI
+      value: 
+      objectReference: {fileID: 2143466784}
+    - target: {fileID: 6012111039333785304, guid: d181da34e1c6cb349bdad6c21f7b5d33, type: 3}
+      propertyPath: textLlave
+      value: 
+      objectReference: {fileID: 933169365}
+    - target: {fileID: 6012111039333785304, guid: d181da34e1c6cb349bdad6c21f7b5d33, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
     - target: {fileID: 6248942870301146444, guid: d181da34e1c6cb349bdad6c21f7b5d33, type: 3}
       propertyPath: inventory
       value: 
@@ -5380,6 +5387,7 @@ MonoBehaviour:
   textInteractuable: {fileID: 1596637832}
   textLlave: {fileID: 933169365}
   puerta: {fileID: 852402868}
+  puertaAnimator: {fileID: 852402870}
 --- !u!95 &852402870
 Animator:
   serializedVersion: 7
@@ -7061,6 +7069,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 3387247139193809217, guid: 690fcc96744f55e43a740cd76a228bcc, type: 3}
+      propertyPath: panelUI
+      value: 
+      objectReference: {fileID: 2143466784}
+    - target: {fileID: 3387247139193809217, guid: 690fcc96744f55e43a740cd76a228bcc, type: 3}
+      propertyPath: textLlave
+      value: 
+      objectReference: {fileID: 933169365}
+    - target: {fileID: 3387247139193809217, guid: 690fcc96744f55e43a740cd76a228bcc, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
+    - target: {fileID: 5676666866062469640, guid: 690fcc96744f55e43a740cd76a228bcc, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 398837119}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8777,11 +8801,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SanityScriptableObject: {fileID: 11400000, guid: 09f3cdf103d3f3948a1ff63979ab7db6, type: 2}
---- !u!1 &1471682604 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5165311888485377444, guid: e8c187598ec8f6046a3b59d6b3680c04, type: 3}
-  m_PrefabInstance: {fileID: 2141608741}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1479809280
 GameObject:
   m_ObjectHideFlags: 0
@@ -9540,7 +9559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1596637833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11306,6 +11325,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 478009358}
     m_Modifications:
+    - target: {fileID: 3313073813147137424, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
+      propertyPath: panelUI
+      value: 
+      objectReference: {fileID: 2143466784}
+    - target: {fileID: 3313073813147137424, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
     - target: {fileID: 6065897384225062199, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -13036,6 +13063,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 6236610493317683412, guid: e8c187598ec8f6046a3b59d6b3680c04, type: 3}
+      propertyPath: panelUI
+      value: 
+      objectReference: {fileID: 2143466784}
+    - target: {fileID: 6236610493317683412, guid: e8c187598ec8f6046a3b59d6b3680c04, type: 3}
+      propertyPath: textLlave
+      value: 
+      objectReference: {fileID: 933169365}
+    - target: {fileID: 6236610493317683412, guid: e8c187598ec8f6046a3b59d6b3680c04, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
     - target: {fileID: 6248942870301146444, guid: e8c187598ec8f6046a3b59d6b3680c04, type: 3}
       propertyPath: inventory
       value: 
