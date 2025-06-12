@@ -9,4 +9,15 @@ public class SanityScriptableObject : ScriptableObject
     public float sanityRegenDelay = 3f;
     public float currentSanity;
 
+    public void ResetData()
+    {
+        maxSanity = 100f;
+        sanityDecreaseRate = 5f;
+        sanityRegenRate = 2f;
+        sanityRegenDelay = 3f;
+        currentSanity=0;
+    }
+
 }
+
+

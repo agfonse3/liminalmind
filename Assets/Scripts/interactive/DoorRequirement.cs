@@ -4,7 +4,7 @@ public class DoorRequirement : MonoBehaviour
 {
     public ItemClass itemdata; // detos de la llave requerida
     private InventoryManager inventoryManager;
-    public GameObject inventory;
+    [SerializeField] private GameObject inventory;
     //
 
     private void Start()
