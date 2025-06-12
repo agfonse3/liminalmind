@@ -39,10 +39,10 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Lighting global
+  - Lighting dynamic
+  - Lighting baked
+  - Lighting emissive
   - 
   m_SortingLayers:
   - name: Default
