@@ -32,7 +32,7 @@ public class SanitySystem : MonoBehaviour
 
             Ray ray = new Ray(cameraTransform.position, dirNormalized);
 
-            if (Vector3.Dot(cameraTransform.forward, dirNormalized) > 0.5f)
+            if (Vector3.Dot(cameraTransform.forward, dirNormalized) > 0.75f)
             {
                 RaycastHit hit;
 
