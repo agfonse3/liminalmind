@@ -5,11 +5,11 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     [SerializeField] private GameObject slotsHolder; //guarda los slots
-    //private ItemClass itemToAdd; // item aadicionar al inventario
+    //public ItemClass itemToAdd; // item aadicionar al inventario para pruebas
     //private ItemClass itemToRemove;
-    public List<ItemClass> items = new List<ItemClass>(); //lista de los items
+    [SerializeField] private List<ItemClass> items = new List<ItemClass>(); //lista de los items
     private GameObject[] slots;
-    private int quantityOfNotes;
+    public int quantityOfNotes;
 
     private void Start()
     {
@@ -21,8 +21,10 @@ public class InventoryManager : MonoBehaviour
             slots[i] = slotsHolder.transform.GetChild(i).gameObject;
         }
         UpdateInventoryUI();
-        //AddItemsToInventory(itemToAdd);
+        //AddItemsToInventory(itemToAdd); // para pruebas
     }
+
+
     // metodo que actualiza el inventario
     public void UpdateInventoryUI() 
     {
@@ -47,10 +49,37 @@ public class InventoryManager : MonoBehaviour
     //metodo que adiciona items en el inventario
     public void AddItemsToInventory(ItemClass item) 
     {
-        Debug.Log("adiciona un item");
-        Debug.Log(item);
-        items.Add(item);
-        UpdateInventoryUI();
+        if (item != null) 
+        {
+            if (item.GetNote() != null)  //revisa si es una nota
+            {
+                if (quantityOfNotes == 0)
+                {
+                    items.Add(item); // si no hay la adiciona
+                    quantityOfNotes++;
+                }
+                else if (quantityOfNotes<4)
+                {
+                    quantityOfNotes++;// si no aumenta la cantidad recolctadas
+                }
+            }else
+            {
+                if (item!=null)
+                {
+                    Debug.Log("adiciona un item");
+                    Debug.Log(item);
+                    items.Add(item);
+                    UpdateInventoryUI();
+                }
+               
+            }
+
+            //Debug.Log("adiciona un item");
+            //Debug.Log(item);
+            //items.Add(item);
+            //UpdateInventoryUI();
+        }
+
     }
 
     //public void RemoveItemsFromInventory(ItemClass item)
@@ -70,6 +99,30 @@ public class InventoryManager : MonoBehaviour
         }
         return false;
     }
+
+
+    // metodo para abrir la nota del panel
+    public bool IsClickedNearNote(Vector3 mouseposition) 
+    {
+        int numberslotNote =-1;
+        for (int y = 0; y < items.Count; y++)
+        {
+            if (items[y].GetNote()) 
+            {
+                numberslotNote = y;
+                break;
+            } 
+        }
+        if (numberslotNote!=-1) {
+            if (Vector2.Distance(slots[numberslotNote].transform.position, mouseposition) < 15)
+            {
+                return true;
+            }
+        }
+        return false;
+                   
+    }
+
 
 
 }
