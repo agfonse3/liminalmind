@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class SanitySystem : MonoBehaviour
 {
-    public float maxSanity = 100f; // Cordura máxima.
+    public float maxSanity = 100f; // Cordura mï¿½xima.
     public float sanityDecreaseRate = 5f; // Cordura perdida/segundo.
-    public float sanityRegenRate = 2f; // Regeneración de cordura/segundo.
-    public float sanityRegenDelay = 3f; // Retraso antés que la regeneración comience.
+    public float sanityRegenRate = 2f; // Regeneraciï¿½n de cordura/segundo.
+    public float sanityRegenDelay = 3f; // Retraso antï¿½s que la regeneraciï¿½n comience.
     public float currentSanity;
     private float timeSinceLastSeen = 0f;
-    public LayerMask lineOfSightObstacles; // Obstáculos para el raycast (paredes, puertas).
-    public Transform cameraTransform; // Transform de la cámara.
+    public LayerMask lineOfSightObstacles; // Obstï¿½culos para el raycast (paredes, puertas).
+    public Transform cameraTransform; // Transform de la cï¿½mara.
     public SanityScriptableObject sanityScriptableObject;
 
     public float CurrentSanity { get { return currentSanity; } private set { currentSanity = value; } }
@@ -21,7 +21,7 @@ public class SanitySystem : MonoBehaviour
         sanityScriptableObject.currentSanity = currentSanity;
 
     }
-    // Detectar GameObject que bajen la cordura con un raycast, disminuirla si se encuentra en el campo de visión y regererarla poco a poco.
+    // Detectar GameObject que bajen la cordura con un raycast, disminuirla si se encuentra en el campo de visiï¿½n y regererarla poco a poco.
     public void HandleSanity()
     {
         SanityAffectingEntity[] targets = Object.FindObjectsByType<SanityAffectingEntity>(FindObjectsSortMode.None);
@@ -39,7 +39,7 @@ public class SanitySystem : MonoBehaviour
             {
                 RaycastHit hit;
 
-                if (Physics.Raycast(ray, out hit, distance)) // Golpea directamente al enemigo si no hay obstáculos.
+                if (Physics.Raycast(ray, out hit, distance)) // Golpea directamente al enemigo si no hay obstï¿½culos.
                 {
                     var sanityComponent = hit.transform.GetComponentInParent<SanityAffectingEntity>();
                     if (sanityComponent == entity)
@@ -57,7 +57,7 @@ public class SanitySystem : MonoBehaviour
             currentSanity = Mathf.Clamp(currentSanity, 0f, maxSanity);
             timeSinceLastSeen = 0f;
             sanityScriptableObject.currentSanity= currentSanity;
-            Debug.Log($"[Sanity] Decreasing: {currentSanity:F2}");
+        //    Debug.Log($"[Sanity] Decreasing: {currentSanity:F2}");
         }
         else
         {
