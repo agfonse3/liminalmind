@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PadLockPassword : MonoBehaviour
 {
+    public MonoBehaviour keyInteractable; // Drag the script component here via Inspector
     public Animator animator; // Animator for the padlock
     public PadlockInteractionManager interactionManager;
     public SuitcaseController suitcase;
@@ -28,12 +29,15 @@ public class PadLockPassword : MonoBehaviour
 
         if (_moveRull._numberArray.SequenceEqual(_numberPassword))
         {
+ 
+
             _isUnlocked = true; //  Lock out further checks
             Debug.Log("Password correct");
 
             if (animator != null)
                 animator.SetTrigger("Unlock");
-
+            if (keyInteractable != null)
+                keyInteractable.enabled = true;
             if (interactionManager != null)
                 interactionManager.EndPadlockInteraction();
 
