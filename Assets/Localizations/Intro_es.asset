@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Intro_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: f8ab9fac259b56d45831704670812223, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 18397728768
+    m_Localized: "No fue un error. No puede haber sido solo eso.\r\n\r\nCamino a
+      mi trabajo, presion\xE9 los n\xFAmeros equivocados. \n\nLo s\xE9. Pero esto\u2026
+      esto no es el mismo edificio. \n\nNo es la misma realidad.\r\n\r\nLas paredes
+      no se ven igual. \n\nLa luz parpadea como un latido irregular, y el ascensor\u2026
+      se niega a abrir sus puertas. \n\nEl tiempo ya no transcurre; simplemente pesa.\r\n\r\nCada
+      piso que visito es un fragmento enfermo de algo que no quiero recordar. \n\nObjetos
+      familiares, distorsionados. Espacios que alguna vez habit\xE9, ahora contaminados
+      por una l\xF3gica perversa.\r\n\r\nNo estoy solo. Pero tampoco estoy acompa\xF1ado.\r\n\r\nHay
+      algo aqu\xED\u2026 \n\nalgo que se alimenta del miedo. \n\nNo quiere matarme.
+      Quiere quebrarme..... \n\nQuiere que me rinda.\r\n\r\nPero no pienso hacerlo.
+      No esta vez.\r\n\r\nSi este lugar es un reflejo de mi mente\u2026 \n\nentonces
+      tal vez, solo tal vez, encontrar\xE9 la salida enfrentando lo que nunca tuve
+      el valor de mirar. \n\nY esta vez\u2026 \n\nno apartar\xE9 la mirada.\r\n"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
