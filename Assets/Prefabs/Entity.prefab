@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: af243ca7c244f3c42a576ee8c80cc20e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.674
+      value: 5.5355406
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: af243ca7c244f3c42a576ee8c80cc20e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: af243ca7c244f3c42a576ee8c80cc20e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.531322
+      value: -13.261966
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: af243ca7c244f3c42a576ee8c80cc20e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -74,7 +74,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: af243ca7c244f3c42a576ee8c80cc20e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6485498349862588474}
+      addedObject: {fileID: 3678351471344131210}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: af243ca7c244f3c42a576ee8c80cc20e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5929159698687696618}
@@ -93,7 +93,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: af243ca7c244f3c42a576ee8c80cc20e, type: 3}
   m_PrefabInstance: {fileID: 7640317564810496704}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6485498349862588474
+--- !u!114 &3678351471344131210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,9 +102,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7405806240254146449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf4ce91b4d429d47baceab69d20d3a0, type: 3}
+  m_Script: {fileID: 11500000, guid: deac01b6893e562469f8e1d3544ba99e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnZoneID: 0
+  rango: 10
+  tiempoEspera: 2
+  probabilidadQuieto: 0.5
 --- !u!95 &5929159698687696618
 Animator:
   serializedVersion: 7
