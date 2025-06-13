@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 8369011779668340149}
   - component: {fileID: 880669632888699564}
   - component: {fileID: 2965061947782076917}
-  - component: {fileID: 8021323789171582228}
+  - component: {fileID: 96501595343203445}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -364,7 +364,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -392,7 +392,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3434408848620256968}
   m_Enabled: 0
---- !u!114 &8021323789171582228
+--- !u!114 &96501595343203445
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -585,6 +585,8 @@ GameObject:
   - component: {fileID: 5992061644994311105}
   - component: {fileID: 1941610114413882892}
   - component: {fileID: 4047814476598437174}
+  - component: {fileID: 5703961102392158829}
+  - component: {fileID: 2731635314658772776}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -696,6 +698,41 @@ MonoBehaviour:
   cameraTransform: {fileID: 7668135660461353142}
   sanityScriptableObject: {fileID: 11400000, guid: 09f3cdf103d3f3948a1ff63979ab7db6, type: 2}
 --- !u!114 &4047814476598437174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6876184005758335181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cecc83f3ad6445d419d3cadceff141ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SanityScriptableObject: {fileID: 11400000, guid: 09f3cdf103d3f3948a1ff63979ab7db6, type: 2}
+--- !u!114 &5703961102392158829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6876184005758335181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fbbe1e30018f84489d5d618181e7cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSanity: 100
+  sanityDecreaseRate: 5
+  sanityRegenRate: 2
+  sanityRegenDelay: 3
+  currentSanity: 0
+  lineOfSightObstacles:
+    serializedVersion: 2
+    m_Bits: 8
+  cameraTransform: {fileID: 7668135660461353142}
+  sanityScriptableObject: {fileID: 11400000, guid: 09f3cdf103d3f3948a1ff63979ab7db6, type: 2}
+--- !u!114 &2731635314658772776
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
