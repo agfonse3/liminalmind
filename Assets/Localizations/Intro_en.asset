@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Intro_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: f8ab9fac259b56d45831704670812223, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 18397728768
+    m_Localized: "It wasn't a mistake.  It couldn't have been just that.\r\n\r\nOn
+      my way to work, I pressed the wrong numbers. I know I did. \n\nBut this...
+      this isn't the same building. \n\nIt's not the same reality.\r\n\r\nThe walls
+      don't look the same. \n\nThe light flickers like an irregular heartbeat, and
+      the elevator... refuses to open its doors. \n\nTime no longer passes; it simply
+      weighs.\r\n\r\nEach floor I visit is a sick fragment of something I don\u2019t
+      want to remember. \nFamiliar objects, distorted. Spaces I once inhabited, now
+      corrupted by a twisted logic.\r\n\r\nI'm not alone. But I\u2019m not accompanied
+      either.\r\n\r\nThere\u2019s something here... \n\nsomething that feeds on fear.
+      \n\nIt doesn\u2019t want to kill me. It wants to break me.... \n\nIt wants
+      me to give up.\r\n\r\nBut I won\u2019t. Not this time.\r\n\r\nIf this place
+      is a reflection of my mind... \n\nthen maybe, just maybe, I\u2019ll find the
+      way out by facing what I never had the courage to look at. \n\nAnd this time...
+      \n\nI won\u2019t look away.\r\n"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
