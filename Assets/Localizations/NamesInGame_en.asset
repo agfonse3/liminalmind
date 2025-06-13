@@ -56,6 +56,10 @@ MonoBehaviour:
       it.
     m_Metadata:
       m_Items: []
+  - m_Id: 3327282183081984
+    m_Localized: Holdings
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
