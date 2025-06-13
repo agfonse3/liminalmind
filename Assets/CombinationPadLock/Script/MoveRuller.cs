@@ -14,6 +14,7 @@ public class MoveRuller : MonoBehaviour
     private int _changeRuller = 0;
     [HideInInspector]
     public int[] _numberArray = {0,0,0,0};
+    public bool isActive = false;
 
     private int _numberRuller = 0;
 
@@ -37,10 +38,13 @@ public class MoveRuller : MonoBehaviour
     }
     void Update()
     {
+        if (!isActive) return;
+
         MoveRulles();
         RotateRullers();
         _lockPassword.Password();
     }
+
 
     void MoveRulles()
     {

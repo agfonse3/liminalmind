@@ -5,9 +5,16 @@ using UnityEngine;
 
 public class PadLockPassword : MonoBehaviour
 {
-    MoveRuller _moveRull;
+    public Animator animator; // Animator for the padlock
+    public PadlockInteractionManager interactionManager;
+    public SuitcaseController suitcase;
+    public GameObject padlockRoot;
+    public float hideDelay = 0.01f;
 
-    public int[] _numberPassword = {0,0,0,0};
+    private MoveRuller _moveRull;
+    public int[] _numberPassword = { 0, 0, 0, 0 };
+
+    private bool _isUnlocked = false; // <-- Prevent repeat
 
     private void Awake()
     {
@@ -16,18 +23,43 @@ public class PadLockPassword : MonoBehaviour
 
     public void Password()
     {
+        //  If already unlocked, do nothing
+        if (_isUnlocked) return;
+
         if (_moveRull._numberArray.SequenceEqual(_numberPassword))
         {
-            // Here enter the event for the correct combination
+            _isUnlocked = true; //  Lock out further checks
             Debug.Log("Password correct");
 
-            // Es. Below the for loop to disable Blinking Material after the correct password
+            if (animator != null)
+                animator.SetTrigger("Unlock");
+
+            if (interactionManager != null)
+                interactionManager.EndPadlockInteraction();
+
+            if (suitcase != null)
+                suitcase.OpenSuitcase();
+
+            if (padlockRoot != null)
+                StartCoroutine(HidePadlockAfterDelay());
+
             for (int i = 0; i < _moveRull._rullers.Count; i++)
             {
-                _moveRull._rullers[i].GetComponent<PadLockEmissionColor>()._isSelect = false;
-                _moveRull._rullers[i].GetComponent<PadLockEmissionColor>().BlinkingMaterial();
+                var emission = _moveRull._rullers[i].GetComponent<PadLockEmissionColor>();
+                if (emission != null)
+                {
+                    emission._isSelect = false;
+                    emission.BlinkingMaterial();
+                }
             }
-
         }
     }
+
+    private System.Collections.IEnumerator HidePadlockAfterDelay()
+    {
+        yield return new WaitForSeconds(hideDelay);
+        padlockRoot.SetActive(false);
+    }
 }
+
+
