@@ -1,4 +1,4 @@
-
+// Tu SpawnManager.cs ya debería ser esta versión o muy similar:
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
@@ -7,17 +7,15 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject enemigoPrefab;
     public int poolSize = 10;
-    public Collider[] zonasSpawn; // Array de colliders que definen las zonas de spawn
+    public Collider[] zonasSpawn; 
 
     public float tiempoEntreSpawns = 5f;
     private float tiempoSiguienteSpawn;
 
     private Queue<GameObject> enemigoPool;
 
-    // NUEVO: Array para rastrear si cada zona de spawn está ocupada
     private bool[] zonasOcupadas; 
 
-    // Variables para la depuración visual (Gizmos)
     public bool mostrarGizmosDebug = true;
     public Vector3[] lastRandomPoints;
     public Vector3[] lastHitPositions;
@@ -27,11 +25,9 @@ public class SpawnManager : MonoBehaviour
         InitializePool();
         tiempoSiguienteSpawn = Time.time; 
 
-        // NUEVO: Inicializar el array de zonas ocupadas
-        if (zonasSpawn != null)
+        if (zonasSpawn != null && zonasSpawn.Length > 0) // Añadida comprobación de Length
         {
             zonasOcupadas = new bool[zonasSpawn.Length];
-            // Todas las zonas están libres al inicio
             for (int i = 0; i < zonasOcupadas.Length; i++)
             {
                 zonasOcupadas[i] = false;
@@ -39,7 +35,7 @@ public class SpawnManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("SpawnManager: No se han asignado zonas de spawn. Por favor, asigna colliders a 'zonasSpawn' en el Inspector.");
+            Debug.LogError("SpawnManager: No se han asignado zonas de spawn o el array está vacío. Asigna colliders a 'zonasSpawn' en el Inspector.");
         }
     }
 
@@ -63,17 +59,6 @@ public class SpawnManager : MonoBehaviour
             GameObject enemigo = Instantiate(enemigoPrefab);
             enemigo.SetActive(false);
             enemigoPool.Enqueue(enemigo);
-            
-            // NUEVO: Asignar un ID de zona al enemigo para saber de qué zona viene
-            // Esto es crucial para marcar la zona como libre cuando el enemigo vuelve al pool.
-            // Necesitas un script en el enemigo (ej. NpcControl) que tenga una propiedad/campo para almacenar este ID.
-            EnemyAI npcControl = enemigo.GetComponent<EnemyAI>();
-            if (npcControl != null)
-            {
-                // Este ID se usará cuando el enemigo sea "devuelto" al pool.
-                // Tendrás que añadir 'public int spawnZoneID;' a tu NpcControl.cs
-                // Si no se asigna aquí, tendrías que encontrar la zona por distancia o referencia al devolverlo.
-            }
         }
     }
 
@@ -91,7 +76,6 @@ public class SpawnManager : MonoBehaviour
             return;
         }
 
-        // NUEVO: Intentar encontrar una zona de spawn libre
         int zonaElegidaIndex = -1;
         List<int> zonasLibresIndices = new List<int>();
         for (int i = 0; i < zonasOcupadas.Length; i++)
@@ -105,15 +89,16 @@ public class SpawnManager : MonoBehaviour
         if (zonasLibresIndices.Count == 0)
         {
             Debug.Log("Todas las zonas de spawn están ocupadas. Esperando una zona libre.");
-            return; // No spawnea si todas las zonas están ocupadas
+            return;
         }
 
-        // Elegir una zona libre aleatoria
         zonaElegidaIndex = zonasLibresIndices[Random.Range(0, zonasLibresIndices.Count)];
         Collider zonaAleatoria = zonasSpawn[zonaElegidaIndex];
 
         GameObject enemigoAActivar = enemigoPool.Dequeue(); 
         
+        // El count aquí se usa para los gizmos, asegúrate de que no cause un IndexOutOfRangeException si el pool se vacía.
+        // Lo mantengo por ahora, pero ten cuidado con eso.
         Vector3 spawnPosition = GenerarPosicionNavMesh(zonaAleatoria, enemigoPool.Count); 
 
         if (spawnPosition != Vector3.zero)
@@ -121,21 +106,20 @@ public class SpawnManager : MonoBehaviour
             enemigoAActivar.transform.position = spawnPosition;
             enemigoAActivar.transform.rotation = Quaternion.identity;
 
-            EnemyAI enemyScript = enemigoAActivar.GetComponent<EnemyAI>();
+            EnemyAI enemyScript = enemigoAActivar.GetComponent<EnemyAI>(); // <-- Asegúrate que este nombre sea correcto
             if (enemyScript != null)
             {
-                // NUEVO: Asignar el ID de la zona a la que pertenece este enemigo
-                enemyScript.spawnZoneID = zonaElegidaIndex; // Necesitas 'public int spawnZoneID;' en NpcControl.cs
-                enemyScript.ConfigurarMovimiento(zonaAleatoria); // Pasa la zona de spawn (Collider) al enemigo
-                Debug.Log($"NavMeshAgent listo. Iniciando movimiento.");
+                enemyScript.spawnZoneID = zonaElegidaIndex; 
+                enemyScript.ConfigurarMovimiento(zonaAleatoria); 
+                // Ya no necesitamos este log aquí, la lógica de "NavMeshAgent listo" está en EnemyAI.
+                // Debug.Log($"NavMeshAgent listo. Iniciando movimiento."); 
             }
             else
             {
-                Debug.LogWarning("El prefab del enemigo no tiene el script 'NpcControl'. No se configurará el movimiento.");
+                Debug.LogWarning("El prefab del enemigo no tiene el script 'EnemyAI'. No se configurará el movimiento.");
             }
 
             enemigoAActivar.SetActive(true);
-            // NUEVO: Marcar la zona como ocupada
             zonasOcupadas[zonaElegidaIndex] = true; 
             Debug.Log($"Enemigo {enemigoAActivar.name} instanciado en zona {zonaElegidaIndex} en {spawnPosition}.");
         }
@@ -144,7 +128,6 @@ public class SpawnManager : MonoBehaviour
             Debug.LogWarning("No se pudo encontrar una posición válida en NavMesh para el enemigo. Devolviendo al pool.");
             enemigoAActivar.SetActive(false);
             enemigoPool.Enqueue(enemigoAActivar);
-            // NO se marca la zona como ocupada si no se pudo spawnear.
         }
     }
 
@@ -177,21 +160,28 @@ public class SpawnManager : MonoBehaviour
         return Vector3.zero;
     }
 
-    // Método para devolver un enemigo al pool
     public void DevolverEnemigoAlPool(GameObject enemigo)
     {
         enemigo.SetActive(false);
         enemigoPool.Enqueue(enemigo);
 
-        // NUEVO: Marcar la zona como libre cuando el enemigo es devuelto al pool
-        EnemyAI npcControl = enemigo.GetComponent<EnemyAI>();
-        if (npcControl != null)
+        EnemyAI enemyScript = enemigo.GetComponent<EnemyAI>(); // <-- Asegúrate que este nombre sea correcto
+        if (enemyScript != null)
         {
-            if (npcControl.spawnZoneID >= 0 && npcControl.spawnZoneID < zonasOcupadas.Length)
+            // Asegúrate de que el spawnZoneID sea válido antes de acceder al array
+            if (enemyScript.spawnZoneID >= 0 && enemyScript.spawnZoneID < zonasOcupadas.Length)
             {
-                zonasOcupadas[npcControl.spawnZoneID] = false;
-                Debug.Log($"Zona {npcControl.spawnZoneID} liberada.");
+                zonasOcupadas[enemyScript.spawnZoneID] = false;
+                Debug.Log($"Zona {enemyScript.spawnZoneID} liberada.");
             }
+            else
+            {
+                Debug.LogWarning($"Enemy {enemigo.name} devuelto al pool, pero su spawnZoneID ({enemyScript.spawnZoneID}) es inválido.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"Enemy {enemigo.name} devuelto al pool, pero no tiene el script 'EnemyAI'. No se pudo liberar la zona.");
         }
     }
 
@@ -204,14 +194,13 @@ public class SpawnManager : MonoBehaviour
                 Collider zona = zonasSpawn[i];
                 if (zona != null)
                 {
-                    // Cambiar color basado en si la zona está ocupada
                     if (zonasOcupadas != null && i < zonasOcupadas.Length && zonasOcupadas[i])
                     {
-                        Gizmos.color = new Color(1, 0, 0, 0.3f); // Rojo semitransparente si está ocupada
+                        Gizmos.color = new Color(1, 0, 0, 0.3f); 
                     }
                     else
                     {
-                        Gizmos.color = new Color(0, 1, 0, 0.3f); // Verde semitransparente si está libre
+                        Gizmos.color = new Color(0, 1, 0, 0.3f); 
                     }
                     Gizmos.DrawCube(zona.bounds.center, zona.bounds.size);
                 }
