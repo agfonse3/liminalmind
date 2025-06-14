@@ -120,6 +120,7 @@ public class SpawnManager : MonoBehaviour
             }
 
             enemigoAActivar.SetActive(true);
+            AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxTerror);
             zonasOcupadas[zonaElegidaIndex] = true; 
             Debug.Log($"Enemigo {enemigoAActivar.name} instanciado en zona {zonaElegidaIndex} en {spawnPosition}.");
         }

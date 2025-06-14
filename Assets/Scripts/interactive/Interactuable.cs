@@ -94,6 +94,7 @@ public class Interactuable : MonoBehaviour
                 if (dataitem != null)
                 {
                     inventoryManager.AddItemsToInventory(dataitem);
+                    AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxRecolectar);
                     Debug.Log("Objeto agregado al inventario: " + dataitem.itemName);
                     Destroy(gameObject);
                 }

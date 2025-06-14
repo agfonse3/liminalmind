@@ -20,24 +20,32 @@ public class CameraManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && EncuentraZonaDeActivacion())
-    {
-        teclaEPulsada = true;
-        currentView = views[0];
-        BloquearMovimiento(true);
+        {
+            teclaEPulsada = true;
+            currentView = views[0];
+            BloquearMovimiento(true);
+
+            // Sonido al activar cámara con E
+            AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxBotonMenu);
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            BloquearMovimiento(false);
+            currentView = defaultView;
+            teclaEPulsada = false;
+
+            // Sonido al volver con M
+            AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxBotonMenu);
+        }
     }
 
-    if (Input.GetKeyDown(KeyCode.M))
+    private bool EncuentraZonaDeActivacion()
     {
-        BloquearMovimiento(false);
-        currentView = defaultView;
-        teclaEPulsada = false;
+        return FindFirstObjectByType<ActivarZona>().jugadorDentro;
+        // Verifica si el jugador está dentro
     }
-    }
-private bool EncuentraZonaDeActivacion()
-{
-    return FindFirstObjectByType<ActivarZona>().jugadorDentro;
-// Verifica si el jugador está dentro
-}
+
     void LateUpdate()
     {
         if (currentView != null)
