@@ -10,7 +10,7 @@ public class ZonaDePatrulla
 }
 
 public class SpawnManager2 : MonoBehaviour
-{
+{/*
     public GameObject enemigoPrefab;
     public int poolSize = 3;
     
@@ -154,5 +154,5 @@ public class SpawnManager2 : MonoBehaviour
         {
             zonasOcupadas[zonaIndex] = false;
         }
-    }
+    }*/
 }
