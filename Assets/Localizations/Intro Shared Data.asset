@@ -16,7 +16,71 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: f8ab9fac259b56d45831704670812223
   m_Entries:
   - m_Id: 18397728768
-    m_Key: GameIntro
+    m_Key: GameIntro1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 187942997266432
+    m_Key: GameIntro2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188017882370048
+    m_Key: GameIntro3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188052263079936
+    m_Key: GameIntro4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188495185776640
+    m_Key: GameIntro5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188919536095232
+    m_Key: GameIntro6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 238040317890560
+    m_Key: Gameintro7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239951754498048
+    m_Key: GameIntro8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241051710722048
+    m_Key: GameIntro9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241054093086720
+    m_Key: GameIntro10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241453340495872
+    m_Key: GameIntro11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241459183161344
+    m_Key: GameIntro12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241953418973184
+    m_Key: GameIntro13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241955033780224
+    m_Key: GameIntro14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241959177752576
+    m_Key: GameIntro15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 242639816822784
+    m_Key: GameIntro16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 338536198246400
+    m_Key: Directions
     m_Metadata:
       m_Items: []
   m_Metadata:

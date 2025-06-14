@@ -5,15 +5,19 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     [SerializeField] private GameObject slotsHolder; //guarda los slots
+    [SerializeField] GameObject player;
     //public ItemClass itemToAdd; // item aadicionar al inventario para pruebas
     //private ItemClass itemToRemove;
-    [SerializeField] private List<ItemClass> items = new List<ItemClass>(); //lista de los items
+    private List<ItemClass> items ; //lista de los items
+    public Inventorylist playerInventorylist;
     private GameObject[] slots;
     public int quantityOfNotes;
 
     private void Start()
     {
         quantityOfNotes = 0;
+        playerInventorylist = player.GetComponent<Playerdata>().Inventorylist;
+        items = playerInventorylist.inventoryList;
         slots = new GameObject[slotsHolder.transform.childCount]; //cantidad de slots disponibles
         //colocar slots
         for (int i = 0; i < slotsHolder.transform.childCount;i++) 
