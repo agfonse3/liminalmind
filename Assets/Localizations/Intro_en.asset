@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Intro_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: f8ab9fac259b56d45831704670812223, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 18397728768
+    m_Localized: "It wasn't a mistake.  \nIt couldn't have been just that."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 187942997266432
+    m_Localized: 'On my way to work, I pressed the wrong numbers. I know I did. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188017882370048
+    m_Localized: "But this... \nthis isn't the same building. \n\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188052263079936
+    m_Localized: "It's not the same reality.\r\n\rThe walls don't look the same. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188495185776640
+    m_Localized: "The light flickers like an irregular heartbeat, \nand the elevator...
+      refuses to open its doors. \n\n\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188919536095232
+    m_Localized: "Time no longer passes; it simply weighs.\r\n\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 238040317890560
+    m_Localized: "Each floor I visit is a sick fragment of something \nI don\u2019t
+      want to remember. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239951754498048
+    m_Localized: "Familiar objects, distorted. \nSpaces I once inhabited, \nnow corrupted
+      by a twisted logic.\r\n\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241054093086720
+    m_Localized: "There\u2019s something here... \nsomething that feeds on fear.
+      \n\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241051710722048
+    m_Localized: "I'm not alone. \nBut I\u2019m not accompanied either."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241459183161344
+    m_Localized: "But I won\u2019t. Not this time.\r\n\rIf this place is a reflection
+      of my mind... "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241453340495872
+    m_Localized: "It doesn\u2019t want to kill me. \nIt wants to break me.... \nIt
+      wants me to give up."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241959177752576
+    m_Localized: 'And this time... '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241955033780224
+    m_Localized: "I\u2019ll find the way out by facing \nwhat I never had the courage
+      to look at. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241953418973184
+    m_Localized: "Then maybe, just maybe, \n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 242639816822784
+    m_Localized: "I won\u2019t look away."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 338536198246400
+    m_Localized: 'To move, use the arrow keys or WASD; to focus, use the mouse.
+
+'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -5,7 +5,7 @@ public class Interactuable : MonoBehaviour
 {     
     public float distanciaInteractuar = 3f;
     public GameObject panelInteractuar;
-    public GameObject panelUI;
+   [SerializeField]  public GameObject panelUI;
     public GameObject textInteractuable;
     private Transform jugador;
     private bool dentroRango = false;
@@ -71,7 +71,7 @@ public class Interactuable : MonoBehaviour
         if (panelUI != null)
         {
             panelUI.SetActive(!panelUI.activeSelf);
-            // Invoke("CerrarPanelUI", 5f); // Oculta el UI después de 5 segundos
+            Time.timeScale = 1.0f;
             Cursor.lockState = panelUI.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;
             Cursor.visible = panelUI.activeSelf;
 

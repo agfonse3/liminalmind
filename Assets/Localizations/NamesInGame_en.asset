@@ -51,6 +51,15 @@ MonoBehaviour:
     m_Localized: You dont have the key
     m_Metadata:
       m_Items: []
+  - m_Id: 3291024111112192
+    m_Localized: You have acquired a piece of Note. Check your inventory to view
+      it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3327282183081984
+    m_Localized: Holdings
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

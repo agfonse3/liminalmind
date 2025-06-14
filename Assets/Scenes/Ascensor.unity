@@ -320,6 +320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Entity_Idle
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: af243ca7c244f3c42a576ee8c80cc20e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1989515907741761845, guid: af243ca7c244f3c42a576ee8c80cc20e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -561,6 +565,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 171f493544654ff48a024af37126cd09, type: 3}
+--- !u!1001 &4717065396103094676
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2690968663902316232, guid: d9fc7b17b64cf1845aba8d84235f728e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690968663902316232, guid: d9fc7b17b64cf1845aba8d84235f728e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.4279563
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690968663902316232, guid: d9fc7b17b64cf1845aba8d84235f728e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690968663902316232, guid: d9fc7b17b64cf1845aba8d84235f728e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690968663902316232, guid: d9fc7b17b64cf1845aba8d84235f728e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690968663902316232, guid: d9fc7b17b64cf1845aba8d84235f728e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690968663902316232, guid: d9fc7b17b64cf1845aba8d84235f728e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690968663902316232, guid: d9fc7b17b64cf1845aba8d84235f728e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690968663902316232, guid: d9fc7b17b64cf1845aba8d84235f728e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690968663902316232, guid: d9fc7b17b64cf1845aba8d84235f728e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320258014202215538, guid: d9fc7b17b64cf1845aba8d84235f728e, type: 3}
+      propertyPath: m_Name
+      value: Women_Idle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d9fc7b17b64cf1845aba8d84235f728e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -569,3 +630,4 @@ SceneRoots:
   - {fileID: 1381260025}
   - {fileID: 1854613352036177454}
   - {fileID: 1215002896}
+  - {fileID: 4717065396103094676}
