@@ -19,19 +19,81 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 18397728768
-    m_Localized: "No fue un error. No puede haber sido solo eso.\r\n\r\nCamino a
-      mi trabajo, presion\xE9 los n\xFAmeros equivocados. \n\nLo s\xE9. Pero esto\u2026
-      esto no es el mismo edificio. \n\nNo es la misma realidad.\r\n\r\nLas paredes
-      no se ven igual. \n\nLa luz parpadea como un latido irregular, y el ascensor\u2026
-      se niega a abrir sus puertas. \n\nEl tiempo ya no transcurre; simplemente pesa.\r\n\r\nCada
-      piso que visito es un fragmento enfermo de algo que no quiero recordar. \n\nObjetos
-      familiares, distorsionados. Espacios que alguna vez habit\xE9, ahora contaminados
-      por una l\xF3gica perversa.\r\n\r\nNo estoy solo. Pero tampoco estoy acompa\xF1ado.\r\n\r\nHay
-      algo aqu\xED\u2026 \n\nalgo que se alimenta del miedo. \n\nNo quiere matarme.
-      Quiere quebrarme..... \n\nQuiere que me rinda.\r\n\r\nPero no pienso hacerlo.
-      No esta vez.\r\n\r\nSi este lugar es un reflejo de mi mente\u2026 \n\nentonces
-      tal vez, solo tal vez, encontrar\xE9 la salida enfrentando lo que nunca tuve
-      el valor de mirar. \n\nY esta vez\u2026 \n\nno apartar\xE9 la mirada.\r\n"
+    m_Localized: "No fue un error. \nNo puede haber sido solo eso.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 187942997266432
+    m_Localized: "Camino a mi trabajo, presion\xE9 los n\xFAmeros equivocados. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188017882370048
+    m_Localized: "Lo s\xE9. Pero esto\u2026 \nesto no es el mismo edificio. \n\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188052263079936
+    m_Localized: "No es la misma realidad.\r\n\rLas paredes no se ven igual. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188495185776640
+    m_Localized: "La luz parpadea como un latido irregular, \ny el ascensor\u2026
+      se niega a abrir sus puertas. \n\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188919536095232
+    m_Localized: 'El tiempo ya no transcurre; simplemente pesa.
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 238040317890560
+    m_Localized: 'Cada piso que visito es un fragmento enfermo de algo que no quiero
+      recordar. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239951754498048
+    m_Localized: "Objetos familiares, distorsionados. \nEspacios que alguna vez habit\xE9,
+      \nahora contaminados por una l\xF3gica perversa.\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241054093086720
+    m_Localized: "Hay algo aqu\xED\u2026 \nalgo que se alimenta del miedo. \n\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241051710722048
+    m_Localized: "No estoy solo. \nPero tampoco estoy acompa\xF1ado"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241459183161344
+    m_Localized: "Pero no pienso hacerlo. No esta vez.\r\n\rSi este lugar es un reflejo
+      de mi mente\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241453340495872
+    m_Localized: "No quiere matarme. \nQuiere quebrarme..... \nQuiere que me rinda."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241959177752576
+    m_Localized: "Y esta vez\u2026 "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241955033780224
+    m_Localized: "Encontrar\xE9 la salida enfrentando \nlo que nunca tuve el valor
+      de mirar. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241953418973184
+    m_Localized: "Entonces tal vez, solo tal vez, \n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 242639816822784
+    m_Localized: "no apartar\xE9 la mirada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 338536198246400
+    m_Localized: 'Para desplazarte utiliza las teclas direccional o WASD, para enfocar 
+      utiliza el raton.
+
+'
     m_Metadata:
       m_Items: []
   references:

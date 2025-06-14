@@ -19,20 +19,80 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 18397728768
-    m_Localized: "It wasn't a mistake.  It couldn't have been just that.\r\n\r\nOn
-      my way to work, I pressed the wrong numbers. I know I did. \n\nBut this...
-      this isn't the same building. \n\nIt's not the same reality.\r\n\r\nThe walls
-      don't look the same. \n\nThe light flickers like an irregular heartbeat, and
-      the elevator... refuses to open its doors. \n\nTime no longer passes; it simply
-      weighs.\r\n\r\nEach floor I visit is a sick fragment of something I don\u2019t
-      want to remember. \nFamiliar objects, distorted. Spaces I once inhabited, now
-      corrupted by a twisted logic.\r\n\r\nI'm not alone. But I\u2019m not accompanied
-      either.\r\n\r\nThere\u2019s something here... \n\nsomething that feeds on fear.
-      \n\nIt doesn\u2019t want to kill me. It wants to break me.... \n\nIt wants
-      me to give up.\r\n\r\nBut I won\u2019t. Not this time.\r\n\r\nIf this place
-      is a reflection of my mind... \n\nthen maybe, just maybe, I\u2019ll find the
-      way out by facing what I never had the courage to look at. \n\nAnd this time...
-      \n\nI won\u2019t look away.\r\n"
+    m_Localized: "It wasn't a mistake.  \nIt couldn't have been just that."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 187942997266432
+    m_Localized: 'On my way to work, I pressed the wrong numbers. I know I did. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188017882370048
+    m_Localized: "But this... \nthis isn't the same building. \n\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188052263079936
+    m_Localized: "It's not the same reality.\r\n\rThe walls don't look the same. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188495185776640
+    m_Localized: "The light flickers like an irregular heartbeat, \nand the elevator...
+      refuses to open its doors. \n\n\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 188919536095232
+    m_Localized: "Time no longer passes; it simply weighs.\r\n\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 238040317890560
+    m_Localized: "Each floor I visit is a sick fragment of something \nI don\u2019t
+      want to remember. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 239951754498048
+    m_Localized: "Familiar objects, distorted. \nSpaces I once inhabited, \nnow corrupted
+      by a twisted logic.\r\n\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241054093086720
+    m_Localized: "There\u2019s something here... \nsomething that feeds on fear.
+      \n\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241051710722048
+    m_Localized: "I'm not alone. \nBut I\u2019m not accompanied either."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241459183161344
+    m_Localized: "But I won\u2019t. Not this time.\r\n\rIf this place is a reflection
+      of my mind... "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241453340495872
+    m_Localized: "It doesn\u2019t want to kill me. \nIt wants to break me.... \nIt
+      wants me to give up."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241959177752576
+    m_Localized: 'And this time... '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241955033780224
+    m_Localized: "I\u2019ll find the way out by facing \nwhat I never had the courage
+      to look at. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241953418973184
+    m_Localized: "Then maybe, just maybe, \n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 242639816822784
+    m_Localized: "I won\u2019t look away."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 338536198246400
+    m_Localized: 'To move, use the arrow keys or WASD; to focus, use the mouse.
+
+'
     m_Metadata:
       m_Items: []
   references:

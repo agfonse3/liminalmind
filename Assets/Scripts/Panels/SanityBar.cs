@@ -63,12 +63,7 @@ public class SanityBar : MonoBehaviour
                 }
                 
             }
-             
-                
-
+          
         }
-       
     }
-
-   
 }
