@@ -30,23 +30,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5943900338230594142, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5943900338230594142, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5943900338230594142, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.70710677
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5943900338230594142, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.70710677
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5943900338230594142, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5943900338230594142, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -69,11 +69,6 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: 2763051122799439333}
   m_SourcePrefab: {fileID: 100100000, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
---- !u!95 &828152046542924664 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1578469186450923064, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
-  m_PrefabInstance: {fileID: 2205064774008091968}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5165311888485377444 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6428652558574637284, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
@@ -95,4 +90,4 @@ MonoBehaviour:
   textInteractuable: {fileID: 1269337624754358051, guid: 1be71b9530b065e45af8d0558e4bc543, type: 3}
   textLlave: {fileID: 2583234865985426969, guid: db57d29165232e748a8b03145799768d, type: 3}
   puerta: {fileID: 5165311888485377444}
-  puertaAnimator: {fileID: 828152046542924664}
+  puertaAnimator: {fileID: 0}
