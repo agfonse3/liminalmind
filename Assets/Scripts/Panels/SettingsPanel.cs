@@ -6,27 +6,28 @@ public class SettingsPanel : PanelBasic
     [SerializeField] Slider volumeBGMSlider; // Control de volumen sonidos de fondo
     [SerializeField] Slider volumeBFXSlider; // Control de volumen efectos de sonidos
     [SerializeField] Button volumeFXButton; // Boton que mutea
-    [SerializeField] GameObject settingsPannel; //panel activo
-    [SerializeField] GameObject startPannel; //panel inicio
-    [SerializeField] GameObject pausePannel; //panel pausa
+    [SerializeField] GameObject settingsPannel; // Panel activo
+    [SerializeField] GameObject startPannel; // Panel inicio
+    [SerializeField] GameObject pausePannel; // Panel pausa
 
-    public StartPanel startPanel; //script
-    public PausePanel pausePanel; //script
+    public StartPanel startPanel; // Script
+    public PausePanel pausePanel; // Script
 
-    bool isOnVolume = true; //variable que controla el muteado
+    bool isOnVolume = true; // Controla el muteado
 
-    public AudioClip audioBGS; //audio de prueba en la escena 
-    public AudioClip audioBFX; //audio de prueba para efectos
-    public Sprite soundOnImage; // imagen boton sonido on
-    public Sprite soundOffImage; // imagen boton mute
+    public AudioClip audioBGS; // Audio de prueba para fondo (ya no se reproduce automáticamente)
+    public AudioClip audioBFX; // Audio de prueba para efectos
+    public Sprite soundOnImage; // Imagen botón sonido on
+    public Sprite soundOffImage; // Imagen botón mute
 
     public bool isOnpause = false;
     public bool isOnStart = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        AudiomanagerTemp.Instance.PlayMusic(audioBGS);// musica que se reproduce en el fondo
+        // 🔇 Comentado para que la música sea controlada desde MusicByScene
+        // AudiomanagerTemp.Instance.PlayMusic(audioBGS);
+
         startPanel = startPannel.GetComponent<StartPanel>();
         pausePanel = pausePannel.GetComponent<PausePanel>();
     }
@@ -36,33 +37,30 @@ public class SettingsPanel : PanelBasic
         MouseActivatedInPanel();
     }
 
-    //metodo dinamica para cambiar el volumen musica de fondo
     public void ChangeVolumeBGM(float value)
     {
         if (isOnVolume)
         {
-            AudiomanagerTemp.Instance.VolumeMusic(value / 100); // se divide en 100 para control mas preciso
+            AudiomanagerTemp.Instance.VolumeMusic(value / 100);
         }
     }
 
-    //metodo dinamica para cambiar el volumen musica de efectos de sonido
     public void ChangeVolumeBFX(float value)
     {
         if (isOnVolume)
         {
             AudiomanagerTemp.Instance.PlaySFX(audioBFX);
-            AudiomanagerTemp.Instance.VolumeSFX(value / 100);// se divide en 100 para control mas preciso
+            AudiomanagerTemp.Instance.VolumeSFX(value / 100);
         }
     }
 
-    //metodo para silenciar todo el juego
     public void MuteVolume()
     {
         if (isOnVolume)
         {
             AudiomanagerTemp.Instance.MuteAll();
             isOnVolume = false;
-            volumeFXButton.image.sprite = soundOffImage; // cambia el icono del boton para indicar que esta apagado
+            volumeFXButton.image.sprite = soundOffImage;
         }
         else
         {
@@ -71,7 +69,6 @@ public class SettingsPanel : PanelBasic
             AudiomanagerTemp.Instance.VolumeSFX(volumeBFXSlider.value / 100);
             volumeFXButton.image.sprite = soundOnImage;
         }
-
     }
 
     public void ExitPanel()
@@ -79,6 +76,7 @@ public class SettingsPanel : PanelBasic
         if (AudiomanagerTemp.Instance != null)
         {
             AudiomanagerTemp.Instance.PlayEndMusic(audioBGS);
+
             if (isOnStart)
             {
                 settingsPannel.SetActive(false);
@@ -88,12 +86,13 @@ public class SettingsPanel : PanelBasic
                 }
                 else
                 {
-                    Debug.Log("no se encontro el objeto");
+                    Debug.Log("No se encontró el objeto StartPanel");
                 }
                 startPannel.SetActive(true);
                 isOnStart = false;
                 isOnpause = false;
             }
+
             if (isOnpause)
             {
                 settingsPannel.SetActive(false);
@@ -103,14 +102,12 @@ public class SettingsPanel : PanelBasic
                 }
                 else
                 {
-                    Debug.Log("no se encontro el objeto");
+                    Debug.Log("No se encontró el objeto PausePanel");
                 }
                 pausePannel.SetActive(true);
                 isOnStart = false;
                 isOnpause = false;
             }
-
         }
-
     }
 }

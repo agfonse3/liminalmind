@@ -32,6 +32,9 @@ public class ActivarZona : MonoBehaviour
             ActivarScript(true);
             ActivarShader(true);
             MostrarTexto(true);
+
+            // 🎧 Sonido de agitación al entrar en la zona
+            AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxAgitacion);
         }
     }
 
@@ -76,8 +79,8 @@ public class ActivarZona : MonoBehaviour
             panelUI.SetActive(activar);
         }
         if (textInteractuable != null)
-    {
-        textInteractuable.SetActive(activar);
-    }
+        {
+            textInteractuable.SetActive(activar);
+        }
     }
 }

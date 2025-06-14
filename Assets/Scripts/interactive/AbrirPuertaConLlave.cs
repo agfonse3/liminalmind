@@ -40,6 +40,7 @@ public class AbrirPuertaConLlave : MonoBehaviour
             }
             else
             {
+                AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxError);
                 MostrarMensajeSinLlave();
             }
         }
@@ -107,6 +108,7 @@ public class AbrirPuertaConLlave : MonoBehaviour
         {
             puertaAnimator.SetTrigger("Abrir"); // Dispara la animación con un Trigger desde el AnimatorController
             Debug.Log("Activando animación en puerta: " + puertaAnimator.gameObject.name);
+            AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxPuertaAbrir);
         }
         else
         {

@@ -8,5 +8,7 @@ private Animator animator;
     {
         animator = GetComponent<Animator>();
         animator.Play("puertas"); // Asegúrate de que "puertas" sea el nombre correcto de la animación en el controlador.
+         
+   
     }
 }
