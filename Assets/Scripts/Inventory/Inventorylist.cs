@@ -8,7 +8,7 @@ public class Inventorylist : ScriptableObject
 
     public void ResetData()
     {
-        inventoryList = null;
+        inventoryList.Clear();
     }
 
 }
