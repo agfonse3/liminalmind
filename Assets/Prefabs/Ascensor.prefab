@@ -145,8 +145,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4142357619020887648}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0065413695, y: 0.012261538, z: 0.0058615385}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00622, y: 0.013529999, z: 0.0059899995}
   m_LocalScale: {x: 0.0076923072, y: 0.0076923072, z: 0.0076923072}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -204,8 +204,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0066500297, y: 0.0064964, z: 0.0048350757}
-  m_Center: {x: 0.040027544, y: 0.010409614, z: 0.019222884}
+  m_Size: {x: 0.004321489, y: 0.0064964, z: 0.0048350757}
+  m_Center: {x: 0.038863312, y: 0.010409615, z: 0.019222884}
 --- !u!114 &7018295008348342871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,8 +223,7 @@ MonoBehaviour:
   materialShader: {fileID: 2100000, guid: 1c9fffbabd8634941bf8a449056de793, type: 2}
   indiceMaterial: 1
   panelUI: {fileID: 0}
-  textoMensaje: {fileID: 0}
-  mensaje: Presiona E para interactuar
+  textInteractuable: {fileID: 0}
   jugadorDentro: 0
 --- !u!1 &7310752624876071010
 GameObject:
@@ -297,8 +296,7 @@ MonoBehaviour:
   materialShader: {fileID: 2100000, guid: 1c9fffbabd8634941bf8a449056de793, type: 2}
   indiceMaterial: 1
   panelUI: {fileID: 0}
-  textoMensaje: {fileID: 0}
-  mensaje: Presiona E para interactuar
+  textInteractuable: {fileID: 0}
   jugadorDentro: 0
 --- !u!1 &7326946094379695296
 GameObject:
@@ -388,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94246b4ef6f717d42b183a57d07aed1d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94246b4ef6f717d42b183a57d07aed1d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1206,7 +1204,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6643101103232328994}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74dac98a663445143a5e678ed85f5191, type: 3}
   m_Name: 
@@ -1216,7 +1214,7 @@ MonoBehaviour:
   - tecla: 50
     nombreAnimacion: boton2
     objetoRenderer: {fileID: 5464190138577527954}
-    indiceEscena: 1
+    indiceEscena: 2
   shaderMaterial: {fileID: 2100000, guid: 1c9fffbabd8634941bf8a449056de793, type: 2}
   indiceMaterial: 1
   cameraManager: {fileID: 0}
