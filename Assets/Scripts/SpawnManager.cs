@@ -1,11 +1,10 @@
-// Tu SpawnManager.cs ya debería ser esta versión o muy similar:
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject enemigoPrefab;
+    public GameObject[] enemigoPrefabs;
     public int poolSize = 10;
     public Collider[] zonasSpawn; 
 
@@ -56,7 +55,7 @@ public class SpawnManager : MonoBehaviour
 
         for (int i = 0; i < poolSize; i++)
         {
-            GameObject enemigo = Instantiate(enemigoPrefab);
+            GameObject enemigo = Instantiate(ObtenerPrefabAleatorio());
             enemigo.SetActive(false);
             enemigoPool.Enqueue(enemigo);
         }
@@ -146,7 +145,7 @@ public class SpawnManager : MonoBehaviour
         }
 
         NavMeshHit hit;
-        float searchRadius = 5f; 
+        float searchRadius = 5f;
 
         if (NavMesh.SamplePosition(randomPointInBounds, out hit, searchRadius, NavMesh.AllAreas))
         {
@@ -159,8 +158,18 @@ public class SpawnManager : MonoBehaviour
 
         Debug.LogWarning($"SpawnManager: No se encontró posición válida en NavMesh para el enemigo en zona {zona.name} cerca de {randomPointInBounds}");
         return Vector3.zero;
+        
     }
+ GameObject ObtenerPrefabAleatorio()
+    {
+        if (enemigoPrefabs.Length == 0)
+        {
+            Debug.LogError("No hay prefabs de enemigos asignados.");
+            return null;
+        }
 
+        return enemigoPrefabs[Random.Range(0, enemigoPrefabs.Length)];
+    }
     public void DevolverEnemigoAlPool(GameObject enemigo)
     {
         enemigo.SetActive(false);
