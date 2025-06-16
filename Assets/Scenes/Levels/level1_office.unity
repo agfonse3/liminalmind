@@ -2181,6 +2181,18 @@ PrefabInstance:
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 5851145264822887999, guid: 171f493544654ff48a024af37126cd09, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5851145264822887999, guid: 171f493544654ff48a024af37126cd09, type: 3}
+      propertyPath: cameraManager
+      value: 
+      objectReference: {fileID: 1221344985}
+    - target: {fileID: 5851145264822887999, guid: 171f493544654ff48a024af37126cd09, type: 3}
+      propertyPath: eventos.Array.data[0].indiceEscena
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5879856548374918714, guid: 171f493544654ff48a024af37126cd09, type: 3}
       propertyPath: m_Name
       value: Ascensor
@@ -2195,7 +2207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6544472207099456640, guid: 171f493544654ff48a024af37126cd09, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 6544472207099456640, guid: 171f493544654ff48a024af37126cd09, type: 3}
       propertyPath: m_LocalRotation.w

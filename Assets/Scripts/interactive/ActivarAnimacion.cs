@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class EventoTecla
 {
     public KeyCode tecla = KeyCode.Alpha1;       // Tecla que activa el evento
+    
     public string nombreAnimacion;               // Nombre de la animación a reproducir
     public Renderer objetoRenderer;              // Objeto al que se le aplica el shader
     public int indiceEscena;                     // Índice de la escena a cargar
