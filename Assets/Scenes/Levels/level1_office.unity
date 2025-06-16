@@ -8812,6 +8812,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4047814476598437174, guid: be09409e3d90c9843b4311996072b416, type: 3}
+      propertyPath: Inventorylist
+      value: 
+      objectReference: {fileID: 11400000, guid: 47a8a227bd31e7d4da0a26843fbb0d07, type: 2}
     - target: {fileID: 5644209708138530564, guid: be09409e3d90c9843b4311996072b416, type: 3}
       propertyPath: 'views.Array.data[0]'
       value: 
@@ -9018,6 +9022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SanityScriptableObject: {fileID: 11400000, guid: 09f3cdf103d3f3948a1ff63979ab7db6, type: 2}
+  Inventorylist: {fileID: 11400000, guid: 47a8a227bd31e7d4da0a26843fbb0d07, type: 2}
 --- !u!82 &1466971479
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14697,6 +14702,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 336165304135683489, guid: c2bf90cc8cfd29c4dbeeb9dc165d0328, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1466971465}
     - target: {fileID: 336165304135683489, guid: c2bf90cc8cfd29c4dbeeb9dc165d0328, type: 3}
       propertyPath: slotsHolder
       value: 
