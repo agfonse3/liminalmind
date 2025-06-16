@@ -96,6 +96,10 @@ MonoBehaviour:
 '
     m_Metadata:
       m_Items: []
+  - m_Id: 1258042894520320
+    m_Localized: Busca las llaves y encuentra la clave que te permitira salir.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

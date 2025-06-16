@@ -5,4 +5,10 @@ using UnityEngine;
 public class Inventorylist : ScriptableObject
 {
     public List<ItemClass> inventoryList = new List<ItemClass>();
+
+    public void ResetData()
+    {
+        inventoryList = null;
+    }
+
 }

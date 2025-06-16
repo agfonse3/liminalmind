@@ -95,6 +95,10 @@ MonoBehaviour:
 '
     m_Metadata:
       m_Items: []
+  - m_Id: 1258042894520320
+    m_Localized: Look for the keys and find the clue that will allow you to escape.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

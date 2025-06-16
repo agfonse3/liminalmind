@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
 
     public int numberActualScene; //guarda el numero de la escena actual
 
+    [SerializeField] private GameObject player;
+
+
     //ultima escena
     public Vector3 lastPosition; // posicion del jugador en la ultima escena
 
@@ -41,11 +44,13 @@ public class GameManager : MonoBehaviour
     {
         gameOver = false;
         isGamePaused = false;
+
     }
   public void NuevoJuego()
     {
         SceneManager.LoadScene(1);
         isGameActive = true;
+
     }
     //Metodo para determinar el idioma
     public void ChangeLanguage(int option)
@@ -71,6 +76,12 @@ public class GameManager : MonoBehaviour
    public void SetGameOver() 
     {
         gameOver = true;
+        GameOver();
+    }
+
+    public void restart() 
+    {
+
     }
 
     //metodo de gameover

@@ -9,7 +9,7 @@ public class InventoryManager : MonoBehaviour
     //public ItemClass itemToAdd; // item aadicionar al inventario para pruebas
     //private ItemClass itemToRemove;
     private List<ItemClass> items ; //lista de los items
-    public Inventorylist playerInventorylist;
+    private Inventorylist playerInventorylist;
     private GameObject[] slots;
     public int quantityOfNotes;
 
@@ -78,10 +78,6 @@ public class InventoryManager : MonoBehaviour
                
             }
 
-            //Debug.Log("adiciona un item");
-            //Debug.Log(item);
-            //items.Add(item);
-            //UpdateInventoryUI();
         }
 
     }
