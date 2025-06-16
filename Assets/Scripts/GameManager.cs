@@ -92,7 +92,8 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(2);
         //SceneManager.LoadScene(3); //escena despues de intro
-        player.transform.position = new Vector3(-0.138f, -0.133f, 0.847f);
+        //player.transform.position = lastPosition;
+        player.transform.position = new Vector3(-0.43587f, 0.133f, 0.707046f);
     }
 
 
