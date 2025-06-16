@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemdata: {fileID: 11400000, guid: a44102400843b8a4baa91cd40920798c, type: 2}
-  inventory: {fileID: 0}
+  inventory: {fileID: 7759767541936311464, guid: c2bf90cc8cfd29c4dbeeb9dc165d0328, type: 3}
 --- !u!95 &6314671435616424682 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5277038490968893354, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}

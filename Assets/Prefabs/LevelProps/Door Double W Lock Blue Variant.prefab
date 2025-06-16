@@ -225,9 +225,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2246670390c6ce04f9c6083a89b9625d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelUI: {fileID: 0}
-  textInteractuable: {fileID: 0}
-  textLlave: {fileID: 0}
+  panelUI: {fileID: 3184518345062138473, guid: 8a2c6490dd7d3924aa062fe969648047, type: 3}
+  textInteractuable: {fileID: 1269337624754358051, guid: 1be71b9530b065e45af8d0558e4bc543, type: 3}
+  textLlave: {fileID: 2583234865985426969, guid: db57d29165232e748a8b03145799768d, type: 3}
   puerta: {fileID: 1094849901655589203}
   puertaAnimator: {fileID: 4683937872234193731}
 --- !u!114 &3708614950357646356
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemdata: {fileID: 11400000, guid: 09f236c904168644699e73a1563b341e, type: 2}
-  inventory: {fileID: 0}
+  inventory: {fileID: 7969616084207118023, guid: a66c4928ed017b944912ad3fd44f9f7b, type: 3}
 --- !u!1 &4477689494091947600 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7794771411265428296, guid: 092943ba7d68fd14dad4aa90fdf17023, type: 3}

@@ -70,3 +70,11 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Scripts/Enemies/ActivarPersecucion.cs
+Assets/Scripts/Enemies/ActivarPersecucion.cs.meta
+Assets/Scripts/Enemies/EnemySpawner.cs
+Assets/Scripts/Enemies/EnemySpawner.cs.meta
+Assets/Scripts/Panels/StartPanel.cs
+Assets/Scripts/RecolectableManager.cs
+Assets/Scripts/RecolectableManager.cs.meta
+Assets/Scripts/SpawnManager.cs
