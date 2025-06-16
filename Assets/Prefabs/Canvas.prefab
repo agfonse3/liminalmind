@@ -6048,18 +6048,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: NuevoJuego
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4286324711273500053
 GameObject:
   m_ObjectHideFlags: 0
@@ -9101,7 +9089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sanitySlider: {fileID: 8716273902015821766}
-  player: {fileID: 0}
+  player: {fileID: 6876184005758335181, guid: be09409e3d90c9843b4311996072b416, type: 3}
   sanityScriptableObject: {fileID: 11400000, guid: 09f3cdf103d3f3948a1ff63979ab7db6, type: 2}
   sanitytemp: 0
 --- !u!1 &7038200667195289465

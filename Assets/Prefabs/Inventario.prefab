@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotsHolder: {fileID: 0}
-  items: []
+  player: {fileID: 6876184005758335181, guid: be09409e3d90c9843b4311996072b416, type: 3}
   quantityOfNotes: 0

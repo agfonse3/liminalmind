@@ -290,7 +290,7 @@ MonoBehaviour:
   panelUI: {fileID: 0}
   textInteractuable: {fileID: 0}
   luzInteractuable: {fileID: 1908208895161196978}
-  inventary: {fileID: 0}
+  inventary: {fileID: 7759767541936311464, guid: c2bf90cc8cfd29c4dbeeb9dc165d0328, type: 3}
 --- !u!114 &4112917353668902836
 MonoBehaviour:
   m_ObjectHideFlags: 0

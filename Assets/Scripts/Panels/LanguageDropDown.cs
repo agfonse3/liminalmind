@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
-using UnityEngine.UI;
 using System.Collections;
 using TMPro;
 using UnityEngine.Localization;

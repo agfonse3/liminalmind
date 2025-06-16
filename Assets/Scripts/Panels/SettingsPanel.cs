@@ -84,10 +84,7 @@ public class SettingsPanel : PanelBasic
                 {
                     AudiomanagerTemp.Instance.PlayMusic(startPanel.audioBGS);
                 }
-                else
-                {
-                    Debug.Log("No se encontró el objeto StartPanel");
-                }
+                
                 startPannel.SetActive(true);
                 isOnStart = false;
                 isOnpause = false;
@@ -100,10 +97,7 @@ public class SettingsPanel : PanelBasic
                 {
                     AudiomanagerTemp.Instance.PlayMusic(pausePanel.audioBGS);
                 }
-                else
-                {
-                    Debug.Log("No se encontró el objeto PausePanel");
-                }
+                
                 pausePannel.SetActive(true);
                 isOnStart = false;
                 isOnpause = false;

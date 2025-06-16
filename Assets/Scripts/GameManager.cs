@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
@@ -7,20 +6,23 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public int numberActualScene; //guarda el numero de la escena actual
+    private int numberActualScene; //guarda el numero de la escena actual
 
     [SerializeField] private GameObject player;
 
 
     //ultima escena
-    public Vector3 lastPosition; // posicion del jugador en la ultima escena
+    private Vector3 lastPosition; // posicion del jugador en la ultima escena
 
     //List<GameObject> lista para el inventario
    // public List<GameObject> listaInventario = new List<GameObject>();
     public bool isGameActive;
     public bool isGamePaused;
     public bool gameOver;
+    private Playerdata playerData;
+
     [SerializeField] GameObject gameOverPannel;
+
 
     private void Awake()
     {
@@ -44,14 +46,25 @@ public class GameManager : MonoBehaviour
     {
         gameOver = false;
         isGamePaused = false;
-
+        playerData = player.GetComponent<Playerdata>();
     }
+
+    public void Restart() 
+    {
+        gameOver = false;
+        isGamePaused = false;
+        SceneManager.LoadScene(0);
+        isGameActive = true;
+        ResetAll();
+    }
+
   public void NuevoJuego()
     {
         SceneManager.LoadScene(1);
         isGameActive = true;
-
+        ResetAll();
     }
+
     //Metodo para determinar el idioma
     public void ChangeLanguage(int option)
     {
@@ -62,32 +75,53 @@ public class GameManager : MonoBehaviour
     }
 
       //metodo que almacena la ultima posicion del jugador
-    public void setLastPosition(Vector3 actualPosition) 
+    public void setLastPosition() 
     {
+        Vector3 actualPosition = player.transform.position;
         lastPosition = actualPosition; // ultima posicion del player
     }
 
-    //metodo que almacena la ultima escena del jugador
-    public void SetActualScene(int value) 
+    public void GoToFirstFloor() //piso oficina
     {
-        numberActualScene=value; // ultima escena en la que estuvo
+        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(2); // escena despues de intro
+        player.transform.position = lastPosition;
     }
 
-   public void SetGameOver() 
+    public void GoToSecondFloor()// piso apartamento
+    {
+        SceneManager.LoadScene(2);
+        //SceneManager.LoadScene(3); //escena despues de intro
+        player.transform.position = new Vector3(-0.138f, -0.133f, 0.847f);
+    }
+
+
+    public void SetGameOver() 
     {
         gameOver = true;
         GameOver();
     }
 
-    public void restart() 
+    public void ResetAll() 
     {
-
+        playerData.SanityScriptableObject.ResetData();
+        playerData.Inventorylist.ResetData();
     }
 
     //metodo de gameover
     public void GameOver()
     {
         gameOverPannel.SetActive(true);
+        //SceneManager.LoadScene(4);
+        isGameActive = false;
+        isGamePaused = true;
+        gameOver = true;
+    }
+
+    public void GameCompleted()
+    {
+        gameOverPannel.SetActive(true);
+        //SceneManager.LoadScene(5);
         isGameActive = false;
         isGamePaused = true;
         gameOver = true;

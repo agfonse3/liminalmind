@@ -287,17 +287,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music: {fileID: 728810836}
   soundEffects: {fileID: 1347951094}
-  sfxAgitacion: {fileID: 0}
-  sfxAscensor: {fileID: 0}
   sfxPaso: {fileID: 0}
   sfxBotonAscensor: {fileID: 0}
-  sfxPapel: {fileID: 0}
-  sfxTerror: {fileID: 0}
   sfxBotonMenu: {fileID: 0}
-  musicMisterio: {fileID: 0}
-  musicAscensor: {fileID: 0}
+  sfxTerror: {fileID: 0}
+  sfxAgitacion: {fileID: 0}
+  sfxPapel: {fileID: 0}
+  sfxPuertaAbrir: {fileID: 0}
+  sfxError: {fileID: 0}
+  sfxRecolectar: {fileID: 0}
+  sfxBotonFisico: {fileID: 0}
   musicMenu: {fileID: 0}
   musicOficina: {fileID: 0}
+  musicAscensor: {fileID: 0}
+  musicMisterio: {fileID: 0}
 --- !u!4 &467176647
 Transform:
   m_ObjectHideFlags: 0
@@ -449,6 +452,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 467176647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &993113164 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3910696970351487291, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+  m_PrefabInstance: {fileID: 7588668401188757526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1177806464
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,12 +881,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f679aaea3dd75ff439db07e2abea3be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberActualScene: 0
-  lastPosition: {x: 0, y: 0, z: 0}
+  player: {fileID: 6876184005758335181, guid: be09409e3d90c9843b4311996072b416, type: 3}
   isGameActive: 0
   isGamePaused: 0
   gameOver: 0
-  gameOverPannel: {fileID: 0}
+  gameOverPannel: {fileID: 993113164}
 --- !u!4 &1887337588
 Transform:
   m_ObjectHideFlags: 0
@@ -918,10 +925,6 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1266577741}
-    - target: {fileID: 5890145527773305117, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1887337587}
     - target: {fileID: 6764766364173830736, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_Pivot.x
       value: 0
