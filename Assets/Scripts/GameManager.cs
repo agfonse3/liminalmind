@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         gameOver = false;
         isGamePaused = false;
+        isGameActive = false;
         playerData = player.GetComponent<Playerdata>();
     }
 
@@ -54,14 +55,14 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         isGamePaused = false;
         SceneManager.LoadScene(0);
-        isGameActive = true;
+        isGameActive = false;
         ResetAll();
     }
 
   public void NuevoJuego()
     {
         SceneManager.LoadScene(1);
-        isGameActive = true;
+        //isGameActive = true;
         ResetAll();
     }
 
@@ -83,15 +84,15 @@ public class GameManager : MonoBehaviour
 
     public void GoToFirstFloor() //piso oficina
     {
-        SceneManager.LoadScene(1);
-        //SceneManager.LoadScene(2); // escena despues de intro
+        //SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2); // escena despues de intro
         //player.transform.position = lastPosition;
     }
 
     public void GoToSecondFloor()// piso apartamento
     {
-        SceneManager.LoadScene(2);
-        //SceneManager.LoadScene(3); //escena despues de intro
+        //SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3); //escena despues de intro
         //player.transform.position = lastPosition;
         player.transform.position = new Vector3(-0.43587f, 0.133f, 0.707046f);
     }
