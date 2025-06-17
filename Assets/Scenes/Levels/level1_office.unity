@@ -4636,11 +4636,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6618740975490706855, guid: 40073900af1dc3b4e8cd6b1b83c34265, type: 3}
   m_PrefabInstance: {fileID: 1336749263}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &592318960 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2790350458614500566, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
-  m_PrefabInstance: {fileID: 2049720615}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &600898156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5033,7 +5028,7 @@ PrefabInstance:
     - target: {fileID: 8051583800603671662, guid: 396147e26dd01ec45a0d49209f2af480, type: 3}
       propertyPath: panelUI
       value: 
-      objectReference: {fileID: 592318960}
+      objectReference: {fileID: 0}
     - target: {fileID: 8051583800603671662, guid: 396147e26dd01ec45a0d49209f2af480, type: 3}
       propertyPath: inventary
       value: 
