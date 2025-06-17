@@ -60,8 +60,12 @@ PrefabInstance:
       value: SlotPanel (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7183996473125618894, guid: 761704cf94abcb244994dc484c60b654, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c772624e0404ef94e8852134eaea4683, type: 3}
+    - target: {fileID: 7183996473125618894, guid: 761704cf94abcb244994dc484c60b654, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7639988505956077976, guid: 761704cf94abcb244994dc484c60b654, type: 3}
       propertyPath: m_Pivot.x
