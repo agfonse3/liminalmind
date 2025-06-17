@@ -29,6 +29,10 @@ public class SanityBar : MonoBehaviour
     {
         sanitySlider.value = currentSanity;
         ChangeColorBar();
+        if (currentSanity==0)
+        {
+            GameManager.Instance.GameOver();
+        }
     }
 
     public void ChangeColorBar() 

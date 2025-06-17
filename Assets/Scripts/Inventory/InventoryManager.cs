@@ -15,8 +15,8 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        quantityOfNotes = playerInventorylist.quantityOfNotes;
         playerInventorylist = player.GetComponent<Playerdata>().Inventorylist;
+        quantityOfNotes = playerInventorylist.quantityOfNotes;
         //items = playerInventorylist.inventoryList;// para prueba
         slots = new GameObject[slotsHolder.transform.childCount]; //cantidad de slots disponibles
         //colocar slots

@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
         //SceneManager.LoadScene(2); // escena despues de intro
-        player.transform.position = lastPosition;
+        //player.transform.position = lastPosition;
     }
 
     public void GoToSecondFloor()// piso apartamento
@@ -113,6 +113,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOverPannel.SetActive(true);
+        gameOverPannel.transform.GetChild(0).gameObject.SetActive(true);
         //SceneManager.LoadScene(4);
         isGameActive = false;
         isGamePaused = true;
@@ -122,6 +123,7 @@ public class GameManager : MonoBehaviour
     public void GameCompleted()
     {
         gameOverPannel.SetActive(true);
+        gameOverPannel.transform.GetChild(1).gameObject.SetActive(true);
         //SceneManager.LoadScene(5);
         isGameActive = false;
         isGamePaused = true;
