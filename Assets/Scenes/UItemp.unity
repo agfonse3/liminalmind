@@ -911,6 +911,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6699553894922949016, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+      propertyPath: sanitytemp
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6764766364173830736, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_Pivot.x
       value: 0
