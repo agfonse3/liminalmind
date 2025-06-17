@@ -21030,7 +21030,7 @@ PrefabInstance:
     - target: {fileID: 6314671435616424682, guid: 719e01af049b2364486097e77f397d65, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: c36ff66cdbb4a93468e98ae8e49b261b, type: 2}
+      objectReference: {fileID: 9100000, guid: 6ba410a92a0697649b00888b911836d3, type: 2}
     - target: {fileID: 6377275338785849342, guid: 719e01af049b2364486097e77f397d65, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 16
