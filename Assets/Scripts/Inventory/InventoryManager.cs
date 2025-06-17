@@ -15,7 +15,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        quantityOfNotes = 0;
+        quantityOfNotes = playerInventorylist.quantityOfNotes;
         playerInventorylist = player.GetComponent<Playerdata>().Inventorylist;
         //items = playerInventorylist.inventoryList;// para prueba
         slots = new GameObject[slotsHolder.transform.childCount]; //cantidad de slots disponibles
@@ -58,14 +58,17 @@ public class InventoryManager : MonoBehaviour
             if (item.GetNote() != null)  //revisa si es una nota
             {
                 Debug.Log("adquiriste una nota");
-                if (quantityOfNotes == 0)
+                if (playerInventorylist.quantityOfNotes == 0)
                 {
                     playerInventorylist.inventoryList.Add(item); // si no hay la adiciona
-                    quantityOfNotes++;
+                    playerInventorylist.quantityOfNotes++;
+                    UpdateInventoryUI();
+                    quantityOfNotes = playerInventorylist.quantityOfNotes;
                 }
-                else if (quantityOfNotes<4)
+                else if (playerInventorylist.quantityOfNotes <4)
                 {
-                    quantityOfNotes++;// si no aumenta la cantidad recolctadas
+                    playerInventorylist.quantityOfNotes++;// si no aumenta la cantidad recolctadas
+                    quantityOfNotes = playerInventorylist.quantityOfNotes;
                 }
             }else
             {
@@ -116,7 +119,7 @@ public class InventoryManager : MonoBehaviour
             } 
         }
         if (numberslotNote!=-1) {
-            if (Vector2.Distance(slots[numberslotNote].transform.position, mouseposition) < 15)
+            if (Vector2.Distance(slots[numberslotNote].transform.position, mouseposition) < 18)
             {
                 return true;
             }
