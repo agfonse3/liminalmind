@@ -634,7 +634,7 @@ PrefabInstance:
     - target: {fileID: 3196919672106352538, guid: ec1431ac115ff354c8d7532c9e06d40e, type: 3}
       propertyPath: panelUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 357139919}
     - target: {fileID: 3196919672106352538, guid: ec1431ac115ff354c8d7532c9e06d40e, type: 3}
       propertyPath: inventary
       value: 
@@ -10518,7 +10518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanciaInteractuar: 0.77
   panelInteractuar: {fileID: 2143466784}
-  panelUI: {fileID: 0}
+  panelUI: {fileID: 357139919}
   textInteractuable: {fileID: 1596637832}
   luzInteractuable: {fileID: 1842429033}
   inventary: {fileID: 398837119}

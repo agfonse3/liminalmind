@@ -77,8 +77,8 @@ public class GameManager : MonoBehaviour
       //metodo que almacena la ultima posicion del jugador
     public void setLastPosition() 
     {
-        Vector3 actualPosition = player.transform.position;
-        lastPosition = actualPosition; // ultima posicion del player
+        //Vector3 actualPosition = player.transform.position;
+        //lastPosition = actualPosition; // ultima posicion del player
     }
 
     public void GoToFirstFloor() //piso oficina
