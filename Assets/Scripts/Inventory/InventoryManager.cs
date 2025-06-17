@@ -57,6 +57,7 @@ public class InventoryManager : MonoBehaviour
         {
             if (item.GetNote() != null)  //revisa si es una nota
             {
+                Debug.Log("adquiriste una nota");
                 if (quantityOfNotes == 0)
                 {
                     playerInventorylist.inventoryList.Add(item); // si no hay la adiciona
