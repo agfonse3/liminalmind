@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         gameOver = false;
         isGamePaused = false;
+        isGameActive = false;
         playerData = player.GetComponent<Playerdata>();
     }
 
@@ -54,14 +55,14 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         isGamePaused = false;
         SceneManager.LoadScene(0);
-        isGameActive = true;
+        isGameActive = false;
         ResetAll();
     }
 
   public void NuevoJuego()
     {
         SceneManager.LoadScene(1);
-        isGameActive = true;
+        //isGameActive = true;
         ResetAll();
     }
 
@@ -77,29 +78,35 @@ public class GameManager : MonoBehaviour
       //metodo que almacena la ultima posicion del jugador
     public void setLastPosition() 
     {
-        Vector3 actualPosition = player.transform.position;
-        lastPosition = actualPosition; // ultima posicion del player
+        //Vector3 actualPosition = player.transform.position;
+        //lastPosition = actualPosition; // ultima posicion del player
     }
 
     public void GoToFirstFloor() //piso oficina
     {
-        SceneManager.LoadScene(1);
-        //SceneManager.LoadScene(2); // escena despues de intro
-        player.transform.position = lastPosition;
+        //SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2); // escena despues de intro
+        //player.transform.position = lastPosition;
     }
 
     public void GoToSecondFloor()// piso apartamento
     {
-        SceneManager.LoadScene(2);
-        //SceneManager.LoadScene(3); //escena despues de intro
+        //SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3); //escena despues de intro
         //player.transform.position = lastPosition;
         player.transform.position = new Vector3(-0.43587f, 0.133f, 0.707046f);
     }
 
+    public void SetGameActive()
+    {
+        isGameActive = true;
+       
+    }
 
     public void SetGameOver() 
     {
         gameOver = true;
+        Debug.Log("Game Over");
         GameOver();
     }
 
@@ -107,12 +114,16 @@ public class GameManager : MonoBehaviour
     {
         playerData.SanityScriptableObject.ResetData();
         playerData.Inventorylist.ResetData();
+        gameOverPannel.SetActive(false);
+        gameOverPannel.transform.GetChild(0).gameObject.SetActive(false);
+        gameOverPannel.transform.GetChild(1).gameObject.SetActive(false);
     }
 
     //metodo de gameover
     public void GameOver()
     {
         gameOverPannel.SetActive(true);
+        gameOverPannel.transform.GetChild(0).gameObject.SetActive(true);
         //SceneManager.LoadScene(4);
         isGameActive = false;
         isGamePaused = true;
@@ -122,10 +133,11 @@ public class GameManager : MonoBehaviour
     public void GameCompleted()
     {
         gameOverPannel.SetActive(true);
+        gameOverPannel.transform.GetChild(1).gameObject.SetActive(true);
         //SceneManager.LoadScene(5);
         isGameActive = false;
         isGamePaused = true;
-        gameOver = true;
+        //gameOver = true;
     }
 
 }

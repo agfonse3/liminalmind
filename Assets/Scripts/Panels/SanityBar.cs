@@ -9,11 +9,13 @@ public class SanityBar : MonoBehaviour
 
     public float sanitytemp; // esta se va a cambiar con el script de vida 
 
+
     private void Start()
     {
         sanitySlider = GetComponent<Slider>();
         sanityScriptableObject=player.GetComponent<Playerdata>().SanityScriptableObject;
         ChangeSanityMax(sanityScriptableObject.maxSanity);
+        sanitySlider.value = 100;
     }
 
     public void Update()
@@ -29,6 +31,10 @@ public class SanityBar : MonoBehaviour
     {
         sanitySlider.value = currentSanity;
         ChangeColorBar();
+        if (currentSanity==0 && GameManager.Instance.isGameActive)
+        {
+            GameManager.Instance.SetGameOver();
+        }
     }
 
     public void ChangeColorBar() 

@@ -3088,7 +3088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4785292873924935762
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9588,7 +9588,7 @@ MonoBehaviour:
   sanitySlider: {fileID: 8716273902015821766}
   player: {fileID: 6876184005758335181, guid: be09409e3d90c9843b4311996072b416, type: 3}
   sanityScriptableObject: {fileID: 11400000, guid: 09f3cdf103d3f3948a1ff63979ab7db6, type: 2}
-  sanitytemp: 0
+  sanitytemp: 100
 --- !u!1 &7038200667195289465
 GameObject:
   m_ObjectHideFlags: 0

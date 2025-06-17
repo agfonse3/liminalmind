@@ -34,7 +34,7 @@ public class ActivarZona : MonoBehaviour
             MostrarTexto(true);
 
             // 🎧 Sonido de agitación al entrar en la zona
-            AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxAgitacion);
+            //AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxAgitacion);
         }
     }
 

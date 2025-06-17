@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class SuitcaseController : MonoBehaviour
 {
@@ -9,7 +10,17 @@ public class SuitcaseController : MonoBehaviour
         if (animator != null)
         {
             animator.SetTrigger("Open");
+            StartCoroutine(BeginGameCompleted());
         }
     }
+
+    IEnumerator BeginGameCompleted()
+    {
+        yield return new WaitForSeconds(4);
+        GameManager.Instance.GameCompleted();
+    }
+
+
+
 }
 
