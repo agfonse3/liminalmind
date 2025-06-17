@@ -7,6 +7,7 @@ public class Transition : MonoBehaviour
     public void Start()
     {
         StartCoroutine(LoadYourAsyncScene());
+        GameManager.Instance.isGameActive = true;
     }
 
     IEnumerator LoadYourAsyncScene()
