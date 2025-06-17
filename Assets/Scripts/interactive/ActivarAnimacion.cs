@@ -5,25 +5,36 @@ using System.Collections.Generic;
 [System.Serializable]
 public class EventoTecla
 {
-    public KeyCode tecla = KeyCode.Alpha1;       // Tecla que activa el evento
-    public string nombreAnimacion;               // Nombre de la animación a reproducir
-    public Renderer objetoRenderer;              // Objeto al que se le aplica el shader
-    public int indiceEscena;                     // Índice de la escena a cargar
+    public KeyCode tecla = KeyCode.Alpha1;
+    public string nombreAnimacion;
+    public Renderer objetoRenderer;
+    public int indiceEscena;
 }
 
 public class ActivarAnimacion : MonoBehaviour
 {
-    public Animator animator;                    // Animator principal
-    public List<EventoTecla> eventos;            // Lista de eventos configurables
-    public Material shaderMaterial;              // Shader/material compartido para todos
-    public int indiceMaterial = 1;               // Índice del material a reemplazar
-    public CameraManager cameraManager;          // Referencia opcional al CameraManager
+    public Animator animator;
+    public List<EventoTecla> eventos;
+    public Material shaderMaterial;
+    public int indiceMaterial = 1;
+    public CameraManager cameraManager;
 
     private int escenaSeleccionada = -1;
 
+    void Start()
+    {
+        escenaSeleccionada = -1;
+
+        if (cameraManager != null)
+        {
+            cameraManager.teclaEPulsada = false;
+            cameraManager.camaraFinalizada = false;
+        }
+    }
+
     void Update()
     {
-        if (cameraManager != null && cameraManager.teclaEPulsada) // Solo si E ha sido presionado
+        if (cameraManager != null && cameraManager.teclaEPulsada) 
         {
             foreach (var evento in eventos)
             {
@@ -68,15 +79,14 @@ public class ActivarAnimacion : MonoBehaviour
         if (escenaSeleccionada >= 0)
         {
             Debug.Log("Cambiando a escena con índice: " + escenaSeleccionada);
-            if (escenaSeleccionada == 1) 
+            if (GameManager.Instance != null)
             {
                 GameManager.Instance.setLastPosition();
-                GameManager.Instance.GoToFirstFloor();
-            }
-            if (escenaSeleccionada == 2)
-            {
-                GameManager.Instance.setLastPosition();
-                GameManager.Instance.GoToSecondFloor();
+
+                if (escenaSeleccionada == 1)
+                    GameManager.Instance.GoToFirstFloor();
+                else if (escenaSeleccionada == 2)
+                    GameManager.Instance.GoToSecondFloor();
             }
         }
         else
