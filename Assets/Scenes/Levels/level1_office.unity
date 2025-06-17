@@ -4970,7 +4970,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 849190699439009417, guid: 396147e26dd01ec45a0d49209f2af480, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 849190699439009417, guid: 396147e26dd01ec45a0d49209f2af480, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2596450286146700088, guid: 396147e26dd01ec45a0d49209f2af480, type: 3}
       propertyPath: m_Name
@@ -6347,6 +6351,22 @@ PrefabInstance:
     - target: {fileID: 6257687155364054342, guid: ddb01d38c99b3cc49af3c87dd09bf279, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135686040868002598, guid: ddb01d38c99b3cc49af3c87dd09bf279, type: 3}
+      propertyPath: '_numberPassword.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135686040868002598, guid: ddb01d38c99b3cc49af3c87dd09bf279, type: 3}
+      propertyPath: '_numberPassword.Array.data[1]'
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135686040868002598, guid: ddb01d38c99b3cc49af3c87dd09bf279, type: 3}
+      propertyPath: '_numberPassword.Array.data[2]'
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135686040868002598, guid: ddb01d38c99b3cc49af3c87dd09bf279, type: 3}
+      propertyPath: '_numberPassword.Array.data[3]'
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4417648052716482837, guid: ddb01d38c99b3cc49af3c87dd09bf279, type: 3}
@@ -13606,6 +13626,10 @@ PrefabInstance:
     - target: {fileID: 4453418237669531817, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4529404318979661899, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4597126652950981326, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_AnchorMax.x
