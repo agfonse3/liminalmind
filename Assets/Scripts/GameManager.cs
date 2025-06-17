@@ -97,10 +97,16 @@ public class GameManager : MonoBehaviour
         player.transform.position = new Vector3(-0.43587f, 0.133f, 0.707046f);
     }
 
+    public void SetGameActive()
+    {
+        isGameActive = true;
+       
+    }
 
     public void SetGameOver() 
     {
         gameOver = true;
+        Debug.Log("Game Over");
         GameOver();
     }
 
@@ -131,7 +137,7 @@ public class GameManager : MonoBehaviour
         //SceneManager.LoadScene(5);
         isGameActive = false;
         isGamePaused = true;
-        gameOver = true;
+        //gameOver = true;
     }
 
 }
