@@ -107,6 +107,9 @@ public class GameManager : MonoBehaviour
     {
         playerData.SanityScriptableObject.ResetData();
         playerData.Inventorylist.ResetData();
+        gameOverPannel.SetActive(false);
+        gameOverPannel.transform.GetChild(0).gameObject.SetActive(false);
+        gameOverPannel.transform.GetChild(1).gameObject.SetActive(false);
     }
 
     //metodo de gameover
