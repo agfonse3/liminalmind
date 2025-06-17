@@ -277,7 +277,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8425130976250673955, guid: e89fa08f3bc4a5d459a2a4358a30dc5f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -317,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemdata: {fileID: 11400000, guid: a44102400843b8a4baa91cd40920798c, type: 2}
-  inventory: {fileID: 7759767541936311464, guid: c2bf90cc8cfd29c4dbeeb9dc165d0328, type: 3}
+  inventory: {fileID: 398837119}
 --- !u!95 &50729652
 Animator:
   serializedVersion: 7
@@ -328,7 +329,7 @@ Animator:
   m_GameObject: {fileID: 50729650}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6fd03f4ea4b0e8845ad488cfd2fafd7f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7a782cca38fabac4ba0125da93f74636, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -355,8 +356,8 @@ MonoBehaviour:
   panelUI: {fileID: 2143466784}
   textInteractuable: {fileID: 1596637832}
   textLlave: {fileID: 933169365}
-  puerta: {fileID: 324383722}
-  puertaAnimator: {fileID: 324383721}
+  puerta: {fileID: 50729650}
+  puertaAnimator: {fileID: 50729652}
 --- !u!65 &50729654
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -446,6 +447,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1504952855}
     m_Modifications:
+    - target: {fileID: 3313073813147137424, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
+      propertyPath: panelUI
+      value: 
+      objectReference: {fileID: 2143466784}
+    - target: {fileID: 3313073813147137424, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
     - target: {fileID: 6065897384225062199, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2379,16 +2388,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 322676442628217833, guid: e1bbad83ae2b7d048858fa993acc4bf9, type: 3}
   m_PrefabInstance: {fileID: 324383719}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &324383721 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4683937872234193731, guid: e1bbad83ae2b7d048858fa993acc4bf9, type: 3}
-  m_PrefabInstance: {fileID: 324383719}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &324383722 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1094849901655589203, guid: e1bbad83ae2b7d048858fa993acc4bf9, type: 3}
-  m_PrefabInstance: {fileID: 324383719}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &333729884
 GameObject:
   m_ObjectHideFlags: 0
@@ -3189,6 +3188,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1321224771}
     m_Modifications:
+    - target: {fileID: 2818369372530169662, guid: 719e01af049b2364486097e77f397d65, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 398837119}
     - target: {fileID: 5165311888485377444, guid: 719e01af049b2364486097e77f397d65, type: 3}
       propertyPath: m_Name
       value: Door Simple W Lock Blue
@@ -3238,9 +3241,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 398837119}
     - target: {fileID: 8855059090537494860, guid: 719e01af049b2364486097e77f397d65, type: 3}
+      propertyPath: panelUI
+      value: 
+      objectReference: {fileID: 2143466784}
+    - target: {fileID: 8855059090537494860, guid: 719e01af049b2364486097e77f397d65, type: 3}
+      propertyPath: textLlave
+      value: 
+      objectReference: {fileID: 933169365}
+    - target: {fileID: 8855059090537494860, guid: 719e01af049b2364486097e77f397d65, type: 3}
       propertyPath: puertaAnimator
       value: 
       objectReference: {fileID: 410121799}
+    - target: {fileID: 8855059090537494860, guid: 719e01af049b2364486097e77f397d65, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3807,9 +3822,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3313073813147137424, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
+      propertyPath: panelUI
+      value: 
+      objectReference: {fileID: 2143466784}
+    - target: {fileID: 3313073813147137424, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3313073813147137424, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
     - target: {fileID: 6065897384225062199, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4615,12 +4638,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1420117164432894289, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3313073813147137424, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
+      propertyPath: panelUI
+      value: 
+      objectReference: {fileID: 2143466784}
+    - target: {fileID: 3313073813147137424, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3313073813147137424, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
     - target: {fileID: 6065897384225062199, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8036,12 +8067,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1420117164432894289, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3313073813147137424, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
+      propertyPath: panelUI
+      value: 
+      objectReference: {fileID: 2143466784}
+    - target: {fileID: 3313073813147137424, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3313073813147137424, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
     - target: {fileID: 6065897384225062199, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8089,7 +8128,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8216791988028810408, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2120183680}
   m_SourcePrefab: {fileID: 100100000, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
 --- !u!4 &1284598783 stripped
 Transform:
@@ -9322,7 +9364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemdata: {fileID: 11400000, guid: e112750e169c9b2478b2c15c1daa72f6, type: 2}
-  inventory: {fileID: 7759767541936311464, guid: c2bf90cc8cfd29c4dbeeb9dc165d0328, type: 3}
+  inventory: {fileID: 398837119}
 --- !u!1 &1500659980
 GameObject:
   m_ObjectHideFlags: 0
@@ -10420,6 +10462,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1288436977032939824, guid: 39fad436ce6de814792c98c215005406, type: 3}
   m_PrefabInstance: {fileID: 616462545}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1668644210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8435916293178013677, guid: 144c85f26a02fb14d9ac49b15d4fe472, type: 3}
+  m_PrefabInstance: {fileID: 1697472946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1668644217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668644210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1461af3786b1467449359aaf68bc61eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanciaInteractuar: 0.77
+  panelInteractuar: {fileID: 2143466784}
+  panelUI: {fileID: 357139919}
+  textInteractuable: {fileID: 1596637832}
+  luzInteractuable: {fileID: 1842429033}
+  inventary: {fileID: 398837119}
 --- !u!4 &1671827668 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4155421432295739810, guid: 39fad436ce6de814792c98c215005406, type: 3}
@@ -10493,6 +10558,11 @@ PrefabInstance:
 --- !u!4 &1683598196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6065897384225062199, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
+  m_PrefabInstance: {fileID: 1683598195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1683598198 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1420117164432894289, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
   m_PrefabInstance: {fileID: 1683598195}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1687105055
@@ -10764,6 +10834,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 357139919}
     - target: {fileID: 7070093631275372515, guid: 144c85f26a02fb14d9ac49b15d4fe472, type: 3}
+      propertyPath: inventary
+      value: 
+      objectReference: {fileID: 398837119}
+    - target: {fileID: 7070093631275372515, guid: 144c85f26a02fb14d9ac49b15d4fe472, type: 3}
+      propertyPath: panelInteractuar
+      value: 
+      objectReference: {fileID: 2143466784}
+    - target: {fileID: 7070093631275372515, guid: 144c85f26a02fb14d9ac49b15d4fe472, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
+    - target: {fileID: 7070093631275372515, guid: 144c85f26a02fb14d9ac49b15d4fe472, type: 3}
       propertyPath: distanciaInteractuar
       value: 0.54
       objectReference: {fileID: 0}
@@ -10811,10 +10893,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: keyyellow
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7070093631275372515, guid: 144c85f26a02fb14d9ac49b15d4fe472, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8435916293178013677, guid: 144c85f26a02fb14d9ac49b15d4fe472, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1668644217}
   m_SourcePrefab: {fileID: 100100000, guid: 144c85f26a02fb14d9ac49b15d4fe472, type: 3}
 --- !u!1001 &1698626332
 PrefabInstance:
@@ -11022,6 +11108,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 234591546}
     m_Modifications:
+    - target: {fileID: 2818369372530169662, guid: 719e01af049b2364486097e77f397d65, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 398837119}
     - target: {fileID: 5165311888485377444, guid: 719e01af049b2364486097e77f397d65, type: 3}
       propertyPath: m_Name
       value: Door Simple W Lock Blue
@@ -11071,9 +11161,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 398837119}
     - target: {fileID: 8855059090537494860, guid: 719e01af049b2364486097e77f397d65, type: 3}
+      propertyPath: panelUI
+      value: 
+      objectReference: {fileID: 2143466784}
+    - target: {fileID: 8855059090537494860, guid: 719e01af049b2364486097e77f397d65, type: 3}
+      propertyPath: textLlave
+      value: 
+      objectReference: {fileID: 933169365}
+    - target: {fileID: 8855059090537494860, guid: 719e01af049b2364486097e77f397d65, type: 3}
       propertyPath: puertaAnimator
       value: 
       objectReference: {fileID: 1730905140}
+    - target: {fileID: 8855059090537494860, guid: 719e01af049b2364486097e77f397d65, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12328,6 +12430,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1092965638}
     m_Modifications:
     - target: {fileID: 2763051122799439333, guid: 39493a1669d8d564c8e37f72f8756a2b, type: 3}
+      propertyPath: panelUI
+      value: 
+      objectReference: {fileID: 2143466784}
+    - target: {fileID: 2763051122799439333, guid: 39493a1669d8d564c8e37f72f8756a2b, type: 3}
       propertyPath: textLlave
       value: 
       objectReference: {fileID: 933169365}
@@ -12335,6 +12441,10 @@ PrefabInstance:
       propertyPath: puertaAnimator
       value: 
       objectReference: {fileID: 1895798712}
+    - target: {fileID: 2763051122799439333, guid: 39493a1669d8d564c8e37f72f8756a2b, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
     - target: {fileID: 5165311888485377444, guid: 39493a1669d8d564c8e37f72f8756a2b, type: 3}
       propertyPath: m_Name
       value: Door Simple W Lock Yellow
@@ -12419,7 +12529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemdata: {fileID: 11400000, guid: e112750e169c9b2478b2c15c1daa72f6, type: 2}
-  inventory: {fileID: 7759767541936311464, guid: c2bf90cc8cfd29c4dbeeb9dc165d0328, type: 3}
+  inventory: {fileID: 398837119}
 --- !u!1001 &1901560430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14116,9 +14226,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 13277915}
     m_Modifications:
     - target: {fileID: 2763051122799439333, guid: 39493a1669d8d564c8e37f72f8756a2b, type: 3}
+      propertyPath: panelUI
+      value: 
+      objectReference: {fileID: 2143466784}
+    - target: {fileID: 2763051122799439333, guid: 39493a1669d8d564c8e37f72f8756a2b, type: 3}
+      propertyPath: textLlave
+      value: 
+      objectReference: {fileID: 933169365}
+    - target: {fileID: 2763051122799439333, guid: 39493a1669d8d564c8e37f72f8756a2b, type: 3}
       propertyPath: puertaAnimator
       value: 
       objectReference: {fileID: 2113088406}
+    - target: {fileID: 2763051122799439333, guid: 39493a1669d8d564c8e37f72f8756a2b, type: 3}
+      propertyPath: textInteractuable
+      value: 
+      objectReference: {fileID: 1596637832}
     - target: {fileID: 5165311888485377444, guid: 39493a1669d8d564c8e37f72f8756a2b, type: 3}
       propertyPath: m_Name
       value: Door Simple W Lock Yellow
@@ -14203,12 +14325,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemdata: {fileID: 11400000, guid: e112750e169c9b2478b2c15c1daa72f6, type: 2}
-  inventory: {fileID: 7759767541936311464, guid: c2bf90cc8cfd29c4dbeeb9dc165d0328, type: 3}
+  inventory: {fileID: 398837119}
 --- !u!4 &2114784215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6743244887868676868, guid: 39fad436ce6de814792c98c215005406, type: 3}
   m_PrefabInstance: {fileID: 616462545}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2120183674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8216791988028810408, guid: 135ac54737995924f9220f8ee00a7bb6, type: 3}
+  m_PrefabInstance: {fileID: 1284598782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2120183680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120183674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44325b52d0c4e8441b66b9a99f24a512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelUI: {fileID: 2143466784}
+  textInteractuable: {fileID: 1596637832}
+  puertaAnimator: {fileID: 1683598198}
 --- !u!4 &2122537189 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5492800848430648054, guid: 39fad436ce6de814792c98c215005406, type: 3}
