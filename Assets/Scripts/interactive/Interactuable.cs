@@ -23,6 +23,7 @@ public class Interactuable : MonoBehaviour
         if (inventary != null)
         {
             inventoryManager = inventary.GetComponent<InventoryManager>();
+           
         }
         else
         {
