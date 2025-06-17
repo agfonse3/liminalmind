@@ -5546,6 +5546,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 829788249}
     m_Modifications:
+    - target: {fileID: 6248942870301146444, guid: d181da34e1c6cb349bdad6c21f7b5d33, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 398837119}
     - target: {fileID: 278046466785991850, guid: 871c7a7651a78934a8be47d62feb4dec, type: 3}
       propertyPath: panelUI
       value: 
@@ -5603,10 +5607,6 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6020796097946717976, guid: 871c7a7651a78934a8be47d62feb4dec, type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 398837119}
-    - target: {fileID: 6248942870301146444, guid: d181da34e1c6cb349bdad6c21f7b5d33, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 398837119}
@@ -15318,10 +15318,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 130152648}
     m_Modifications:
+    - target: {fileID: 938173999363246970, guid: 79ec465142a5b774d88ffd0a72a3fc91, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d7192fb9701282345b58817c367d395d, type: 2}
     - target: {fileID: 1553089610398563833, guid: 79ec465142a5b774d88ffd0a72a3fc91, type: 3}
       propertyPath: m_Name
       value: 1_officelevel_bigcorridor
       objectReference: {fileID: 0}
+    - target: {fileID: 1641292060221821703, guid: 79ec465142a5b774d88ffd0a72a3fc91, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3bafc9855a74cbf48a03d7d21b1c42c0, type: 2}
     - target: {fileID: 2217598857013339971, guid: 79ec465142a5b774d88ffd0a72a3fc91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -15362,6 +15370,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7560813029930942751, guid: 79ec465142a5b774d88ffd0a72a3fc91, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3bafc9855a74cbf48a03d7d21b1c42c0, type: 2}
+    - target: {fileID: 9119325150867957373, guid: 79ec465142a5b774d88ffd0a72a3fc91, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d7192fb9701282345b58817c367d395d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15475,10 +15491,6 @@ PrefabInstance:
     - target: {fileID: 991168474133426916, guid: b7763125083f3764493e9ee5dc553315, type: 3}
       propertyPath: m_Name
       value: 1_officelevel_office1_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9133986027035283678, guid: b7763125083f3764493e9ee5dc553315, type: 3}
-      propertyPath: m_CastShadows
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

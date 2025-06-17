@@ -939,7 +939,7 @@ PrefabInstance:
     - target: {fileID: -6912129759392263365, guid: 2ee1eb43906f2364a8f41c64989c5417, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2895490e9c7345a499116836c56bbfdd, type: 2}
+      objectReference: {fileID: 2100000, guid: 26da7668cc0187246b79d1da9aee814c, type: 2}
     - target: {fileID: -6897980440671523663, guid: 2ee1eb43906f2364a8f41c64989c5417, type: 3}
       propertyPath: m_CastShadows
       value: 0
@@ -2795,7 +2795,7 @@ PrefabInstance:
     - target: {fileID: -2121712198741164762, guid: 2ee1eb43906f2364a8f41c64989c5417, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2895490e9c7345a499116836c56bbfdd, type: 2}
+      objectReference: {fileID: 2100000, guid: 26da7668cc0187246b79d1da9aee814c, type: 2}
     - target: {fileID: -2075238510855786875, guid: 2ee1eb43906f2364a8f41c64989c5417, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -3223,7 +3223,7 @@ PrefabInstance:
     - target: {fileID: -982489883659680842, guid: 2ee1eb43906f2364a8f41c64989c5417, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2895490e9c7345a499116836c56bbfdd, type: 2}
+      objectReference: {fileID: 2100000, guid: a19ea8982b1f9194d85bef2c1271d684, type: 2}
     - target: {fileID: -958854761736805734, guid: 2ee1eb43906f2364a8f41c64989c5417, type: 3}
       propertyPath: m_CastShadows
       value: 0
@@ -4787,7 +4787,7 @@ PrefabInstance:
     - target: {fileID: 3038136874802238627, guid: 2ee1eb43906f2364a8f41c64989c5417, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2895490e9c7345a499116836c56bbfdd, type: 2}
+      objectReference: {fileID: 2100000, guid: 8845b794f4dbbb54fbedf39219b07ab2, type: 2}
     - target: {fileID: 3042779849899814898, guid: 2ee1eb43906f2364a8f41c64989c5417, type: 3}
       propertyPath: m_CastShadows
       value: 0
