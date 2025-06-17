@@ -4370,7 +4370,7 @@ PrefabInstance:
     - target: {fileID: 7402365057231435552, guid: 9295189b4f03b8a47b9873a8492069d1, type: 3}
       propertyPath: panelUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 357139919}
     - target: {fileID: 7402365057231435552, guid: 9295189b4f03b8a47b9873a8492069d1, type: 3}
       propertyPath: inventary
       value: 
@@ -5028,7 +5028,7 @@ PrefabInstance:
     - target: {fileID: 8051583800603671662, guid: 396147e26dd01ec45a0d49209f2af480, type: 3}
       propertyPath: panelUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 357139919}
     - target: {fileID: 8051583800603671662, guid: 396147e26dd01ec45a0d49209f2af480, type: 3}
       propertyPath: inventary
       value: 
@@ -5546,6 +5546,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 829788249}
     m_Modifications:
+    - target: {fileID: 6248942870301146444, guid: d181da34e1c6cb349bdad6c21f7b5d33, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 398837119}
     - target: {fileID: 278046466785991850, guid: 871c7a7651a78934a8be47d62feb4dec, type: 3}
       propertyPath: panelUI
       value: 
@@ -5603,10 +5607,6 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6020796097946717976, guid: 871c7a7651a78934a8be47d62feb4dec, type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 398837119}
-    - target: {fileID: 6248942870301146444, guid: d181da34e1c6cb349bdad6c21f7b5d33, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 398837119}
