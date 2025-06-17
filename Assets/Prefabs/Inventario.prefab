@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700bd7e4a32157a439733d581cff4694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotsHolder: {fileID: 0}
-  items: []
+  slotsHolder: {fileID: 7440892924407664881, guid: a2b07d98c9674ae4a97079e8152bc6f0, type: 3}
+  player: {fileID: 6876184005758335181, guid: be09409e3d90c9843b4311996072b416, type: 3}
   quantityOfNotes: 0

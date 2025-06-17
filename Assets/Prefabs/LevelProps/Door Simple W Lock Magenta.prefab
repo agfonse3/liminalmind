@@ -63,5 +63,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6428652558574637284, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8751587030886345303}
+    - targetCorrespondingSourceObject: {fileID: 6428652558574637284, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3341798854059124671}
   m_SourcePrefab: {fileID: 100100000, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
+--- !u!1 &5165311888485377444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6428652558574637284, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
+  m_PrefabInstance: {fileID: 2205064774008091968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-8751587030886345303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5165311888485377444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2246670390c6ce04f9c6083a89b9625d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelUI: {fileID: 3184518345062138473, guid: 8a2c6490dd7d3924aa062fe969648047, type: 3}
+  textInteractuable: {fileID: 1269337624754358051, guid: 1be71b9530b065e45af8d0558e4bc543, type: 3}
+  textLlave: {fileID: 2583234865985426969, guid: db57d29165232e748a8b03145799768d, type: 3}
+  puerta: {fileID: 5165311888485377444, guid: d181da34e1c6cb349bdad6c21f7b5d33, type: 3}
+  puertaAnimator: {fileID: 2038875796075751319, guid: 690fcc96744f55e43a740cd76a228bcc, type: 3}
+--- !u!114 &-3341798854059124671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5165311888485377444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11810d93b9a8f0248a9c0993e406b91e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemdata: {fileID: 11400000, guid: 6a2265eeab0eac14581d29541cbf5408, type: 2}
+  inventory: {fileID: 7969616084207118023, guid: a66c4928ed017b944912ad3fd44f9f7b, type: 3}

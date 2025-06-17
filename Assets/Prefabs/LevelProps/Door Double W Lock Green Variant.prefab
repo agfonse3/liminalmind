@@ -63,5 +63,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6719042703462253643, guid: 092943ba7d68fd14dad4aa90fdf17023, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5510077187401221107}
+    - targetCorrespondingSourceObject: {fileID: 6719042703462253643, guid: 092943ba7d68fd14dad4aa90fdf17023, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6539994994202351631}
   m_SourcePrefab: {fileID: 100100000, guid: 092943ba7d68fd14dad4aa90fdf17023, type: 3}
+--- !u!1 &4753637331837583445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6719042703462253643, guid: 092943ba7d68fd14dad4aa90fdf17023, type: 3}
+  m_PrefabInstance: {fileID: 2073514324453442590}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5510077187401221107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4753637331837583445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11810d93b9a8f0248a9c0993e406b91e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemdata: {fileID: 11400000, guid: 3d0ca243d9c6797429245cdf0e52a225, type: 2}
+  inventory: {fileID: 7969616084207118023, guid: a66c4928ed017b944912ad3fd44f9f7b, type: 3}
+--- !u!114 &-6539994994202351631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4753637331837583445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2246670390c6ce04f9c6083a89b9625d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelUI: {fileID: 3184518345062138473, guid: 8a2c6490dd7d3924aa062fe969648047, type: 3}
+  textInteractuable: {fileID: 1269337624754358051, guid: 1be71b9530b065e45af8d0558e4bc543, type: 3}
+  textLlave: {fileID: 2583234865985426969, guid: db57d29165232e748a8b03145799768d, type: 3}
+  puerta: {fileID: 2722722113038624362, guid: 690fcc96744f55e43a740cd76a228bcc, type: 3}
+  puertaAnimator: {fileID: 2038875796075751319, guid: 690fcc96744f55e43a740cd76a228bcc, type: 3}

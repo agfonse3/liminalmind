@@ -68,6 +68,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6428652558574637284, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
       insertIndex: 1
       addedObject: {fileID: 8855059090537494860}
+    - targetCorrespondingSourceObject: {fileID: 6428652558574637284, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2818369372530169662}
   m_SourcePrefab: {fileID: 100100000, guid: b4eb7f19abbd71440a0d42ec90f71e93, type: 3}
 --- !u!1 &5165311888485377444 stripped
 GameObject:
@@ -91,3 +94,17 @@ MonoBehaviour:
   textLlave: {fileID: 2583234865985426969, guid: db57d29165232e748a8b03145799768d, type: 3}
   puerta: {fileID: 5165311888485377444}
   puertaAnimator: {fileID: 0}
+--- !u!114 &2818369372530169662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5165311888485377444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11810d93b9a8f0248a9c0993e406b91e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemdata: {fileID: 11400000, guid: 09f236c904168644699e73a1563b341e, type: 2}
+  inventory: {fileID: 7969616084207118023, guid: a66c4928ed017b944912ad3fd44f9f7b, type: 3}

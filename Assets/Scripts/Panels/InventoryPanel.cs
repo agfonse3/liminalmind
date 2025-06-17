@@ -21,7 +21,7 @@ public class InventoryPanel : PanelBasic
             if (isOnNote) 
             {
                 ShowNote();
-                  AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxPapel);
+                AudiomanagerTemp.Instance.PlaySFX(AudiomanagerTemp.Instance.sfxPapel);
                 StartCoroutine(DontShowNote());
             }
         }    

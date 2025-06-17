@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class StartPanel : PanelBasic
 {
@@ -24,7 +23,7 @@ public class StartPanel : PanelBasic
     {
         startPannel.SetActive(false);
         AudiomanagerTemp.Instance.PlayEndMusic(audioBGS);
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameManager.Instance.NuevoJuego();
     }
 
     private void OnEnable()

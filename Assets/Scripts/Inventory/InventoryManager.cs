@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] GameObject player;
     //public ItemClass itemToAdd; // item aadicionar al inventario para pruebas
     //private ItemClass itemToRemove;
-    private List<ItemClass> items ; //lista de los items
+    //public List<ItemClass> items ; //lista de los items prueba
     private Inventorylist playerInventorylist;
     private GameObject[] slots;
     public int quantityOfNotes;
@@ -17,7 +17,7 @@ public class InventoryManager : MonoBehaviour
     {
         quantityOfNotes = 0;
         playerInventorylist = player.GetComponent<Playerdata>().Inventorylist;
-        items = playerInventorylist.inventoryList;
+        //items = playerInventorylist.inventoryList;// para prueba
         slots = new GameObject[slotsHolder.transform.childCount]; //cantidad de slots disponibles
         //colocar slots
         for (int i = 0; i < slotsHolder.transform.childCount;i++) 
@@ -38,7 +38,7 @@ public class InventoryManager : MonoBehaviour
             try
             {
                 slots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
-                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = items[i].itemsprite;
+                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = playerInventorylist.inventoryList[i].itemsprite;
 
             }
             catch 
@@ -57,9 +57,10 @@ public class InventoryManager : MonoBehaviour
         {
             if (item.GetNote() != null)  //revisa si es una nota
             {
+                Debug.Log("adquiriste una nota");
                 if (quantityOfNotes == 0)
                 {
-                    items.Add(item); // si no hay la adiciona
+                    playerInventorylist.inventoryList.Add(item); // si no hay la adiciona
                     quantityOfNotes++;
                 }
                 else if (quantityOfNotes<4)
@@ -72,7 +73,7 @@ public class InventoryManager : MonoBehaviour
                 {
                     Debug.Log("adiciona un item");
                     Debug.Log(item);
-                    items.Add(item);
+                    playerInventorylist.inventoryList.Add(item);
                     UpdateInventoryUI();
                 }
                
@@ -90,9 +91,10 @@ public class InventoryManager : MonoBehaviour
     //metodo que verifica si hay un item en el inverntario
     public bool IsOnInventory(ItemClass item) 
     {
-        for (int i = 0; i <items.Count; i++)
+        Debug.Log(playerInventorylist.inventoryList.Count);
+        for (int i = 0; i < playerInventorylist.inventoryList.Count; i++)
         {
-            if (items != null && items[i] == item)
+            if (playerInventorylist.inventoryList != null && playerInventorylist.inventoryList[i] == item)
             {
                 return true;
             }
@@ -105,9 +107,9 @@ public class InventoryManager : MonoBehaviour
     public bool IsClickedNearNote(Vector3 mouseposition) 
     {
         int numberslotNote =-1;
-        for (int y = 0; y < items.Count; y++)
+        for (int y = 0; y < playerInventorylist.inventoryList.Count; y++)
         {
-            if (items[y].GetNote()) 
+            if (playerInventorylist.inventoryList[y].GetNote()) 
             {
                 numberslotNote = y;
                 break;

@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class ConfirmationPanel : PanelBasic
 {
@@ -47,8 +47,7 @@ public class ConfirmationPanel : PanelBasic
     {
         // Aquí va la lógica para Restart el juego
         PlayerPrefs.SetInt("restart", 1); // Marcamos que el juego se está reiniciando
-        //SceneManager.LoadScene(1);// carga primera escena titulo
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameManager.Instance.Restart();
         Time.timeScale = 1f;
     }
     public void NoRestart() 
