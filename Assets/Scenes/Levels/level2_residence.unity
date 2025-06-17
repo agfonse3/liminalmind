@@ -19663,6 +19663,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2126237657}
     - target: {fileID: 7018295008348342871, guid: 171f493544654ff48a024af37126cd09, type: 3}
+      propertyPath: scriptAActivar
+      value: 
+      objectReference: {fileID: 650018430}
+    - target: {fileID: 7018295008348342871, guid: 171f493544654ff48a024af37126cd09, type: 3}
       propertyPath: textInteractuable
       value: 
       objectReference: {fileID: 778860430}

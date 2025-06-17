@@ -2520,6 +2520,10 @@ PrefabInstance:
       propertyPath: textInteractuable
       value: 
       objectReference: {fileID: 1596637832}
+    - target: {fileID: 7952124281878952210, guid: 171f493544654ff48a024af37126cd09, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8793308127575981032, guid: 171f493544654ff48a024af37126cd09, type: 3}
       propertyPath: panelUI
       value: 
@@ -13355,6 +13359,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 327974480180240742, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3530587
+      objectReference: {fileID: 0}
+    - target: {fileID: 327974480180240742, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -358
+      objectReference: {fileID: 0}
     - target: {fileID: 628114409534318791, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 7.3999023
