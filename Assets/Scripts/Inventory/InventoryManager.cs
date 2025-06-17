@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] GameObject player;
     //public ItemClass itemToAdd; // item aadicionar al inventario para pruebas
     //private ItemClass itemToRemove;
-    //private List<ItemClass> items = new List<ItemClass>; //lista de los items
+    //public List<ItemClass> items ; //lista de los items prueba
     private Inventorylist playerInventorylist;
     private GameObject[] slots;
     public int quantityOfNotes;
@@ -16,7 +17,7 @@ public class InventoryManager : MonoBehaviour
     {
         quantityOfNotes = 0;
         playerInventorylist = player.GetComponent<Playerdata>().Inventorylist;
-        //items = playerInventorylist.inventoryList;
+        //items = playerInventorylist.inventoryList;// para prueba
         slots = new GameObject[slotsHolder.transform.childCount]; //cantidad de slots disponibles
         //colocar slots
         for (int i = 0; i < slotsHolder.transform.childCount;i++) 
@@ -89,6 +90,7 @@ public class InventoryManager : MonoBehaviour
     //metodo que verifica si hay un item en el inverntario
     public bool IsOnInventory(ItemClass item) 
     {
+        Debug.Log(playerInventorylist.inventoryList.Count);
         for (int i = 0; i < playerInventorylist.inventoryList.Count; i++)
         {
             if (playerInventorylist.inventoryList != null && playerInventorylist.inventoryList[i] == item)
