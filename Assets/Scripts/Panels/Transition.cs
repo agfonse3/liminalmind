@@ -1,16 +1,22 @@
 using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Transition : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Start()
     {
-        
+        StartCoroutine(LoadYourAsyncScene());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator LoadYourAsyncScene()
     {
-        
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(2);
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
+
 }
