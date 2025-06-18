@@ -44,9 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f679aaea3dd75ff439db07e2abea3be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityOfPlayer: 0
-  numberActualScene: 0
-  lastPosition: {x: 0, y: 0, z: 0}
-  listaInventario: []
+  player: {fileID: 6876184005758335181, guid: be09409e3d90c9843b4311996072b416, type: 3}
   isGameActive: 0
+  isGamePaused: 0
+  gameOver: 0
   gameOverPannel: {fileID: 0}

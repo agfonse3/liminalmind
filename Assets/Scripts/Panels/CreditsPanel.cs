@@ -6,7 +6,7 @@ public class CreditsPanel : PanelBasic
     [SerializeField] GameObject creditsPannel; //panel activo
     [SerializeField] GameObject startPannel; //panel inicio
     public AudioClip audioBGS; //audio de la escena
-    public StartPanel startPanel; //scrpit
+    private StartPanel startPanel; //scrpit
 
     void Start()
     {
