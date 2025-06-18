@@ -122,6 +122,10 @@ public class GameManager : MonoBehaviour
         GameOver();
     }
 
+    public bool GetGameOver()
+    {
+        return isGameOver;
+    }
     public void ResetAll() 
     {
         playerData.SanityScriptableObject.ResetData();

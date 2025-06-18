@@ -19,21 +19,21 @@ public class GamePanel : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKey(KeyCode.P) && !GameManager.Instance.isGameOver) 
+        if (Input.GetKey(KeyCode.P) && !GameManager.Instance.GetGameOver()) 
         {
-            GameManager.Instance.isGamePaused = true;
+            GameManager.Instance.SetGamePause();
             Pause();
         }
 
-        if (Input.GetKey(KeyCode.H) && !GameManager.Instance.isGameOver)
+        if (Input.GetKey(KeyCode.H) && !GameManager.Instance.GetGameOver())
         {
-            GameManager.Instance.isGamePaused = true;
+            GameManager.Instance.SetGamePause();
             HelpPan();
         }
 
-        if (Input.GetKey(KeyCode.F) && !GameManager.Instance.isGameOver)
+        if (Input.GetKey(KeyCode.F) && !GameManager.Instance.GetGameOver())
         {
-            GameManager.Instance.isGamePaused = true;
+            GameManager.Instance.SetGamePause();
             InventoryPan();
         }
     }

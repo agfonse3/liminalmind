@@ -11,10 +11,10 @@ public class HelpPanel : PanelBasic
 
     private void OnDisable()
     {
-        if (GameManager.Instance.isGamePaused)
+        if (GameManager.Instance.GetGamePause())
         {
             MouseDesctivatedOutOfPanel();
-            GameManager.Instance.isGamePaused = false;
+            GameManager.Instance.SetGameActive();
         }
 
     }
