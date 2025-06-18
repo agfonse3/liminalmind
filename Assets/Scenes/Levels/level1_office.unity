@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: fafe88faee8ad6949a3144db55f97c55, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: ecd73e54a65e85944a27632782c7efd1, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 74e026fcdd33fa844a659579c16a8f73, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -5473,10 +5473,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 829788249}
     m_Modifications:
-    - target: {fileID: 6248942870301146444, guid: d181da34e1c6cb349bdad6c21f7b5d33, type: 3}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 398837119}
     - target: {fileID: 278046466785991850, guid: 871c7a7651a78934a8be47d62feb4dec, type: 3}
       propertyPath: panelUI
       value: 
@@ -5534,6 +5530,10 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6020796097946717976, guid: 871c7a7651a78934a8be47d62feb4dec, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 398837119}
+    - target: {fileID: 6248942870301146444, guid: d181da34e1c6cb349bdad6c21f7b5d33, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 398837119}
