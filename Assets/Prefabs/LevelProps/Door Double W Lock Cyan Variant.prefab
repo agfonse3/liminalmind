@@ -70,23 +70,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229891234274221809, guid: 092943ba7d68fd14dad4aa90fdf17023, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6229891234274221809, guid: 092943ba7d68fd14dad4aa90fdf17023, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6229891234274221809, guid: 092943ba7d68fd14dad4aa90fdf17023, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5
+      value: 0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 6229891234274221809, guid: 092943ba7d68fd14dad4aa90fdf17023, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5
+      value: 0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 6229891234274221809, guid: 092943ba7d68fd14dad4aa90fdf17023, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 6229891234274221809, guid: 092943ba7d68fd14dad4aa90fdf17023, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -177,8 +177,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.77803993, y: 2.1772416, z: 1.3512111}
-  m_Center: {x: -0.16461349, y: 1.082317, z: -0.01570344}
+  m_Size: {x: 1.1140906, y: 2.1772416, z: 1.3512111}
+  m_Center: {x: 0.0034117703, y: 1.082317, z: -0.015703455}
 --- !u!114 &3387247139193809217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,9 +191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2246670390c6ce04f9c6083a89b9625d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelUI: {fileID: 3184518345062138473, guid: 8a2c6490dd7d3924aa062fe969648047, type: 3}
-  textInteractuable: {fileID: 1269337624754358051, guid: 1be71b9530b065e45af8d0558e4bc543, type: 3}
-  textLlave: {fileID: 2583234865985426969, guid: db57d29165232e748a8b03145799768d, type: 3}
+  panelUI: {fileID: 0}
+  textInteractuable: {fileID: 0}
+  textLlave: {fileID: 0}
   puerta: {fileID: 2722722113038624362}
   puertaAnimator: {fileID: 2038875796075751319}
 --- !u!95 &2038875796075751319
@@ -206,7 +206,7 @@ Animator:
   m_GameObject: {fileID: 2722722113038624362}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cab113dfd8dcc2347b522c2a94b2a86d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7a782cca38fabac4ba0125da93f74636, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -231,4 +231,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemdata: {fileID: 11400000, guid: c2fc4fde0239aad4287ff338977a9457, type: 2}
-  inventory: {fileID: 7759767541936311464, guid: c2bf90cc8cfd29c4dbeeb9dc165d0328, type: 3}
+  inventory: {fileID: 0}
