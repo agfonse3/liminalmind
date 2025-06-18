@@ -10,29 +10,28 @@ public class GamePanel : MonoBehaviour
     //[SerializeField] GameObject player;
     //SanitySystem sanitySystem;
 
-    public PausePanel PausePanel;
+    private PausePanel PausePanel;
 
     void Start()
     {
         PausePanel = pausePannel.GetComponent<PausePanel>();
-        //sanitySystem = player.gameObject.GetComponent<SanitySystem>();
     }
 
     public void Update()
     {
-        if (Input.GetKey(KeyCode.P) && !GameManager.Instance.gameOver) 
+        if (Input.GetKey(KeyCode.P) && !GameManager.Instance.isGameOver) 
         {
             GameManager.Instance.isGamePaused = true;
             Pause();
         }
 
-        if (Input.GetKey(KeyCode.H) && !GameManager.Instance.gameOver)
+        if (Input.GetKey(KeyCode.H) && !GameManager.Instance.isGameOver)
         {
             GameManager.Instance.isGamePaused = true;
             HelpPan();
         }
 
-        if (Input.GetKey(KeyCode.F) && !GameManager.Instance.gameOver)
+        if (Input.GetKey(KeyCode.F) && !GameManager.Instance.isGameOver)
         {
             GameManager.Instance.isGamePaused = true;
             InventoryPan();

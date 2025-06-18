@@ -6,8 +6,8 @@ public class PausePanel : PanelBasic
     [SerializeField] GameObject settingsPannel; //panel configuracion
     [SerializeField] GameObject confirmationPannel; //panel de confirmacion
     public AudioClip audioBGS; //audio de la escena
-    public SettingsPanel settingsPanel; //script
-    public ConfirmationPanel confirmationPanel; //script
+    private SettingsPanel settingsPanel; //script
+    private ConfirmationPanel confirmationPanel; //script
 
     void Start()
     {
@@ -18,16 +18,15 @@ public class PausePanel : PanelBasic
     
     private void OnEnable()
     {
-       
         MouseActivatedInPanel();
     }
 
     private void OnDisable()
     {
-        if (GameManager.Instance.isGamePaused)
+        if (GameManager.Instance.GetGamePause())
         {
             MouseDesctivatedOutOfPanel();
-            GameManager.Instance.isGamePaused = false;
+            GameManager.Instance.SetGameActive();
         }
        
     }
@@ -58,5 +57,11 @@ public class PausePanel : PanelBasic
         Time.timeScale = 1.0f;
         pausePannel.SetActive(false);     
     }
-   
+
+    public void QuitButton()
+    {
+        Application.Quit();
+        Debug.Log("Game is exiting");
+    }
+
 }

@@ -13,12 +13,9 @@ public class GameManager : MonoBehaviour
 
     //ultima escena
     private Vector3 lastPosition; // posicion del jugador en la ultima escena
-
-    //List<GameObject> lista para el inventario
-   // public List<GameObject> listaInventario = new List<GameObject>();
-    public bool isGameActive;
-    public bool isGamePaused;
-    public bool gameOver;
+    [SerializeField] private bool isGameActive;
+    [SerializeField] private bool isGamePaused;
+    [SerializeField] private bool isGameOver;
     private Playerdata playerData;
 
     [SerializeField] GameObject gameOverPannel;
@@ -30,13 +27,11 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-
             DontDestroyOnLoad(gameObject);
         }
         else
 
         {
-
             Destroy(gameObject);
         }
     }
@@ -44,7 +39,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        gameOver = false;
+        isGameOver = false;
         isGamePaused = false;
         isGameActive = false;
         playerData = player.GetComponent<Playerdata>();
@@ -52,17 +47,16 @@ public class GameManager : MonoBehaviour
 
     public void Restart() 
     {
-        gameOver = false;
+        isGameOver = false;
         isGamePaused = false;
         SceneManager.LoadScene(0);
         isGameActive = false;
         ResetAll();
     }
-
+    //inicio de juego, resetea las variables
   public void NuevoJuego()
     {
         SceneManager.LoadScene(1);
-        //isGameActive = true;
         ResetAll();
     }
 
@@ -84,28 +78,46 @@ public class GameManager : MonoBehaviour
 
     public void GoToFirstFloor() //piso oficina
     {
-        //SceneManager.LoadScene(1);
-        SceneManager.LoadScene(2); // escena despues de intro
+        SceneManager.LoadScene(2); // orden escena en build
+        isGameActive = true;
         //player.transform.position = lastPosition;
     }
 
     public void GoToSecondFloor()// piso apartamento
     {
-        //SceneManager.LoadScene(2);
-        SceneManager.LoadScene(3); //escena despues de intro
-        //player.transform.position = lastPosition;
+        SceneManager.LoadScene(3); // orden escena en build
+        isGameActive = true;
         player.transform.position = new Vector3(-0.43587f, 0.133f, 0.707046f);
     }
 
     public void SetGameActive()
     {
         isGameActive = true;
-       
+        isGamePaused = false;
+        Time.timeScale = 1.0f;
     }
+
+    public bool GetGameActive()
+    {
+        return isGameActive;
+    }
+
+    public void SetGamePause()
+    {
+        isGamePaused = true;
+        isGameActive = false;
+        Time.timeScale = 0f;
+    }
+
+    public bool GetGamePause()
+    {
+        return isGamePaused;
+    }
+
 
     public void SetGameOver() 
     {
-        gameOver = true;
+        isGameOver = true;
         Debug.Log("Game Over");
         GameOver();
     }
@@ -127,7 +139,7 @@ public class GameManager : MonoBehaviour
         //SceneManager.LoadScene(4);
         isGameActive = false;
         isGamePaused = true;
-        gameOver = true;
+        isGameOver = true;
     }
 
     public void GameCompleted()

@@ -10,8 +10,8 @@ public class SettingsPanel : PanelBasic
     [SerializeField] GameObject startPannel; // Panel inicio
     [SerializeField] GameObject pausePannel; // Panel pausa
 
-    public StartPanel startPanel; // Script
-    public PausePanel pausePanel; // Script
+    private StartPanel startPanel; // Script
+    private PausePanel pausePanel; // Script
 
     bool isOnVolume = true; // Controla el muteado
 
@@ -84,7 +84,6 @@ public class SettingsPanel : PanelBasic
                 {
                     AudiomanagerTemp.Instance.PlayMusic(startPanel.audioBGS);
                 }
-                
                 startPannel.SetActive(true);
                 isOnStart = false;
                 isOnpause = false;
