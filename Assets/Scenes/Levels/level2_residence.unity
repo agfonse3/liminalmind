@@ -10344,6 +10344,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MuteVolume
       objectReference: {fileID: 0}
+    - target: {fileID: 3910696970351487291, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4396322639822010818, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10531,7 +10535,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2051574413554811301, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1977913137}
   m_SourcePrefab: {fileID: 100100000, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
 --- !u!114 &888685814 stripped
 MonoBehaviour:
@@ -24303,6 +24310,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7329095507426745035, guid: 66e4eceaae2d7d8479b383c743deaffa, type: 3}
   m_PrefabInstance: {fileID: 771775156433825780}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1977913136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2051574413554811301, guid: 1a71e8fa5efcfad419b30abce0155333, type: 3}
+  m_PrefabInstance: {fileID: 888685813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1977913137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977913136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80556eb877e383549bded5b80d55cd12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1988435396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25684,7 +25708,7 @@ MonoBehaviour:
   player: {fileID: 6876184005758335181, guid: be09409e3d90c9843b4311996072b416, type: 3}
   isGameActive: 0
   isGamePaused: 0
-  gameOver: 0
+  isGameOver: 0
   gameOverPannel: {fileID: 382038980}
 --- !u!4 &2067422089
 Transform:

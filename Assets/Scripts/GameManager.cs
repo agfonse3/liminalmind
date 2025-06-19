@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
-
+using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
@@ -43,9 +43,14 @@ public class GameManager : MonoBehaviour
         isGamePaused = false;
         isGameActive = false;
         playerData = player.GetComponent<Playerdata>();
+      
+    }
+      public void SetGameOverPanelReference(GameObject panel)
+    {
+        gameOverPannel = panel;
     }
 
-    public void Restart() 
+    public void Restart()
     {
         isGameOver = false;
         isGamePaused = false;
@@ -115,11 +120,14 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void SetGameOver() 
+    public void SetGameOver()
     {
         isGameOver = true;
-        Debug.Log("Game Over");
-        GameOver();
+            isGamePaused = true;
+        isGameActive = false;
+        StartCoroutine(ActivarPanelGameOverConDelay());
+        //Debug.Log("Game Over");
+        //GameOver();
     }
 
     public bool GetGameOver()
@@ -138,12 +146,26 @@ public class GameManager : MonoBehaviour
     //metodo de gameover
     public void GameOver()
     {
-        gameOverPannel.SetActive(true);
+        if (gameOverPannel == null)
+    {
+        Debug.LogWarning("No se encontró GameOverPanel en GameOver()");
+        return;
+    }
+
+    Debug.Log("Activando panel game over: " + gameOverPannel.name);
+    gameOverPannel.SetActive(true); 
+
+    if (gameOverPannel.transform.childCount > 0)
         gameOverPannel.transform.GetChild(0).gameObject.SetActive(true);
+
+
+        //gameOverPannel.SetActive(true);
+        //gameOverPannel.transform.GetChild(0).gameObject.SetActive(true);
         //SceneManager.LoadScene(4);
         isGameActive = false;
         isGamePaused = true;
         isGameOver = true;
+        Time.timeScale = 0f;
     }
 
     public void GameCompleted()
@@ -155,5 +177,10 @@ public class GameManager : MonoBehaviour
         isGamePaused = true;
         //gameOver = true;
     }
+private IEnumerator ActivarPanelGameOverConDelay()
+{
+    yield return new WaitForSecondsRealtime(0.2f); 
+    GameOver();
+}
 
 }

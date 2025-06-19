@@ -837,7 +837,6 @@ MonoBehaviour:
   creditsPannel: {fileID: 287758160618033816}
   startPannel: {fileID: 1902801315580116892}
   audioBGS: {fileID: 8300000, guid: fa743471e7faf6c4d8da49ccb9a3546e, type: 3}
-  startPanel: {fileID: 0}
 --- !u!1 &533600591983078100
 GameObject:
   m_ObjectHideFlags: 0
@@ -3347,8 +3346,6 @@ MonoBehaviour:
   startPannel: {fileID: 1902801315580116892}
   settingsPannel: {fileID: 3273556463160395504}
   audioBGS: {fileID: 8300000, guid: fa743471e7faf6c4d8da49ccb9a3546e, type: 3}
-  settingsPanel: {fileID: 0}
-  creditsPanel: {fileID: 0}
 --- !u!1 &1933087981720257846
 GameObject:
   m_ObjectHideFlags: 0
@@ -5114,8 +5111,6 @@ MonoBehaviour:
   settingsPannel: {fileID: 3273556463160395504}
   startPannel: {fileID: 1902801315580116892}
   pausePannel: {fileID: 4439714674217027028}
-  startPanel: {fileID: 0}
-  pausePanel: {fileID: 0}
   audioBGS: {fileID: 8300000, guid: fa743471e7faf6c4d8da49ccb9a3546e, type: 3}
   audioBFX: {fileID: 8300000, guid: 282bfe5a0fab03545851189fd486d041, type: 3}
   soundOnImage: {fileID: 21300000, guid: dcaca8c92e3a8ab409e33d90e65f345d, type: 3}
@@ -5956,7 +5951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2849685359223087436
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9513,7 +9508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &895650790941739065
 RectTransform:
   m_ObjectHideFlags: 0
